@@ -27,7 +27,7 @@ tf.flags.DEFINE_integer("embedding_size", 20, "Embedding size for embedding matr
 tf.flags.DEFINE_integer("memory_size", 50, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
-tf.flags.DEFINE_string("data_dir", "data/readworks/", "Directory containing bAbI tasks")
+tf.flags.DEFINE_string("data_dir", "data/readworksTrainTest", "Directory containing bAbI tasks")
 FLAGS = tf.flags.FLAGS
 
 def get_log_dir_name():
