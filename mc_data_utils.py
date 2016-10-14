@@ -3,6 +3,7 @@ from __future__ import absolute_import
 import os
 import re
 import numpy as np
+from itertools import chain
 
 
 def load_task(data_dir, task_id):
@@ -81,51 +82,11 @@ def tokenize(sent):
     return [x.strip() for x in re.split('(\W+)?', sent) if x.strip()]
 
 
-def parse_stories(lines, only_supporting=False):
-    '''Parse stories provided in the bAbI tasks format
-    If only_supporting is true, only the sentences that support the answer are kept.
-    '''
-    data = []
-    story = []
-    for line in lines:
-        line = str.lower(line)
-        nid, line = line.split(' ', 1)
-        nid = int(nid)
-        if nid == 1:
-            story = []
-        if '\t' in line: # question
-            q, a, supporting = line.split('\t')
-            q = tokenize(q)
-            #a = tokenize(a)
-            # answer is one vocab word even if it's actually multiple words
-            a = [a]
-            substory = None
-
-            # remove question marks
-            if q[-1] == "?":
-                q = q[:-1]
-
-            if only_supporting:
-                # Only select the related substory
-                supporting = map(int, supporting.split())
-                substory = [story[i - 1] for i in supporting]
-            else:
-                # Provide all the substories
-                substory = [x for x in story if x]
-
-            data.append((substory, q, a))
-            story.append('')
-        else: # regular sentence
-            # remove periods
-            sent = tokenize(line)
-            if sent[-1] == ".":
-                sent = sent[:-1]
-            story.append(sent)
-    return data
+from keras.preprocessing.sequence import pad_sequences
+#TODO: for some reason just converting Q into np.array doesn't convert into a multidimensional array. Use pad_sequences from keras to reinforce.
 
 
-
-def vectorize_data(data, word_idx, sentence_size, memory_size):
+def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
     """
     Vectorize stories and queries.
 
@@ -139,7 +100,9 @@ def vectorize_data(data, word_idx, sentence_size, memory_size):
     S = []
     Q = []
     A = []
-    for story, query, answer in data:
+    L = []
+    label_num = max([lb[3] for lb in data]) + 1
+    for story, query, answer, label in data:
         lq = max(0, sentence_size - len(query))
         q = [word_idx[w] for w in query] + [0] * lq
 
@@ -163,13 +126,22 @@ def vectorize_data(data, word_idx, sentence_size, memory_size):
                 ss.append([0] * sentence_size)
 
         y = np.zeros(len(word_idx) + 1) # 0 is reserved for nil word
-        for a in answer:
-            y[word_idx[a]] = 1
+
+        sa = []
+        for i, sentence in enumerate(answer, 1):
+            ls = max(0, answer_size - len(sentence))
+            sa.append([word_idx[w] for w in sentence] + [0] * ls)
+
+        lb = np.zeros(label_num)
+        lb[label] = 1
 
         S.append(ss)
         Q.append(q)
-        A.append(y)
-    return np.array(S), np.array(Q), np.array(A)
+        A.append(sa)
+        L.append(lb)
+    Q = pad_sequences(Q, sentence_size)
+
+    return np.array(S), np.array(Q), np.array(A), np.array(L)
 
 def jaccard(a, b):
     '''

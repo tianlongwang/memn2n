@@ -23,8 +23,8 @@ tf.flags.DEFINE_integer("evaluation_interval", 10, "Evaluate and print results e
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
 tf.flags.DEFINE_integer("epochs", 200, "Number of epochs to train for.")
-tf.flags.DEFINE_integer("embedding_size", 20, "Embedding size for embedding matrices.")
-tf.flags.DEFINE_integer("memory_size", 50, "Maximum size of memory.")
+tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
+tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
 tf.flags.DEFINE_string("data_dir", "data/readworksTrainTest", "Directory containing bAbI tasks")
@@ -59,14 +59,18 @@ query_size = max(map(len, (q for _, q, _,_ in data)))
 memory_size = min(FLAGS.memory_size, max_story_size)
 vocab_size = len(word_idx) + 1 # +1 for nil word #TODO: already got <eos>??
 sentence_size = max(query_size, sentence_size) # for the position
+answer_size = max(map(len, chain.from_iterable(a for _,_,a,_ in data)))
+label_size = len(data[0][2])
 
 print("Longest sentence length", sentence_size)
 print("Longest story length", max_story_size)
+print("Answer length", answer_size)
+print("Label size", label_size)
 
 # train/validation/test sets
-S, Q, A = vectorize_data(train, word_idx, sentence_size, memory_size)
-trainS, valS, trainQ, valQ, trainA, valA = cross_validation.train_test_split(S, Q, A, test_size=.1, random_state=FLAGS.random_state)
-testS, testQ, testA = vectorize_data(test, word_idx, sentence_size, memory_size)
+S, Q, A, L = vectorize_data(train, word_idx, sentence_size, memory_size, answer_size)
+trainS, valS, trainQ, valQ, trainA, valA, trainL, valL = cross_validation.train_test_split(S, Q, A, L, test_size=.1, random_state=FLAGS.random_state)
+testS, testQ, testA, testL= vectorize_data(test, word_idx, sentence_size, memory_size, answer_size)
 
 print(testS[0])
 
@@ -81,9 +85,9 @@ print("Training Size", n_train)
 print("Validation Size", n_val)
 print("Testing Size", n_test)
 
-train_labels = np.argmax(trainA, axis=1)
-test_labels = np.argmax(testA, axis=1)
-val_labels = np.argmax(valA, axis=1)
+train_labels = np.argmax(trainL, axis=1)
+test_labels = np.argmax(testL, axis=1)
+val_labels = np.argmax(valL, axis=1)
 
 tf.set_random_seed(FLAGS.random_state)
 batch_size = FLAGS.batch_size
@@ -91,7 +95,7 @@ batch_size = FLAGS.batch_size
 
 batches = zip(range(0, n_train-batch_size, batch_size), range(batch_size, n_train, batch_size))
 with tf.Session() as sess:
-    model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, FLAGS.embedding_size, session=sess,
+    model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, FLAGS.embedding_size, answer_size, label_size, session=sess,
                    hops=FLAGS.hops, max_grad_norm=FLAGS.max_grad_norm,  l2=FLAGS.regularization, nonlin=tf.nn.relu)
 
     writer = tf.train.SummaryWriter(get_log_dir_name(), sess.graph)

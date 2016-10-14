@@ -20,8 +20,8 @@ def position_encoding(sentence_size, embedding_size):
         for j in range(1, ls):
             encoding[i-1, j-1] = (i - (le-1)/2) * (j - (ls-1)/2)
     encoding = 1 + 4 * encoding / embedding_size / sentence_size
-    ret = np.transpose(encoding)
-    return ret
+    print(np.transpose
+    return np.transpose(encoding)
 
 def zero_nil_slot(t, name=None):
     """
@@ -54,6 +54,8 @@ def add_gradient_noise(t, stddev=1e-3, name=None):
 class MemN2N(object):
     """End-To-End Memory Network."""
     def __init__(self, batch_size, vocab_size, sentence_size, memory_size, embedding_size,
+        answer_size,
+        label_size,
         hops=3,
         max_grad_norm=40.0,
         nonlin=None,
@@ -105,6 +107,8 @@ class MemN2N(object):
         self._sentence_size = sentence_size
         self._memory_size = memory_size
         self._embedding_size = embedding_size
+        self._answer_size = answer_size
+        self._label_size = label_size
         self._hops = hops
         self._max_grad_norm = max_grad_norm
         self._nonlin = nonlin
@@ -178,8 +182,9 @@ class MemN2N(object):
     def _build_inputs(self):
         self._stories = tf.placeholder(tf.int32, [None, self._memory_size, self._sentence_size], name="stories")
         self._queries = tf.placeholder(tf.int32, [None, self._sentence_size], name="queries")
-        self._answers = tf.placeholder(tf.int32, [None, self._vocab_size], name="answers")
-        self._val_answers = tf.placeholder(tf.int32, [None], name="val_answers")
+        self._answers = tf.placeholder(tf.int32, [None, self._label_size, self._answer_size], name="answers")
+        self._labels = tf.placeholder(tf.int32, [None, self._label_size], name="labels")
+        self._val_labels = tf.placeholder(tf.int32, [None], name="val_labels")#TODO: valuation output as index, not as one hot
 
     def _build_vars(self):
         with tf.variable_scope(self._name + str(1)):
@@ -187,9 +192,11 @@ class MemN2N(object):
             A = tf.concat(0, [ nil_word_slot, self._init([self._vocab_size-1, self._embedding_size]) ])
             B = tf.concat(0, [ nil_word_slot, self._init([self._vocab_size-1, self._embedding_size]) ])
             C = tf.concat(0, [ nil_word_slot, self._init([self._vocab_size-1, self._embedding_size]) ])
-            self.A = tf.Variable(A, name="A")
+            D = tf.concat(0, [ nil_word_slot, self._init([self._vocab_size-1, self._embedding_size]) ])
+            self.A = tf.Variable(A, name="A")#TODO: trainable = False
             self.B = tf.Variable(B, name="B")
             self.C = tf.Variable(C, name="C")
+            self.D = tf.Variable(D, name="D")
 
             self.TA = tf.Variable(self._init([self._memory_size, self._embedding_size]), name='TA')
             self.TC = tf.Variable(self._init([self._memory_size, self._embedding_size]), name='TC')
@@ -201,12 +208,13 @@ class MemN2N(object):
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.A))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.B))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.C))
+        tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.D))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.TA))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.TC))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.W))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.H))
 
-    def _inference(self, stories, queries):
+    def _inference(self, stories, queries, answers):
         with tf.variable_scope(self._name + str(2)):
             q_emb = tf.nn.embedding_lookup(self.B, queries)
             u_0 = tf.reduce_sum(q_emb * self._encoding, 1)
@@ -237,11 +245,8 @@ class MemN2N(object):
                     u_k = self._nonlin(u_k)
 
                 u.append(u_k)
-            print(u)
-            print(u[len(u)-1])
-            ret = tf.matmul(u_k, self.W)
 
-            return ret
+            return tf.matmul(u_k, self.W)
 
     def save_model(self, location):
         saver = tf.train.Saver()
