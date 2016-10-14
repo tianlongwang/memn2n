@@ -3,7 +3,7 @@ Download tasks from facebook.ai/babi """
 from __future__ import absolute_import
 from __future__ import print_function
 
-from mc_data_utils import load_task, vectorize_data
+from mc_data_utils import load_task, vectorize_data, get_vocab
 from sklearn import cross_validation, metrics
 from memn2n import MemN2N
 from itertools import chain
@@ -47,23 +47,21 @@ print("Started Task:", FLAGS.task_id)
 
 # task data
 train, test = load_task(FLAGS.data_dir, FLAGS.task_id)
-set_trace()
 data = train + test
 
-vocab = sorted(reduce(lambda x, y: x | y, (set(list(chain.from_iterable(s)) + q + a) for s, q, a in data)))
-word_idx = dict((c, i + 1) for i, c in enumerate(vocab))
+vocab = get_vocab(data)
 
-max_story_size = max(map(len, (s for s, _, _ in data)))
-mean_story_size = int(np.mean(map(len, (s for s, _, _ in data))))
-sentence_size = max(map(len, chain.from_iterable(s for s, _, _ in data)))
-query_size = max(map(len, (q for _, q, _ in data)))
+word_idx = dict((c, i ) for i, c in enumerate(vocab))
+
+max_story_size = max(map(len, (s for s, _, _ ,_ in data)))
+sentence_size = max(map(len, chain.from_iterable(s for s, _, _,_ in data)))
+query_size = max(map(len, (q for _, q, _,_ in data)))
 memory_size = min(FLAGS.memory_size, max_story_size)
-vocab_size = len(word_idx) + 1 # +1 for nil word
+vocab_size = len(word_idx) + 1 # +1 for nil word #TODO: already got <eos>??
 sentence_size = max(query_size, sentence_size) # for the position
 
 print("Longest sentence length", sentence_size)
 print("Longest story length", max_story_size)
-print("Average story length", mean_story_size)
 
 # train/validation/test sets
 S, Q, A = vectorize_data(train, word_idx, sentence_size, memory_size)

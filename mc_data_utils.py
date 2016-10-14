@@ -61,7 +61,16 @@ def json_get_data(fname):
     return ret
 
 
-
+def get_vocab(data):
+    assert(len(data[0]) == 4)
+    vocab = set()
+    ret = [u'<eos>']
+    for dp in data:
+        vocab = vocab.union(set(chain.from_iterable(dp[0])))
+        vocab = vocab.union(set(dp[1]))
+        vocab = vocab.union(set(chain.from_iterable(dp[2])))
+    ret.extend(sorted(list(vocab)))
+    return ret
 
 
 def tokenize(sent):
@@ -115,12 +124,6 @@ def parse_stories(lines, only_supporting=False):
     return data
 
 
-def get_stories(f, only_supporting=False):
-    '''Given a file name, read the file, retrieve the stories, and then convert the sentences into a single story.
-    If max_length is supplied, any stories longer than max_length tokens will be discarded.
-    '''
-    with open(f) as f:
-        return parse_stories(f.readlines(), only_supporting=only_supporting)
 
 def vectorize_data(data, word_idx, sentence_size, memory_size):
     """
