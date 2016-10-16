@@ -99,7 +99,9 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
     """
     S = []
     Q = []
-    A = []
+    AA = []
+    AB = []
+    AC = []
     L = []
     label_num = max([lb[3] for lb in data]) + 1
     for story, query, answer, label in data:
@@ -137,11 +139,14 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
 
         S.append(ss)
         Q.append(q)
-        A.append(sa)
+        AA.append(sa[0])
+        AB.append(sa[1])
+        AC.append(sa[2])
         L.append(lb)
     Q = pad_sequences(Q, sentence_size)
 
-    return np.array(S), np.array(Q), np.array(A), np.array(L)
+    return np.array(S), np.array(Q), np.array(AA),np.array(AB),np.array(AC), np.array(L)
+
 
 def jaccard(a, b):
     '''
