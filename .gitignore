@@ -1,5 +1,7 @@
 *.pyc
 data/tasks_1-20_v1-2/
+*.zip
+data/glove/
 *.md~
 
 /.DS_Store
