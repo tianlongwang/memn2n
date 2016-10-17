@@ -160,6 +160,35 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
     return np.array(S), np.array(Q), np.array(AA),np.array(AB),np.array(AC), np.array(L)
 
 
+def perturb(S,Q,AA,AB,AC,L):
+    retS = S
+    retQ = Q
+    retAA = AA
+    retAB = AB
+    retAC = AC
+    retL = L
+
+    As = [AA,AB,AC]
+
+    for vec in [[0,2,1],[1,0,2],[1,2,0],[2,1,0],[2,0,1]]:
+        retS = np.vstack([retS,S])
+        retQ = np.vstack([retQ,Q])
+        retAA = np.vstack([retAA, As[vec[0]]])
+        retAB = np.vstack([retAB, As[vec[1]]])
+        retAC = np.vstack([retAC, As[vec[2]]])
+        retL = np.vstack([retL, L[:,vec]])
+    print("number of data points after perturbation", len(retS))
+    print("number of data points after perturbation", len(retQ))
+    print("number of data points after perturbation", len(retAA))
+    print("number of data points after perturbation", len(retAB))
+    print("number of data points after perturbation", len(retAC))
+    print("number of data points after perturbation", len(retL))
+    return retS, retQ, retAA, retAB, retAC, retL
+
+
+
+
+
 def jaccard(a, b):
     '''
     Assumes that a and b are sets so that calling code only has to cast the question to set once.
