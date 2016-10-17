@@ -5,7 +5,6 @@ from __future__ import print_function
 
 from mc_data_utils import load_task, vectorize_data, get_vocab, get_embedding
 from sklearn import cross_validation, metrics
-from memn2n.mc_memn2n import MemN2N
 from itertools import chain
 from six.moves import range
 
@@ -20,10 +19,10 @@ tf.flags.DEFINE_float("learning_rate", 0.01, "Learning rate for Adam Optimizer."
 tf.flags.DEFINE_float("epsilon", 1e-8, "Epsilon value for Adam Optimizer.")
 tf.flags.DEFINE_float("regularization", 0.02, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
-tf.flags.DEFINE_integer("evaluation_interval", 10, "Evaluate and print results every x epochs")
+tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
-tf.flags.DEFINE_integer("hops", 5, "Number of hops in the Memory Network.")
-tf.flags.DEFINE_integer("epochs", 100, "Number of epochs to train for.")
+tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
+tf.flags.DEFINE_integer("epochs", 50, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
@@ -100,58 +99,24 @@ batch_size = FLAGS.batch_size
 
 
 batches = zip(range(0, n_train-batch_size, batch_size), range(batch_size, n_train, batch_size))
-with tf.Session() as sess:
-    model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, FLAGS.embedding_size, answer_size, label_size, glove_embedding = glove_embedding,session=sess,
-                     l2=FLAGS.regularization, nonlin=tf.nn.relu)
 
-    writer = tf.train.SummaryWriter(get_log_dir_name(), sess.graph)
 
-    for t in range(1, FLAGS.epochs+1):
-        np.random.shuffle(batches)
-        total_cost = 0.0
-        for start in range(0, n_train, batch_size):
-            end = start + batch_size
-            s = trainS[start:end]
-            q = trainQ[start:end]
-            aa = trainAA[start:end]
-            ab = trainAB[start:end]
-            ac = trainAC[start:end]
-            l = trainL[start:end]
-            cost_t, cost_summary, cost_ema = model.batch_fit(s, q, aa, ab, ac, l)
-            total_cost += cost_t
+ST = tf.placeholder(tf.int32, [None, max_story_size, sentence_size])
+QU = tf.placeholder(tf.int32, [None, sentence_size])
+AA = tf.placeholder(tf.int32, [None, answer_size])
+AB = tf.placeholder(tf.int32, [None, answer_size])
+AC = tf.placeholder(tf.int32, [None, answer_size])
+LA = tf.placeholder(tf.int32, [None, label_size])
+val_LA = tf.placeholder(tf.int32, [None])
 
-            # writer.add_summary(cost_summary, t*n_train+start)
-            writer.add_summary(cost_ema, t*n_train+start)
+EB = tf.Variable(tf.cast(tf.constant(glove_embedding),tf.float32), "embedding")
+lstm = rnn_cell.BasicLSTMCell(lstm_size)
 
-        if t % FLAGS.evaluation_interval == 0:
-            train_preds = []
-            for start in range(0, n_train, batch_size):
-                end = start + batch_size
-                s = trainS[start:end]
-                q = trainQ[start:end]
-                aa = trainAA[start:end]
-                ab = trainAB[start:end]
-                ac = trainAC[start:end]
-                pred = model.predict(s, q, aa, ab, ac)
-                train_preds += list(pred)
 
-#             val_preds = model.predict(valS, valQ)
-            train_acc = metrics.accuracy_score(np.array(train_preds), train_labels)
-            total_cost_summary = tf.scalar_summary("epoch_loss", total_cost)
-            tcs = sess.run(total_cost_summary)
-            writer.add_summary(tcs, t)
-#             val_acc = metrics.accuracy_score(val_preds, val_labels)
 
-            val_acc, val_acc_summary = model.get_val_acc_summary(valS, valQ, valAA, valAB, valAC, val_labels)
-            writer.add_summary(val_acc_summary, t)
 
-            print('-----------------------')
-            print('Epoch', t)
-            print('Total Cost:', total_cost)
-            print('Training Accuracy:', train_acc)
-            print('Validation Accuracy:', val_acc)
-            print('-----------------------')
 
-    test_preds = model.predict(testS, testQ, testAA, testAB, testAC)
-    test_acc = metrics.accuracy_score(test_preds, test_labels)
-    print("Testing Accuracy:", test_acc)
+
+
+
+

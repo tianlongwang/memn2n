@@ -9,7 +9,6 @@ import tensorflow as tf
 import numpy as np
 from six.moves import range
 
-from ipdb import set_trace
 
 def position_encoding(sentence_size, embedding_size):
     """
@@ -128,22 +127,14 @@ class MemN2N(object):
         self._encoding = tf.constant(encoding(self._sentence_size, self._embedding_size), name="encoding")
         self._answer_encoding = tf.constant(encoding(self._answer_size, self._embedding_size), name="answer_encoding")
 
-
         # cross entropy
-        logits = self._inference(self._stories, self._queries, self._answerA, self._answerB, self._answerC) # (batch_size, label_size)
+        logits = self._inference(self._stories, self._queries, self._answerA, self._answerB, self._answerC) # (batch_size, vocab_size)
         cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits, tf.cast(self._labels, tf.float32), name="cross_entropy")
-
         cross_entropy_sum = tf.reduce_sum(cross_entropy, name="cross_entropy_sum")
-
-        #hinge loss
-        hinge_loss = tf.contrib.losses.hinge_loss(logits, tf.cast(self._labels, tf.float32))
-        hinge_loss_sum = tf.reduce_sum(hinge_loss)
-
 
         # loss op
         reg_loss = self._l2 * tf.add_n(tf.get_collection('reg_loss'))
         loss_op = cross_entropy_sum + reg_loss
-        #loss_op = hinge_loss_sum + reg_loss
 
         loss_op_summary = tf.scalar_summary("loss", loss_op)
 

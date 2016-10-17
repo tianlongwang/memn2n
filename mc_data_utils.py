@@ -12,10 +12,14 @@ def load_task(data_dir, task_id):
     Returns a tuple containing the training and testing data for the task.
     '''
     assert task_id in [1,2]
-
+    data_dir = './data/readworksAll/'
     train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
     test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
+    #data_dir = './data/readworksTrainTest2/'
+    #train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
+    #test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
     train_data = json_get_data(train_file)
+    print("got train")
     test_data = json_get_data(test_file)
     return train_data, test_data
 
@@ -47,6 +51,10 @@ def json_get_data(fname):
     jlines = json.loads(lines)
     ret = []
     for exjson in jlines['exercises']:
+      if 'text' not in exjson['story']:
+        print("No 'text' in story")
+        print(exjson)
+        continue
       s_tokens = para_to_tokens(exjson['story']['text'])
       for qjson in exjson['questions']:
         q_tokens = sent_to_tokens(qjson['text'])
@@ -57,6 +65,10 @@ def json_get_data(fname):
         for lab in 'ABC':
           a_tokens.append(sent_to_tokens(a_dict[lab]))
         l_dict = {'A':0,'B':1,'C':2}
+        if qjson['correctAnswer'] not in ['A','B','C']:
+            print("CorrectAnswer not in 'ABC'")
+            print(qjson)
+            continue
         true_ans = l_dict[qjson['correctAnswer']]
         ret.append([s_tokens, q_tokens, a_tokens, true_ans])
     return ret
@@ -103,7 +115,7 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
     AB = []
     AC = []
     L = []
-    label_num = max([lb[3] for lb in data]) + 1
+    label_num = 3
     for story, query, answer, label in data:
         lq = max(0, sentence_size - len(query))
         q = [word_idx[w] for w in query] + [0] * lq
@@ -162,6 +174,7 @@ def load_glove(dim):
     :return: GloVe word table
     """
     word2vec = {}
+    print('start loading glove')
 
     path = "data/glove/glove.6B." + str(dim) + 'd'
     fn = path+ '.cache'
