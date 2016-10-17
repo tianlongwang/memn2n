@@ -9,6 +9,7 @@ import tensorflow as tf
 import numpy as np
 from six.moves import range
 
+
 def position_encoding(sentence_size, embedding_size):
     """
     Position Encoding described in section 4.1 [1]
@@ -55,11 +56,11 @@ class MemN2N(object):
     def __init__(self, batch_size, vocab_size, sentence_size, memory_size, embedding_size,
         answer_size,
         label_size,
+        glove_embedding,
         session=tf.Session(),
         hops=3,
         max_grad_norm=40.0,
         nonlin=None,
-        initializer=tf.random_normal_initializer(stddev=0.1),
         encoding=position_encoding,
         l2 = 0.02,
         lr = 0.01,
@@ -111,10 +112,15 @@ class MemN2N(object):
         self._hops = hops
         self._max_grad_norm = max_grad_norm
         self._nonlin = nonlin
-        self._init = initializer
+        self._glove_embedding = glove_embedding
         self._opt = tf.train.AdamOptimizer(learning_rate=lr, epsilon=epsilon)
         self._name = name
         self._l2 = l2
+
+
+        self._glove_tf = tf.constant(self._glove_embedding)
+
+        self._init = tf.random_normal_initializer(stddev=0.1)
 
         self._build_inputs()
         self._build_vars()
@@ -194,8 +200,8 @@ class MemN2N(object):
             A = tf.concat(0, [ nil_word_slot, self._init([self._vocab_size-1, self._embedding_size]) ])
             B = tf.concat(0, [ nil_word_slot, self._init([self._vocab_size-1, self._embedding_size]) ])
             C = tf.concat(0, [ nil_word_slot, self._init([self._vocab_size-1, self._embedding_size]) ])
-            self.A = tf.Variable(A, name="A")#TODO: trainable = False
-            self.B = tf.Variable(B, name="B")
+            self.A = tf.Variable(tf.cast(self._glove_tf, tf.float32), name="A")#TODO: trainable = False
+            self.B = tf.Variable(tf.cast(self._glove_tf, tf.float32), name="B")
             self.C = tf.Variable(C, name="C")
 
             self.TA = tf.Variable(self._init([self._memory_size, self._embedding_size]), name='TA')

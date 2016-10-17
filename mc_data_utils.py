@@ -14,7 +14,7 @@ def load_task(data_dir, task_id):
     assert task_id in [1,2]
 
     train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
-    test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
+    test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
     train_data = json_get_data(train_file)
     test_data = json_get_data(test_file)
     return train_data, test_data
@@ -154,3 +154,49 @@ def jaccard(a, b):
     '''
     return len(a.intersection(b)) / float(len(a.union(b)))
     set(a).intersection(set(b))
+
+import cPickle
+def load_glove(dim):
+    """ Loads GloVe data.
+    :param dim: word vector size (50, 100, 200)
+    :return: GloVe word table
+    """
+    word2vec = {}
+
+    path = "data/glove/glove.6B." + str(dim) + 'd'
+    fn = path+ '.cache'
+    if os.path.exists(fn) and os.stat(fn).st_size > 0:
+        with open(fn, 'rb') as cache_file:
+            word2vec = cPickle.load(cache_file)
+
+    else:
+        # Load n create cache
+        with open(path + '.txt') as f:
+            for line in f:
+                l = line.split()
+                word2vec[l[0]] = [float(x) for x in l[1:]]
+
+        with open(path + '.cache', 'wb') as cache_file:
+            cPickle.dump(word2vec, cache_file)
+
+    print("Loaded Glove data")
+    return word2vec
+
+def get_embedding(vocab, dim=50):
+    wv = load_glove(dim)
+    ret = np.zeros([len(vocab), dim])
+    for ii in range(len(vocab)):
+        if ii == 0:
+            continue
+        else:
+            if vocab[ii] in wv:
+                ret[ii,:] = wv[vocab[ii]]
+            else:
+                ret[ii,:] = np.random.randn(dim) * 0.5
+    return ret
+
+
+
+
+
+

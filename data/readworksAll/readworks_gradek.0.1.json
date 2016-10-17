@@ -1,0 +1,4798 @@
+{
+  "jsonVersion": "0.1",
+  "date": "2015/09/03 13:59:35",
+  "exercises": [
+    {
+      "story": {
+        "id": "242370",
+        "title": "A Volcano Erupts ",
+        "author": "Scott Robinson ",
+        "metadata": "Grade: K Lexile: 410L",
+        "text": "Look out below! Hot liquid rock is below the ground. Volcanoes are openings in the ground where that liquid can come out. Sometimes, volcanoes erupt. That means they explode. Smoke and hot liquid rock come out of the volcano. The liquid is called lava. Lava can move slowly. It can also move quickly. Lava is dangerous for people, animals, and plants. Some experts study volcanoes. They try to figure out when volcanoes might erupt. Then people can get to a safe place before trouble starts. "
+      },
+      "questions": [
+        {
+          "text": "What are openings in the Earth where hot liquid rock can come out? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "volcanoes",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "mountains",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does it mean if a volcano erupts? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "The volcano does not explode.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "The volcano explodes.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What comes out of the volcano when a volcano erupts? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "smoke and hot rock",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "water and tiny stones",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What is another name for the hot liquid rock that comes out of a volcano? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "sauce",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "lava",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242352",
+        "title": "Hot, Wet, and Muddy ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 390L",
+        "text": "Chloe and her family were on a trip to a rain forest. \"The rain forest is very hot,\" said Chloe. Chloe was looking for birds. There were so many trees. Chloe could see only little pieces of sky. Plop! A big raindrop fell on Chloe\u0027s face. \"The rain forest is very wet,\" said Chloe. Chloe took another step. Uh-oh! Chloe slipped and fell in the mud. \"The rain forest is very muddy. But I am the muddiest!\" said Chloe. "
+      },
+      "questions": [
+        {
+          "text": "Where were Chloe and her family? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the desert",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the rain forest",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What is the weather like in the rain forest? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "cold",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "hot",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What plant blocks out most of the sky in the rain forest? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "big trees",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "tall grass",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did Chloe learn about the rain forest when a raindrop fell on her face? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Rain forests are wet.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Rain forests are dry.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "248655",
+        "title": "The Treasure Map ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 310L",
+        "text": "Nate\u0027s mom drew a map of the park. It was a treasure map. Nate and his mom walked to the park with Nate\u0027s friend Kim. Kim would be Captain Blue Shoes. Nate would be Captain Red Beard. The children looked at the map. It said the treasure was near the swings. The captains sneaked behind the slide. They ran by the seesaw. They crawled under the swings. Mom had left two pirate hats there. \"We found the treasure!\" shouted Captain Blue Shoes. "
+      },
+      "questions": [
+        {
+          "text": "Who is this story about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a pirate captain",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Kim and Nate",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do Kim and Nate use to find the treasure in the park? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a map",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a cell phone",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where does the treasure map say the treasure is? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "near the swings",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "behind the slide",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where did \"the captains\" go after they sneaked behind the slide? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "by the seesaw",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "under the swings",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246065",
+        "title": "Edison Tried and Tried Again ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 250L",
+        "text": "Thomas Edison was a scientist. He was born in 1847. He invented many things. One was a light bulb that could stay lit for hours. Edison worked very hard. He tried many times to get the light bulb right. Some people say it took 1,000 tries. Edison was asked how he felt about that. He was happy. He said he knew 999 things that do not work. Edison did not give up. "
+      },
+      "questions": [
+        {
+          "text": "Which scientist and inventor is this passage about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Benjamin Franklin",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Thomas Edison",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What did Thomas Edison work hard to invent? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "light bulb",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the telephone",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "241918",
+        "title": "The Flying Machine ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 280L",
+        "text": "Long ago, a man named Leonardo da Vinci lived. He wanted to build a flying machine. He watched birds fly. He watched bats fly. He watched kites fly. Then he built his flying machine. He could not make it fly. He tried many different ideas. But those ideas did not work. Humans would not fly for 400 more years. Two brothers in the United States made a flying machine. That machine worked. It was an airplane! "
+      },
+      "questions": [
+        {
+          "text": "What did Leonardo da Vinci want to build? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a flying machine",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a ship",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did Leonardo Da Vinci watch to help him build his flying machine? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "airplanes and rockets",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "birds, bats, and kites",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Did Leonardo Da Vinci make a flying machine that worked? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "No",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Yes",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246217",
+        "title": "Who Is a Good Citizen at School?",
+        "author": "Woodley Wonderworks",
+        "metadata": "Grade: K Lexile: 270L",
+        "text": "Good citizens at school help other people. They follow the class rules. Good citizens do their school jobs. They talk nicely to one another. They do their best to answer the teacher\u0027s questions. They work together with other students. Good citizens are kind. They do not make fun of others. Are you a good citizen at school? "
+      },
+      "questions": [
+        {
+          "text": "If you want to be a good citizen at school, how should you behave? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "make up your own rules",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "follow the rules and do your jobs",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "How do good citizens talk to one another? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "nicely",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "angrily",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What kind of student does his or her best to answer the teacher\u0027s questions? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a troublemaker",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a good citizen",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "How do good citizens treat others? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "They make fun of others.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "They help others and are kind.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246058",
+        "title": "Ben Franklin\u0027s Idea",
+        "author": "",
+        "metadata": "Grade: K Lexile: 250L",
+        "text": "Ben Franklin invented things. He liked to read too. He went to the library a lot. Franklin had a problem. Some books were on high shelves. They were hard to reach. Franklin had an idea. He made a tool. He called it the long arm. It was a pole with a claw at one end. The claw was like a hand. Franklin pulled a cord to open and close the claw. Now he could reach the high books! "
+      },
+      "questions": [
+        {
+          "text": "Who is this passage about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Thomas Jefferson",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Ben Franklin",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What did Ben Franklin like to do? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "invent things and read",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "sing and play",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did Ben Franklin have trouble doing when he was at the library? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "reaching high books",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "reading hard words",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did Ben Franklin invent to solve his problem? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the long arm",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "electricity",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242408",
+        "title": "Finding the Office ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 570L",
+        "text": "Corey\u0027s teacher asked him to bring a note to the school\u0027s office. Corey walked down the long hall. He saw Ms. Ross, the custodian, cleaning the floor. He saw Mr. Banks, the music teacher, teaching his class a new song. He saw Mr. Ramirez, the assistant principal, talking to a teacher. When Corey got to the office, he saw Mrs. Franks, the secretary. He handed her the note. \"Thank you, Corey!\" said Mrs. Franks. "
+      },
+      "questions": [
+        {
+          "text": "Where did Corey bring his teacher\u0027s note? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the music room",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the school\u0027s office",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Who did Corey see first on his way to the office? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Ms. Ross, the custodian",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Mrs. Franks, the secretary",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What was Mr. Banks, the music teacher, doing when Corey passed his room? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "writing on the board",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "teaching his class a song",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Who did Corey see talking to a teacher just before he got to the office? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the assistant principal",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "his teacher",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242331",
+        "title": "George Washington\u0027s Cherry Tree ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 300L",
+        "text": "George Washington was America\u0027s first president. There is an old story people tell to show that he was honest. In the story, George was six years old. He chopped down his father\u0027s cherry tree. His father was angry. His father asked, \"Who cut down my favorite tree?\" Young George looked at his father. He said, \"I cannot tell a lie. I cut down the tree.\" But his father was not mad. He was happy that his son was honest. "
+      },
+      "questions": [
+        {
+          "text": "Who was George Washington? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "famous writer",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "America\u0027s first president",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "In the story about George Washington, what did George do that made his father angry? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "plant a tree",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cut down a tree",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What did George Washington say when his father asked him, \"Who cut down my favorite tree?\" ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "\"I cut down the tree.\"",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "\"The wind blew the tree over.\"",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "George told the truth, how did his father feel? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "angry",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "happy",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242297",
+        "title": "A Community of People ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 270L",
+        "text": "What is a community? It is a group of people. They live near one another. They work and play near one another too. The place they live in can be a city or a town. People work in a community. They can help one another. People have different jobs. There are teachers and firefighters. Some people are police officers. Some people are doctors. Some people deliver mail. Some people work in stores. Kids have jobs too. They go to school to learn. What do you like about your community? "
+      },
+      "questions": [
+        {
+          "text": "What do we call a group of people who live, work, and play near one another? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "community",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "family",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where can communities be? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "city or town",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "in a tent",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What do the grown-ups in a community do to help one another? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "go to school",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "work",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What job do the kids in a community have? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "work as a doctor",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "go to school",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246219",
+        "title": "Who Can Pull Harder?",
+        "author": "",
+        "metadata": "Grade: K Lexile: 340L",
+        "text": "Tug-of-war is a game. It takes a lot of energy. Two teams play. They face each other. Members of both teams hold on to one rope. Each team pulls the rope. The team that pulls harder moves the rope. Wait! The other team can move the rope too. If the other team pulls just as hard, the rope stops. Then they may pull the rope in the other direction. The teams move the rope back and forth. One big pull can end the game. The stronger team wins. "
+      },
+      "questions": [
+        {
+          "text": "What game is this passage about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "tug-of-war",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "football",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What do the players hold on to in tug-of-war? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "treasure",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "rope",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What is each team trying to do when they pull on the rope? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "break the rope",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "move the rope",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "If both teams pull just as hard, how will the rope move? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "The rope stops.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "The rope changes direction.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242305",
+        "title": "The Liberty Bell ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 190L",
+        "text": "Have you seen the Liberty Bell? It is a symbol of America. It is a very big bell. The bell was made in 1753. It was rung to call people together. The bell cracked soon after it was made. People fixed the bell. Then the bell cracked again! It has not been rung since. Now the bell hangs in a museum. It is in Philadelphia. That is a city in Pennsylvania. Many people visit the museum. They want to see the Liberty Bell. They also want to see the crack! "
+      },
+      "questions": [
+        {
+          "text": "The Liberty Bell is a symbol of which country? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "America",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "France",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Why did people ring the Liberty Bell? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "to call people together",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "to tell the time",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What happened to the Liberty Bell soon after it was made? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "It cracked.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "It was stolen.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246059",
+        "title": "Jon Follows School Rules",
+        "author": "",
+        "metadata": "Grade: K Lexile: 440L",
+        "text": "Jon was in kindergarten. He liked it a lot. His teacher talked about school rules. Jon wanted to follow them. Here is what Jon did. He put up his hand to talk. He stood quietly in line. He took turns with others. Jon used his inside voice. At the end of the day, his teacher said, \"You did a good job, Jon!\" "
+      },
+      "questions": [
+        {
+          "text": "What did Jon want to do in school? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "follow school rules",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "run in the hall",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did Jon do to show that he wants to talk? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "shout out",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "put up his hand",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What school rule should you follow when working with others? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "take turns",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "hit and push",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What happens when Jon follows school rules? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "His teacher is happy.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Jon has no friends.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246069",
+        "title": "Spying the Signs ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 300L",
+        "text": "Laura\u0027s family is going to see Aunt Rosa and her new baby. They are on the bus. Laura and her brother Daniel play I Spy. Laura sees a stop sign. \"I spy something red. It has eight sides,\" she tells Daniel. Daniel finds it. \"It\u0027s a stop sign,\" says Daniel. Then it is Daniel\u0027s turn. \"I spy a white H inside a blue square,\" says Daniel. \"That is a hospital sign,\" says Laura. \"We are here!\" "
+      },
+      "questions": [
+        {
+          "text": "Who are Laura and her family going to visit? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Aunt Rosa and her baby",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Laura\u0027s mom",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What do Laura and her brother play on the bus? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Tic-Tac-Toe",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "I Spy",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What sign does Laura spy? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "stop sign",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "hospital sign",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does the hospital sign that Daniel spies look like? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "red, eight sides",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "white H inside a blue square",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242383",
+        "title": "Frogs Have Special Skin ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 180L",
+        "text": "Have you ever seen a frog in a pond? You can often spot one there. Most frogs live near water. They need to keep their skin wet. A frog\u0027s skin is special. It makes a slimy coating that helps the frog stay wet. A frog drinks through its skin. It also breathes through its skin. A frog can do that only when its skin is wet. Frogs also breathe using lungs. What else do frogs use lungs for? Frogs make noise. Ribbit! "
+      },
+      "questions": [
+        {
+          "text": "What do most frogs live near? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "trees",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "water",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Frogs like to live near water because they need to stay wet. What part of a frog needs to stay wet? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the frog\u0027s skin",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the frog\u0027s feet",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What can a frog do through its skin (when it is wet)? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "eat and make noise",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "drink and breathe",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242333",
+        "title": "My School",
+        "author": "",
+        "metadata": "Grade: K Lexile: 320L",
+        "text": "Hi! My name is Hanna. I live in a small town. My school is on 11 Apple Road. The road has a lot of houses and trees. My school is on a hill. The building is made of red bricks. A park is on the left side of my school. On the right side of my school is a yellow house. The fire station is across the street from my school. Behind the school is a blue house. The blue house is on Valley Street. My house is at the bottom of that street. I am close enough to walk to school! "
+      },
+      "questions": [
+        {
+          "text": "What is the school\u0027s address? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "3 Valley Street",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "11 Apple Road",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What is the school made of? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "red bricks",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "gray rocks",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What color are the two houses that are right by the school? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "yellow and blue",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "red and black",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Hanna lives close to his school. How does Hanna get to school? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "She walks.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "She takes the school bus.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246152",
+        "title": "Me and My Shadow ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 140L",
+        "text": "It was a bright, sunny day. Stella and her mom took a walk. \"Look, Mom,\" said Stella. She pointed to the ground. \"I can see my shadow!\" \"Right,\" said her mom. \"Your body blocks the sun. The place where the light is blocked is your shadow. Watch this,\" Stella\u0027s mom said. She moved her fingers. Their shadow looked like a flying bird. She put out her arm. The shadow looked like a wiggly snake. Stella laughed. \"This is fun in the sun!\" she said. "
+      },
+      "questions": [
+        {
+          "text": "Who is this story about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Stella only",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Stella and her mom",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What was the weather like for Stella\u0027s walk? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "sunny",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cloudy",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does Stella see on the ground? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "her shadow",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "bug",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What do we call the place where light is blocked by your body? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "your shadow",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the dark",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242317",
+        "title": "Watch the Tennis Ball ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 270L",
+        "text": "Tennis is a sport. Players use a racket to hit a small ball. The ball moves through the air. The player swings the racket. When the racket and ball meet, they collide. The ball and racket push on each other. The ball changes direction. It flies through the air. The racket keeps moving. It does not fly through the air. Why? The player is holding it. "
+      },
+      "questions": [
+        {
+          "text": "What sport is this passage about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "baseball",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "tennis",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do you need to play Tennis? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "basketball",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "racket and ball",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "When the ball and racket meet and push on each other, what happens to the ball? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "The ball changes direction.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "The ball stops moving.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Why doesn\u0027t the racket fly through the air when it hits the ball? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "The player is holding the racket.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "The racket is on the floor.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242345",
+        "title": "A Sticky Idea ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 80L",
+        "text": "Have you ever put a sticky bandage on a cut? The best-known sticky bandages are called Band-Aids. They were invented in 1920. A man named Earle Dickson invented Band-Aids. Earle wanted to help his wife. She often cut her fingers when she cooked. At the time, people had to make their own bandages. They cut pieces of gauze and tape. Those bandages were hard to use. Earle\u0027s idea was easy to use. Thanks, Earle! "
+      },
+      "questions": [
+        {
+          "text": "What did Earle Dickson invent in 1920? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "tape",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Band-Aids",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What often happened to Earl\u0027s wife when she cooked? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "She cut her fingers.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "She burnt the food.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did people do when they got a cut in 1920? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "made a bandage",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "went to a doctor",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242355",
+        "title": "Rain Forest Plants are Helpers ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 390L",
+        "text": "The rain forest is a warm and wet place. Many kinds of plants grow there. Some of those plants have special parts. Those parts can be used to make medicines. The medicines help sick people. They help some sick people get well. Scientists keep looking in the rain forest. They want to find more plants. More plants can help us find new medicines. "
+      },
+      "questions": [
+        {
+          "text": "What kind of place is a rain forest? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "hot and dry",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "warm and wet",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What grows in the rain forest? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "only trees",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "many kinds of plants",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What can rain forest plants be used to make? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "medicine",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "phones",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Who can the medicines from rain forest plants help? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "healthy people",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "sick people",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242313",
+        "title": "Kai\u0027s Life in Hawaii",
+        "author": "",
+        "metadata": "Grade: K Lexile: 240L",
+        "text": "Kai lives in Hawaii. Hawaii is part of the United States. Hawaii is made up of islands. Hawaii is a warm place to live. Here is a day in Kai\u0027s life. Kai wakes up early. He eats cereal and papaya. Papaya is a fruit. It is orange and sweet. Then Kai goes to school. He learns math and art today. After school, it starts to rain. It rains for a short time. Then Kai goes to the beach. He surfs with his older brother. They try to ride the waves. Then they go home for dinner. Kai eats and does his homework. Then Kai gets ready for bed. "
+      },
+      "questions": [
+        {
+          "text": "Where does Kai live? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Hawaii",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "New York",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What is the weather like in Hawaii? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "warm",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cold",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does Kai eat for breakfast? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "eggs and toast",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cereal and papaya",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What does Kai do after he goes home for dinner? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "goes to school",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "eats and does his homework",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "241922",
+        "title": "Paddle a Canoe",
+        "author": "",
+        "metadata": "Grade: K Lexile: 320L",
+        "text": "A canoe is a small boat. It holds about two people. How do you make a canoe move in the water? Wear a life jacket, so you are safe. Sit down in the canoe. Pick up a paddle. The paddle has a handle at one end. It has a blade at the other end. The blade goes into the water. Push the blade against the water. Pushing the blade makes the boat move forward. A bigger push makes the boat go faster. It takes energy to paddle the canoe! "
+      },
+      "questions": [
+        {
+          "text": "What is a canoe? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a car",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a small boat",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What should you wear while canoeing to keep safe? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a helmet",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a life jacket",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What part of the paddle should you put in the water? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the blade",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the handle",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What makes the boat move forward? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "pushing the blade",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "holding the paddle",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "241913",
+        "title": "Harry Hits a Homer",
+        "author": "",
+        "metadata": "Grade: K Lexile: 270L",
+        "text": " Harry was learning to swing a bat so that he could play baseball. Harry swung the bat but did not hit the ball. \"Missed,\" he said. \"Watch the ball, Harry,\" his dad called. Harry tried again. Missed. On game day, it was Harry\u0027s turn to bat. Harry missed the ball. Harry missed the ball again. The last time, Harry swung hard. His bat hit the ball. The ball flew through the air. Harry ran all the way around the bases. Everyone cheered, \"A homer for Harry!\" "
+      },
+      "questions": [
+        {
+          "text": "What is Harry learning at the beginning of the passage? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "to catch a ball",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "to swing a bat",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What is Harry trying to hit with the bat? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a bat",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a ball",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "When it is Harry\u0027s turn to bat on game day, does he hit the ball on the first try? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Yes",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "NO",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What happens to the ball when Harry hits it with the bat? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "The ball flew through the air.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Someone caught the ball.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242314",
+        "title": "Will You Push or Pull?",
+        "author": "",
+        "metadata": "Grade: K Lexile: 240L",
+        "text": " Pretend a red wagon is outside your playroom door. You want to move it into the playroom. Stand in front of the wagon. Take hold of its handle. Give it a pull to bring the wagon into the room. You could try this instead: stand behind the wagon. Put both hands on the wagon\u0027s back. Give it a push. That will also bring it into the room. Which way would you choose? "
+      },
+      "questions": [
+        {
+          "text": "What should you pretend you want to do with the wagon? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "move it",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "paint it",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "If you stand in front of the wagon and hold the handle, how can you move the wagon? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "push it",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "pull it",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where should you stand if you want to push the wagon? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "behind the wagon",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "in front of the wagon",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where should you put your hands if you want to push the wagon? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "on the handle",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "on the wagon\u0027s back",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "241924",
+        "title": "Squanto was a Helper",
+        "author": "",
+        "metadata": "Grade: K Lexile: 240L",
+        "text": " Squanto was a Native American who lived long ago. He helped the Pilgrims. The Pilgrims had come from England to North America. The land was new to the Pilgrims. They did not know how to find food. Squanto knew the land well. He spoke English too. He showed the Pilgrims where to catch fish. He taught them how to plant corn. He helped them find berries to eat. The Pilgrims thanked Squanto for helping them. "
+      },
+      "questions": [
+        {
+          "text": "Who was Squanto? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a Native American",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a Pilgrim",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Who knew the land in North America well? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Squanto",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the Pilgrims",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did the Pilgrims not know how to do when they came to North America? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "build houses",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "find food",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What language did Squanto know that helped him speak to the Pilgrims? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "English",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Spanish",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "253136",
+        "title": "Getting Water from a Well",
+        "author": "",
+        "metadata": "Grade: K Lexile: 350L",
+        "text": "Getting Water from a Well Long ago, people got water from a well. They made a hole in the ground. They would dig until they found water. A place where they found water was called a well. People lined the inside of the well with stones. They tied a long rope to a pail. A pail is a type of bucket. They dropped the pail down into the well. The pail filled with water. People pulled the pail of water up from the well. They carried water into their homes. They used the water for cooking and cleaning. "
+      },
+      "questions": [
+        {
+          "text": "What do people get from a well? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "water",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "food",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did people do to make a well? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "dig a hole in the ground",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "make a pile of stones",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did people drop down into a well to get the water out? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a pan",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "a pail",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What did people use the water for once they got it out of the well? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "watering their plants",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cooking and cleaning",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242324",
+        "title": "A Day in Kindergarten ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 280L",
+        "text": "In Keesha\u0027s kindergarten classroom, the day started with meeting time. The children sang a song each day. They also talked about the weather. Next, they had show-and-tell. Today Tim talked about his toy spaceship. He passed it around for everyone to see. Then it was reading time. The letter of the week was d. Ms. Clarke read a book about dolphins. The children had time to draw pictures. Keesha drew a picture of her favorite animal. It was a dolphin! "
+      },
+      "questions": [
+        {
+          "text": "How did the day start in Keesha\u0027s kindergarten classroom? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "with reading time",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "with meeting time",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do the children do during meeting time? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "sing a song",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "run",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What comes after meeting time? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "reading time",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "show-and-tell",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "When show-and-tell is over, what time is it? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "reading time",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "sleeping time",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246148",
+        "title": "From Morning to Night ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 130L",
+        "text": "It is morning. It is time for a new day to begin. The morning sun appears. It slowly brightens the sky. It is noon. It is the middle of the day. The sun is high in the sky. The sunlight is bright. It is evening. The sunlight becomes less bright. The sun is moving lower in the sky. The sky may change to a reddish color. It is night. The sun is gone from the sky. The sky is dark without sunlight. The moon and the stars shine in the night sky. Tomorrow a new day will begin again. "
+      },
+      "questions": [
+        {
+          "text": "What appears in the sky in the morning? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the sun",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the moon",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where is the sun in the middle of the day? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "low in the sky",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "high in the sky",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where is the sun in the evening? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "high in the sky",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "low in the sky",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What can you see in the sky at night? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the sun",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the moon and stars",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246214",
+        "title": "When Grandma Was a Girl ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 190L",
+        "text": "Jay and Susie opened the door. It was Grandma! They asked her to tell a story. She told them a story about her life. It took place many years ago. Grandma was a little girl. She lived on a farm. She had three brothers. All of them had chores to do. Grandma fed the chickens and collected their eggs. One day, Grandma found a rock in one chicken\u0027s nest. She was confused. How did that get there? Then her brothers told her it was a joke. Grandma laughed. When they heard the story, Jay and Susie laughed too. "
+      },
+      "questions": [
+        {
+          "text": "Where did Grandma live when she was growing up? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "on a farm",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "in the city",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What was one of Grandma\u0027s chores? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "collect chicken eggs",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cook dinner",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did Grandma find in a chicken\u0027s nest that did not belong? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "rock",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "milk",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "253149",
+        "title": "Kareem\u0027s Playdate ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 240L",
+        "text": "Kareem had a playdate. He was going to Bill\u0027s tomorrow! They were going to play with their toy cars. That night Kareem said, \"Dad, where does Bill live? Is it far away?\" Dad said, \"Look, I\u0027ll show you.\" Dad made a little map. It showed Kareem\u0027s street. It showed the street with the bank on it. It showed Bill\u0027s street. \"See,\" said Dad, \"Bill lives just two blocks away. We will walk there tomorrow.\" "
+      },
+      "questions": [
+        {
+          "text": "Who is this story mostly about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Kareem",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Bill",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where is Kareem going tomorrow? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the bank",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Bill\u0027s house",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where does Bill live? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "close to Kareem",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "far away from Kareem",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "How will Kareem get to his friend Bill\u0027s house? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "His Dad will drive him.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "He will walk.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246158",
+        "title": "The Four Seasons",
+        "author": "",
+        "metadata": "Grade: K Lexile: 300L",
+        "text": "Some places have four seasons every year. Do you know their names? The seasons are winter, spring, summer, and autumn. Winter is the coldest time of the year. Spring comes next. Many animals are born in spring. Many new plants grow then too. Summer is a time of sunshine and hot weather. In autumn, the weather gets cooler. The leaves fall off trees. Some people call autumn by another name. They call it fall! "
+      },
+      "questions": [
+        {
+          "text": "How many seasons do some places have every year? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "one",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "four",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Which season is the coldest? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "summer",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "winter",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "When would you see many baby animals and new plants? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "spring",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "autumn",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What is the weather like in the summer? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "sunny and hot",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "rainy and cold",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242378",
+        "title": "Juan Wants to Build",
+        "author": "",
+        "metadata": "Grade: K Lexile: 420L",
+        "text": "Juan wants to build a toy car. His friend Emma wants to help. Juan tells Emma his idea. Emma is not sure how she can help. Juan gets an idea. He takes out paper and crayons. He draws a picture of a toy car. He draws more pictures showing how he wants to build it. Then Juan tells Emma about the toy car again. He talks while pointing to each picture. Now Emma knows how she can help. "
+      },
+      "questions": [
+        {
+          "text": "Who has an idea for how to build a toy car? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Emma",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Juan",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Who wants to help build a toy car but doesn\u0027t know how? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Emma",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Juan",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does Juan draw a picture of? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "toy car",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "bicycle",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246106",
+        "title": " Save Your Paper ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 450L",
+        "text": "Help Earth Do you throw away pieces of paper after you use them? You can do something better: Recycle! When you throw things away, they become trash. Too much trash hurts our planet. Also, we would have to cut down more trees to make new paper. That would hurt Earth too. Today many people recycle paper. When used paper is recycled, it is turned into new paper. Less paper is put in the trash. Fewer trees are cut down. Recycling is helpful to Earth! "
+      },
+      "questions": [
+        {
+          "text": "What do your things become when you throw them away? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "trash",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "dirt",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Why is trash a problem? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "It smells bad.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "It hurts Earth.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do we need to cut down to make new paper? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "trees",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "grass",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What can we make out of recycled paper? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "new paper",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "trash",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "255262",
+        "title": "Luisa builds a Model",
+        "author": "",
+        "metadata": "Grade: K Lexile: 240L",
+        "text": "Luisa really likes the neighborhood where she lives. Luisa wants to build a model of it. She finds some cardboard. Her dad cuts it into squares. Luisa colors the squares. She tapes the squares so they could stand up. The model is done. Luisa shows it to her dad. Luisa points to the fire station. Luisa shows her dad the market. He points to a red house. Then he smiles. \"Isn\u0027t that our house?\" he says. \"Yes!\" says Luisa. "
+      },
+      "questions": [
+        {
+          "text": "What does Luisa want to build a model of? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "her neighborhood",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "her house",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does she use to make her model? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "squares of cardboard",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "paper",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "How does Luisa make the cardboard look like the buildings in her neighborhood? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "She tapes them together.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "She colors them.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What buildings does Luisa build from her neighborhood? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "fire station and market",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "police station and school",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242336",
+        "title": "The New House ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 330L",
+        "text": "Jana\u0027s parents bought a new house. The house was still being built. The builder showed the family a model of the house. The builder also showed them a photograph of the house. Jana looked at the picture. It showed that the house had two floors. Next, Jana looked at the model. She opened the tiny front door and peeked inside. She saw a kitchen and a living room. Then Jana looked at the top floor. She saw two bedrooms and a bathroom. Jana was happy to see the model and the picture. Now she was excited to move. "
+      },
+      "questions": [
+        {
+          "text": "What did Jana\u0027s parents buy? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "new house",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "new dog",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What did the builder show Jana\u0027s family of the house? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "just a picture",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "picture and a model",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "First Jana looked at the picture of the house. What did the picture of her house show? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "The house had two floors.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "The house had a living room.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Next Jana looked at the model. What did Jana see in the top floor of the house? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "kitchen",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "bathroom",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246061",
+        "title": "Parts of a Tree",
+        "author": "",
+        "metadata": "Grade: K Lexile: 210L",
+        "text": "Trees are a kind of plant. They grow like some other plants do. What are the parts of a tree? A tree has leaves. The leaves help make food for the tree. A tree has branches. Branches give trees their shape. A tree has bark. Bark is hard skin on the outside of the tree. A tree has roots. Roots take in water for the tree. How are trees like other plants? "
+      },
+      "questions": [
+        {
+          "text": "What plant is this passage about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "flower",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "tree",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What part of the tree helps make food for the tree? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the leaves",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the bark",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What gives the tree its shape? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the roots",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the branches",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do we call the hard skin on the outside of the tree? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "bark",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "jacket",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242311",
+        "title": "City Life and Country Life",
+        "author": "",
+        "metadata": "Grade: K Lexile: 240L",
+        "text": "Do you live in a city? A city has many buildings. It also has many roads. It has many cars and lots of noise. Cities are full of people. City life can be full of fun. City life is noisy. Do you live in the country? The country has lots of grass, trees, and animals. It also has farms. People grow food in the country. Fewer people live in the country than in the city. Country life can be full of fun. Country life is quieter. "
+      },
+      "questions": [
+        {
+          "text": "What does a city have a lot of? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "animals",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "people",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where do people grow food? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the country",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the city",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where should you live if you like it to be quiet? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the country",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the city",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What is the same about the country and the city? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Life can be full of fun.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "They have lots of buildings",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "252996",
+        "title": "Jack\u0027s Lost Kite",
+        "author": "",
+        "metadata": "Grade: K Lexile: 310L",
+        "text": "Jack could not find his kite. It was not in his bedroom. It was not in the kitchen. \"Mom,\" asked Jack, \"have you seen my kite?\" \"No, Jack,\" said his mom. \"Did you look outside?\" Jack looked under the porch. No kite. He looked next to the swings. No kite. He looked behind the house. No kite. \"Where could it be?\" he thought. Jack looked up. There it was! His kite was stuck in the tree. "
+      },
+      "questions": [
+        {
+          "text": "Who is this story about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Mom",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Jack",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What was Jack looking for? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "his kite",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "his bike",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where else does Jack look for his kite? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "under the house",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "behind the house",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "241921",
+        "title": "Traffic Lights",
+        "author": "",
+        "metadata": "Grade: K Lexile: 300L",
+        "text": "A traffic light helps people cross the street safely. Here are rules to follow when crossing a street. Always cross with a grown-up. Wait for the light to turn green. Green means go. Look both ways to make sure cars stop. Walk across the street. Remember this poem: Watch a traffic light to know. Red means stop, and green means go. When cars stop, the street is clear. You can cross, and have no fear.  "
+      },
+      "questions": [
+        {
+          "text": "What do traffic lights help people do? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "go fishing",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cross the street safely",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Who should you always cross the street with? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "friend",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "grown-up",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What color on the traffic light means go? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "green",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "red",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "How can you make sure that all cars stop? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "step onto the road",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "look both ways before walking",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246231",
+        "title": "Page not Found",
+        "author": "",
+        "metadata": "Grade: K Lexile: 300L",
+        "text": "The Longest and Shortest Days When is the longest day of the year in the United States? It is around June 21. That is the first day of summer. It is called the summer solstice. Summer days are long. We have many hours of sunlight. Why? Earth tilts as it travels around the sun. In the summer, the north half of Earth tilts toward the sun. The United States is in Earth\u0027s north half. What is the shortest day of the year? It is around December 21. That is the winter solstice. It is the first day of winter. In the winter, Earth\u0027s north half tilts away from the sun. "
+      },
+      "questions": [
+        {
+          "text": "What do we call the first day of summer? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the summer solstice",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the winter solstice",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "During which season are the days long? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "winter",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "summer",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do we call the first day of winter? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the summer solstice",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the winter solstice",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Are winter days long or short? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "short",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "long",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242346",
+        "title": "How Plants Work",
+        "author": "",
+        "metadata": "Grade: K Lexile: 370L",
+        "text": "Every part of a plant has a job to do. The leaves make food for the plant. Leaves use sunlight to make food. The stem holds the plant up. Without a strong stem, the plant would fall down. The roots grow underground. Roots take in water for the plant. Flowers look pretty, but they have a job too! They make sure new plants will grow. Seeds grow inside flowers. The seeds will fall to the ground. Many of the seeds will grow into new plants. "
+      },
+      "questions": [
+        {
+          "text": "What do leaves use to make food for plants? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "sunlight",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "seeds",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What part of a plant holds the plant up so the plant does not fall down? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the stem",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the flowers",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What part of the plant takes in water? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "leaves",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "roots",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where do plant seeds fall to grow into new plants? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "on an animal",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "on the ground",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "253178",
+        "title": "How Trees Help",
+        "author": "",
+        "metadata": "Grade: K Lexile: 210L",
+        "text": "Did you know that trees are helpers? Trees are plants that clean our air. There is a gas in the air that can be dangerous to people. Tree leaves take in that gas. The leaves use that gas to make food for the tree. Then the leaves give off a clean gas. The clean gas goes into the air for us to breathe. Trees also give us shade on hot days. Trees give us food to eat. Trees give some animals homes. Thank you, trees! "
+      },
+      "questions": [
+        {
+          "text": "What plant does this passage say is a helper? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "trees",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "bushes",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "How can trees help us on hot days? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "They give us water.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "They give us shade.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do some trees give us to eat? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "water",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "food",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What part of the tree takes in gas from the air? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "leaves",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "trunk",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246056",
+        "title": "Cloudy and Sunny",
+        "author": "",
+        "metadata": "Grade: K Lexile: 110L",
+        "text": "This morning it was cloudy. Maria and her friends went outside. They played tag. Then the sun came out. The sun felt warm. The air got warmer and warmer. Maria felt very warm. She needed to take a break. She sat down under a tree. It was cooler in the shade. Maria smiled. She waved to her friends. \"Cool off with me in the shade!\" said Maria. "
+      },
+      "questions": [
+        {
+          "text": "Who is this story about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Maria and her friends",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "dog and a cat",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where are Maria and her friends playing? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "inside",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "outside",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What is the weather like at the end of the story? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "sunny",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cloudy",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Why did Maria take a break? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "She felt very warm.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "She felt sleepy.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246212",
+        "title": "Take Care of Your Teeth!",
+        "author": "",
+        "metadata": "Grade: K Lexile: 230L",
+        "text": "You need healthy teeth. Do you know why? Your teeth help you eat. They help you talk. Here are some ways to care for your teeth: ? Brush your teeth after you eat. ? Eat healthful foods. ? Have a grown-up help you floss your teeth. ? Visit the dentist two times each year. And don\u0027t forget to smile! "
+      },
+      "questions": [
+        {
+          "text": "What do you need to help you eat and talk? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "healthy teeth",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "your nose",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What should you do after you eat to care for your teeth? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "drink soda",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "brush your teeth",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What kind of food should you eat? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "healthy food",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "junk food",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Who can help you floss your teeth? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "grown-up",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "your dog",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246103",
+        "title": "How Plants Get Water and Food ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 440L",
+        "text": "Most plants have roots. Those roots grow down into the dirt. The roots take in water from the dirt. The roots also take in minerals and other things from the dirt. A plant uses those things to help it make food. The water and food then move up the plant\u0027s stem. They move to other parts of the plant. This helps the plant grow well. "
+      },
+      "questions": [
+        {
+          "text": "Where do roots grow? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "down into the dirt",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "up in the air",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What do roots take in from the dirt for the plant? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "sunlight and air",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "water and minerals",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What does water and food move up through to other parts of the plant? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the roots",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the stem",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What happens to plants that get plenty of food and water? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "They get sick.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "They grow well.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242416",
+        "title": " José and the Blue Crayons ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 440L",
+        "text": "José, Ella, and Alex sat at the same table. They listened to their teacher, Ms. Garcia. Ms. Garcia talked about sharing and taking turns. Then she said the class could draw pictures. Ms. Garcia put a big box of crayons on each table. José took all three blue crayons. He drew water and the sky and a sailboat. Ella looked sad. \"I need a blue crayon,\" she told José. José gave Ella one of the blue crayons. \"I like to share!\" he said. "
+      },
+      "questions": [
+        {
+          "text": "Where do José, Ella, and Alex sit in school? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "at their desks",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "at the same table",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do the students at each table need to share to color their pictures? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "crayons",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "markers",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does José take from the box of crayons at his table? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "all the crayons",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "all the blue crayons",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "is Ella sad? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "She misses her Mommy.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "She needs a blue crayon.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246109",
+        "title": " Racing Cars Can Go!",
+        "author": "",
+        "text": "Mario wants to try his new set of racing cars. He leans a board against his bed to make a ramp. He gently pushes each car down the ramp. The cars move smoothly down. Mario wants to see if they will go faster. He gives each car a bigger push. Now cars move down the ramp faster. Vroom! They make a racing sound. The cars go in different directions. \"These cars are neat!\" Mario says. "
+      },
+      "questions": [
+        {
+          "text": "What new toy is Mario playing with? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "racing cars",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "fire truck",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does Mario make for his racing cars by leaning a board against his bed? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "race track",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "ramp",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Mario wants to see if his racing cars will go faster. What does he do to the racing cars to see if they will go faster? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "He gives each car a bigger push.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "He throws each car.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Mario gives his racecars a bigger push, what direction do they go? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "straight",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "different directions",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "241912",
+        "title": " The Winning Shot ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 230L",
+        "text": "The soccer game was nearly over. Time had almost run out. The two teams were tied, one to one. Amber kicked the ball. Oh no! She kicked it the wrong way. She kicked it toward the school building. \"What a bad kick,\" Amber thought. But wait! One of her teammates, John, jumped to stop the ball. The ball went off John and into the goal! Amber\u0027s team won the game. Hooray! It was not a bad kick, after all. "
+      },
+      "questions": [
+        {
+          "text": "What game is Amber playing? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "soccer",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "baseball",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Amber thinks she kicked the ball the wrong way. Which building did she kick it towards? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "school building",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "post office",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Who jumped to stop the ball? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Amber",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "John",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where does the ball go after it bounces off John? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "out of the field",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "into the goal",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242407",
+        "title": " Finding Food ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 350L",
+        "text": "Long ago, getting food was a lot of work. There were no stores to buy food. People had four ways to get food. They farmed crops such as corn and beans. They hunted for deer, rabbits, and other animals. They went fishing for food such as trout and eels. They searched in the forest for food that grew wild, such as nuts and berries. Getting food then was not easy. Today most people can get the food they need at a store. Now getting food is easier and faster. "
+      },
+      "questions": [
+        {
+          "text": "Is it easier and faster to get food today or was it easier long ago? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "today",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "long ago",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "How did people get corn and beans in the past? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "They farmed.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "They went fishing.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What could people hunt for? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "trout and eels",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "deer and rabbits",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242347",
+        "title": " Fun on the Playground ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 380L",
+        "text": "\"It\u0027s time for recess,\" Ms. Roberto said. It was bright and sunny outside. The children went out to the playground. Ava and Glenda went on the swings. Next, they climbed up to the tower. They sat at the top and then went down a curvy slide. Ms. Roberto was smiling and watching them. \"Recess is over,\" she said. \"Can we play again tomorrow?\" Ava asked. \"Yes, if it is sunny like today,\" Ms. Roberto said. "
+      },
+      "questions": [
+        {
+          "text": "What is it time for at the beginning of the story? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "lunch",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "recess",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where are the children having recess? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "outside",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "inside",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where did Ava and Glenda play during recess? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the basketball court",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the swings",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "what did Mrs. Roberto do during recess? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "ate a snack",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "watched the children",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246167",
+        "title": " The Bicycle Problem ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 370L",
+        "text": "Jimmy had a problem with his bicycle. He had a flat tire. Maybe he could ride on one good tire? That didn\u0027t work. The bike went bump bump bump. Well, he could buy a new tire. But how could he get to the store? His bike didn\u0027t work! Then Lashona came along with an idea. She showed Jimmy how to take off the flat tire. She had a patch to fix a hole in the tire. Jimmy put the tire back on the bike. Then he used Lashona\u0027s pump to fill the tire with air again. Now his bike was ready to go! "
+      },
+      "questions": [
+        {
+          "text": "What problem does Jimmy have with his bicycle? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "He had a flat tire.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "He didn\u0027t like the color.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Why can\u0027t Jimmy buy a new tire? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "He doesn\u0027t have money.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "He can\u0027t get to the store.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "How does Lashona want to solve Jimmy\u0027s problem? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "buy him a new bike",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "patch the flat tire",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242326",
+        "title": " Ant and Grasshopper ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 370L",
+        "text": "One day a grasshopper hopped along a road and saw an ant. The ant was carrying a big ear of corn. \"Hey, stop and talk to me,\" Grasshopper said. \"I am getting food for the winter,\" Ant said. \"You should too.\" \"It is summer. I have food,\" said Grasshopper. Soon winter came. Grasshopper had no food. Ant and his friends had corn to eat. Grasshopper learned a lesson: it is wise to get ready for the future. "
+      },
+      "questions": [
+        {
+          "text": "Who is this story about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "an ant and a grasshopper",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "mouse",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What was ant doing at the beginning of the story? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "playing",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "getting food (for winter)",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "what is the lesson of this story? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Get ready for the future.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Play as much as possible.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242353",
+        "title": " Lily Makes Lemonade ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 380L",
+        "text": "Lily\u0027s friends are visiting her today. Olivia bakes oatmeal cookies. Sharon brings chips and dip. Lily makes lemonade. She squeezes four lemons into a pitcher. Next she adds four cups of water. Finally she mixes one teaspoon of sugar into the pitcher. Lily tastes it. \"This lemonade is too sour,\" she says. She adds more sugar. She tastes it again. Now it is much better! "
+      },
+      "questions": [
+        {
+          "text": "Who is visiting Lily\u0027s today? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Lily\u0027s Grandmother",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Olivia and Sharon",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What is Lily making? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "lemonade",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cookies",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does Lily use to make lemonade? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "lemons, water, and sugar",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "apples and milk",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "what does Lily do to make her lemonade taste better? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "add sugar",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "squeeze more lemons",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "246111",
+        "title": " Walt\u0027s Class Watches the Weather ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 520L",
+        "text": "Walt\u0027s class was learning about weather. Mrs. Lin, their teacher, made a weather chart. She made five boxes. In each box, she wrote down one day of the week: Monday, Tuesday, Wednesday, Thursday, and Friday. Each day, Mrs. Lin asked what the weather was like. On Monday, Susie said it was rainy. Susie drew a picture of a rainy day in the box that said \"Monday.\" On Tuesday, Walt said it was sunny. Mrs. Lin asked Walt to draw the picture. In the box marked \"Tuesday,\" Walt drew a big yellow sun. "
+      },
+      "questions": [
+        {
+          "text": "What is Walt\u0027s class learning about? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the weather",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "bugs",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does Walt\u0027s class use to record the weather? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "a weather chart",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "journal",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What does Mrs. Lin write in each box on the class\u0027s weather chart? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the weather",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "day of the week",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "when did Susie say that the weather was rainy? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "Friday",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "Monday",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "254347",
+        "title": " The United States of America ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 160L",
+        "text": "Americans live in the United States of America. Millions of people live in America. People come here from all over the world. Why? Many come here because they want a better life. People in America may not look the same. They may not eat the same foods. They may not have the same beliefs. They may speak different languages. What do they have in common? They live in the United States. Many of them love their country. "
+      },
+      "questions": [
+        {
+          "text": "Why do many people come from all over the world to live in America? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "They want a better life.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "They want to be near the ocean.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "People in America are not all the same. What may be different about them? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "the country they live in",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "the way they look",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do people in America have in common? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "They live in the United States.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "They eat the same foods.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242304",
+        "title": " Wow, Water! ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 180L",
+        "text": "Our Earth has a lot of water. People need water. Do you know why? We need water to drink. Water keeps our bodies working well. We need water to cook some food. We need water to wash our bodies. How do you use water? "
+      },
+      "questions": [
+        {
+          "text": "What does the Earth have a lot of? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "candy",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "water",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What do we need water for? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "drive a car",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "cook",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "what do you need to wash your body? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "soda",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "water",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242354",
+        "title": " Getting Around Alaska ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 390L",
+        "text": "Alaska is very cold during winter. Snow and ice cover the ground. Not all roads get plowed. How do people get around? They can use skis. Skis help people glide over snow. They can use snowshoes. Snowshoes help people walk on top of snow. They can use dogsleds. A team of strong dogs pulls the sled. One of the fastest ways to travel is by snowmobile. A snowmobile has a motor. A snowmobile has skis on the front. It helps people in snowy places get around quickly. There are many ways to get around, even in deep snow! "
+      },
+      "questions": [
+        {
+          "text": "What covers the ground in Alaska during the winter? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "water",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "snow and ice",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What can people use to glide over snow? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "skis",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "snowshoes",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What do snowshoes help you do? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "plow your road",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "walk on top of snow",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "what animal can be used to pull a sled? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "cats",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "dogs",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "241919",
+        "title": " How to Ride a Skateboard ",
+        "author": "",
+        "metadata": "Grade: K Lexile: 290L",
+        "text": "Would you like to learn how to ride a skateboard? Here is a quick lesson. First put on your safety helmet. Then place one foot on the skateboard. Keep the other foot on the ground. Use the foot on the ground to push. Quick! Put both feet up on the board. Now you are skateboarding! Use a small push to move slowly. Use a bigger push to move faster. Put one foot on the ground to stop. Happy skateboarding!"
+      },
+      "questions": [
+        {
+          "text": "What can you learn to ride from this passage? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "skateboard",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "scooter",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "What should you always put on first? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "helmet",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "jacket",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "How many feet should you have on the skateboard when you want to start skateboarding? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "both feet",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "one foot",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "How many feet should you have on the skateboard while skateboarding? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "both feet",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "one foot",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "242315",
+        "title": "Caden\u0027s Day",
+        "author": "",
+        "metadata": "Grade: K Lexile: 250L",
+        "text": "Mom helped Caden get ready for school. Then she walked him to the bus. She gave him a hug. \"See you tomorrow!\" said Mom. Mom works in the evening. She has an important job. She is a nurse at the hospital. She helps people who are sick or hurt. After school, Dad picked Caden up. He has an important job. He is a teacher. He teaches science. At home, Dad helps Caden do his homework. Later that night, Dad helps Caden get ready for bed. Caden misses his mom. But he knows he will see her again in the morning. "
+      },
+      "questions": [
+        {
+          "text": "Who helps Caden get ready for school? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "his mom",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "his dad",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "text": "Where is Caden\u0027s mom when he gets home from school? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "at home with Caden",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "at work",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "Where does Caden\u0027s mom work? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "grocery store",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "hospital",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "text": "What job does Caden\u0027s Dad have? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "He is a teacher.",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "He is a police officer.",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "A"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    },
+    {
+      "story": {
+        "id": "255087",
+        "title": "Be Careful With Medicines",
+        "author": "By Susan LaBella",
+        "text": "Sometimes people who do not feel well must take medicine. Doctors give people medicine to help them get better. Anyone who takes medicine must follow safety rules. Take medicine only from a doctor or a grown-up you know and trust. Give any medicine or pills that you find to a grown-up. Make sure medicines are put away safer after they are used. Following these rules will help you stay healthy and safe. "
+      },
+      "questions": [
+        {
+          "text": "What should you do with medicine that you find? ",
+          "answerChoices": [
+            {
+              "label": "A",
+              "text": "give it to a grown-up",
+              "featureValueMap": {},
+              "passageList": []
+            },
+            {
+              "label": "B",
+              "text": "give it to a grown-up",
+              "featureValueMap": {},
+              "passageList": []
+            }
+          ],
+          "correctAnswer": "B"
+        }
+      ],
+      "assertions": [],
+      "question2DialogQueue": {}
+    }
+  ]
+}

@@ -3,11 +3,13 @@ Download tasks from facebook.ai/babi """
 from __future__ import absolute_import
 from __future__ import print_function
 
-from mc_data_utils import load_task, vectorize_data, get_vocab
+from mc_data_utils import load_task, vectorize_data, get_vocab, get_embedding
 from sklearn import cross_validation, metrics
 from memn2n.mc_memn2n import MemN2N
 from itertools import chain
 from six.moves import range
+
+import ipdb
 
 
 import os
@@ -18,15 +20,15 @@ tf.flags.DEFINE_float("learning_rate", 0.01, "Learning rate for Adam Optimizer."
 tf.flags.DEFINE_float("epsilon", 1e-8, "Epsilon value for Adam Optimizer.")
 tf.flags.DEFINE_float("regularization", 0.02, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
-tf.flags.DEFINE_integer("evaluation_interval", 10, "Evaluate and print results every x epochs")
+tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
-tf.flags.DEFINE_integer("epochs", 200, "Number of epochs to train for.")
+tf.flags.DEFINE_integer("epochs", 50, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
-tf.flags.DEFINE_string("data_dir", "data/readworksTrainTest", "Directory containing bAbI tasks")
+tf.flags.DEFINE_string("data_dir", "data/readworksAll/", "Directory containing bAbI tasks")
 FLAGS = tf.flags.FLAGS
 
 def get_log_dir_name():
@@ -52,6 +54,11 @@ vocab = get_vocab(data)
 
 word_idx = dict((c, i ) for i, c in enumerate(vocab))
 
+
+glove_embedding = get_embedding(vocab)
+
+
+
 max_story_size = max(map(len, (s for s, _, _ ,_ in data)))
 sentence_size = max(map(len, chain.from_iterable(s for s, _, _,_ in data)))
 query_size = max(map(len, (q for _, q, _,_ in data)))
@@ -68,7 +75,7 @@ print("Label size", label_size)
 
 # train/validation/test sets
 S, Q, AA,AB,AC, L = vectorize_data(train, word_idx, sentence_size, memory_size, answer_size)
-trainS, valS, trainQ, valQ, trainAA, valAA,trainAB, valAB,trainAC, valAC, trainL, valL = cross_validation.train_test_split(S, Q, AA,AB,AC, L, test_size=.1, random_state=FLAGS.random_state)
+trainS, valS, trainQ, valQ, trainAA, valAA,trainAB, valAB,trainAC, valAC, trainL, valL = cross_validation.train_test_split(S, Q, AA,AB,AC, L, test_size=.2, random_state=FLAGS.random_state)
 testS, testQ, testAA, testAB, testAC, testL= vectorize_data(test, word_idx, sentence_size, memory_size, answer_size)
 
 print(testS[0])
@@ -94,7 +101,7 @@ batch_size = FLAGS.batch_size
 
 batches = zip(range(0, n_train-batch_size, batch_size), range(batch_size, n_train, batch_size))
 with tf.Session() as sess:
-    model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, FLAGS.embedding_size, answer_size, label_size, session=sess,
+    model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, FLAGS.embedding_size, answer_size, label_size, glove_embedding = glove_embedding,session=sess,
                      l2=FLAGS.regularization, nonlin=tf.nn.relu)
 
     writer = tf.train.SummaryWriter(get_log_dir_name(), sess.graph)
