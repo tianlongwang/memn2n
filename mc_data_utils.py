@@ -196,16 +196,24 @@ def load_glove(dim):
     return word2vec
 
 def get_embedding(vocab, dim=50):
-    wv = load_glove(dim)
-    ret = np.zeros([len(vocab), dim])
-    for ii in range(len(vocab)):
-        if ii == 0:
-            continue
-        else:
-            if vocab[ii] in wv:
-                ret[ii,:] = wv[vocab[ii]]
+    fn = "data/glove/myembedding." + str(dim) + "d"+ '.pickle'
+    if os.path.exists(fn) and os.stat(fn).st_size > 0:
+        with open(fn, 'rb') as pickle_file:
+            ret = cPickle.load(pickle_file)
+    else:
+        wv = load_glove(dim)
+        ret = np.zeros([len(vocab), dim])
+        for ii in range(len(vocab)):
+            if ii == 0:
+                continue
             else:
-                ret[ii,:] = np.random.randn(dim) * 0.5
+                if vocab[ii] in wv:
+                    ret[ii,:] = wv[vocab[ii]]
+                else:
+                    ret[ii,:] = np.random.randn(dim) * 0.5
+
+        with open(fn, 'wb') as pickle_write:
+            cPickle.dump(ret, pickle_write)
     return ret
 
 

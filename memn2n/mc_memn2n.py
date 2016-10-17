@@ -268,24 +268,32 @@ class MemN2N(object):
             print('self._answer_encoding', self._answer_encoding)
             aa_enc = tf.reduce_sum(aa_emb * self._answer_encoding, 1)
             print('u_k', u_k)
-            aa_ans = tf.sub(aa_enc, u_k)
+            #aa_ans = tf.sub(aa_enc, u_k)
+            aa_ans = 1 - tf.reduce_sum(tf.square(tf.sub(aa_enc, u_k)), 1)
+            aa_ans = tf.reshape(aa_ans, [-1, 1])
             #TODO: try change subtraction into elementwise multiplication
+
 
 
             ab_emb = tf.nn.embedding_lookup(self.B, answerB)
             ab_enc = tf.reduce_sum(ab_emb * self._answer_encoding, 1)
-            ab_ans = tf.sub(ab_enc, u_k)
+            #ab_ans = tf.sub(ab_enc, u_k)
+            ab_ans = 1 - tf.reduce_sum(tf.square(tf.sub(ab_enc, u_k)), 1)
+            ab_ans = tf.reshape(ab_ans, [-1, 1])
 
 
             ac_emb = tf.nn.embedding_lookup(self.B, answerC)
             ac_enc = tf.reduce_sum(ac_emb * self._answer_encoding, 1)
-            ac_ans =  tf.sub(ac_enc, u_k)
+            #ac_ans =  tf.sub(ac_enc, u_k)
+            ac_ans = 1 - tf.reduce_sum(tf.square(tf.sub(ac_enc, u_k)), 1)
+            ac_ans = tf.reshape(ac_ans, [-1, 1])
 
             print('ac_ans', ac_ans)
             ans_3 = tf.concat(1, [aa_ans, ab_ans, ac_ans])
             print('ans_3', ans_3)
             print('self.W', self.W)
-            return tf.matmul(ans_3, self.W)
+            #return tf.matmul(ans_3, self.W)
+            return ans_3
 
     def save_model(self, location):
         saver = tf.train.Saver()
