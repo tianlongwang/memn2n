@@ -31,7 +31,7 @@ def zero_nil_slot(t, name=None):
     The nil_slot is a dummy slot and should not be trained and influence
     the training algorithm.
     """
-    with tf.op_scope([t], name, "zero_nil_slot") as name:
+    with tf.name_scope( name, "zero_nil_slot", [t]) as name:
         t = tf.convert_to_tensor(t, name="t")
         s = tf.shape(t)[1]
         z = tf.zeros(tf.pack([1, s]))
@@ -47,7 +47,7 @@ def add_gradient_noise(t, stddev=1e-3, name=None):
 
     0.001 was said to be a good fixed value for memory networks [2].
     """
-    with tf.op_scope([t, stddev], name, "add_gradient_noise") as name:
+    with tf.name_scope( name, "add_gradient_noise", [t, stddev]) as name:
         t = tf.convert_to_tensor(t, name="t")
         gn = tf.random_normal(tf.shape(t), stddev=stddev)
         return tf.add(t, gn, name=name)
@@ -269,23 +269,22 @@ class MemN2N(object):
             aa_enc = tf.reduce_sum(aa_emb * self._answer_encoding, 1)
             print('u_k', u_k)
             #aa_ans = tf.sub(aa_enc, u_k)
-            aa_ans = 1 - tf.reduce_sum(tf.square(tf.sub(aa_enc, u_k)), 1)
+            aa_ans =   tf.reduce_sum(tf.square(tf.sub(aa_enc, u_k)), 1)
             aa_ans = tf.reshape(aa_ans, [-1, 1])
-            #TODO: try change subtraction into elementwise multiplication
 
 
 
             ab_emb = tf.nn.embedding_lookup(self.B, answerB)
             ab_enc = tf.reduce_sum(ab_emb * self._answer_encoding, 1)
             #ab_ans = tf.sub(ab_enc, u_k)
-            ab_ans = 1 - tf.reduce_sum(tf.square(tf.sub(ab_enc, u_k)), 1)
+            ab_ans =   tf.reduce_sum(tf.square(tf.sub(ab_enc, u_k)), 1)
             ab_ans = tf.reshape(ab_ans, [-1, 1])
 
 
             ac_emb = tf.nn.embedding_lookup(self.B, answerC)
             ac_enc = tf.reduce_sum(ac_emb * self._answer_encoding, 1)
             #ac_ans =  tf.sub(ac_enc, u_k)
-            ac_ans = 1 - tf.reduce_sum(tf.square(tf.sub(ac_enc, u_k)), 1)
+            ac_ans =  tf.reduce_sum(tf.square(tf.sub(ac_enc, u_k)), 1)
             ac_ans = tf.reshape(ac_ans, [-1, 1])
 
             print('ac_ans', ac_ans)

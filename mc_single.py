@@ -16,7 +16,7 @@ import os
 import tensorflow as tf
 import numpy as np
 
-tf.flags.DEFINE_float("learning_rate", 0.01, "Learning rate for Adam Optimizer.")
+tf.flags.DEFINE_float("learning_rate", 0.005, "Learning rate for Adam Optimizer.")
 tf.flags.DEFINE_float("epsilon", 1e-8, "Epsilon value for Adam Optimizer.")
 tf.flags.DEFINE_float("regularization", 0.02, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
@@ -78,7 +78,7 @@ S, Q, AA,AB,AC, L = vectorize_data(train, word_idx, sentence_size, memory_size, 
 trainS, valS, trainQ, valQ, trainAA, valAA,trainAB, valAB,trainAC, valAC, trainL, valL = cross_validation.train_test_split(S, Q, AA,AB,AC, L, test_size=.2, random_state=FLAGS.random_state)
 testS, testQ, testAA, testAB, testAC, testL= vectorize_data(test, word_idx, sentence_size, memory_size, answer_size)
 
-print(testS[0])
+#print(testS[0])
 
 print("Training set shape", trainS.shape)
 
