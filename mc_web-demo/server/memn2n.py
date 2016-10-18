@@ -56,7 +56,7 @@ class MemN2N(object):
     def __init__(self, batch_size, vocab_size, sentence_size, memory_size, embedding_size,
         answer_size,
         label_size,
-        glove_embedding,
+        glove_embedding=None,
         session=tf.Session(),
         hops=3,
         max_grad_norm=40.0,
