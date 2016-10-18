@@ -1,0 +1,73 @@
+Started Task: 1
+got train
+Longest sentence length 91
+Longest story length 21
+Answer length 33
+Label size 3
+Training set shape (338, 21, 91)
+Training Size 338
+Validation Size 85
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 91, 100) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(91, 100) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 100) dtype=float32>)
+('aa_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 33, 100) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(33, 100) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 100) dtype=float32>)
+('ac_ans', <tf.Tensor 'MemN2N2/Reshape_2:0' shape=(?, 1) dtype=float32>)
+('ans_3', <tf.Tensor 'MemN2N2/concat:0' shape=(?, 3) dtype=float32>)
+('self.W', <tensorflow.python.ops.variables.Variable object at 0x7f2a07b3a5d0>)
+-----------------------
+Epoch 10
+Total Cost: 15085.9082031
+Training Accuracy: 0.96449704142
+Validation Accuracy: 0.341176
+-----------------------
+-----------------------
+Epoch 20
+Total Cost: 7764.39306641
+Training Accuracy: 0.98224852071
+Validation Accuracy: 0.411765
+-----------------------
+-----------------------
+Epoch 30
+Total Cost: 4919.59924316
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.341176
+-----------------------
+-----------------------
+Epoch 40
+Total Cost: 2872.6161499
+Training Accuracy: 0.96449704142
+Validation Accuracy: 0.364706
+-----------------------
+-----------------------
+Epoch 50
+Total Cost: 1908.93530273
+Training Accuracy: 0.991124260355
+Validation Accuracy: 0.4
+-----------------------
+-----------------------
+Epoch 60
+Total Cost: 1363.53900146
+Training Accuracy: 1.0
+Validation Accuracy: 0.352941
+-----------------------
+-----------------------
+Epoch 70
+Total Cost: 1056.06222534
+Training Accuracy: 0.98224852071
+Validation Accuracy: 0.341176
+-----------------------
+-----------------------
+Epoch 80
+Total Cost: 686.500640869
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.352941
+-----------------------
+-----------------------
+Epoch 90
+Total Cost: 494.67640686
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.376471
+-----------------------

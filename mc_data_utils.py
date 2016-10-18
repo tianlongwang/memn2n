@@ -12,12 +12,12 @@ def load_task(data_dir, task_id):
     Returns a tuple containing the training and testing data for the task.
     '''
     assert task_id in [1,2]
-    data_dir = './data/readworksAll/'
-    train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
-    test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
-    #data_dir = './data/readworksTrainTest2/'
-    #train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
-    #test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
+    #data_dir = './data/readworksAll/'
+    #train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
+    #test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
+    data_dir = './data/readworksTrainTest2/'
+    train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
+    test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
     train_data = json_get_data(train_file)
     print("got train")
     test_data = json_get_data(test_file)
@@ -183,6 +183,14 @@ def perturb(S,Q,AA,AB,AC,L):
     print("number of data points after perturbation", len(retAB))
     print("number of data points after perturbation", len(retAC))
     print("number of data points after perturbation", len(retL))
+    idxs = np.arange(0, len(retS))
+    np.random.shuffle(idxs)
+    retS = retS[idxs, :]
+    retQ = retQ[idxs, :]
+    retAA = retAA[idxs, :]
+    retAB = retAB[idxs, :]
+    retAC = retAC[idxs, :]
+    retL = retL[idxs, :]
     return retS, retQ, retAA, retAB, retAC, retL
 
 
@@ -224,9 +232,9 @@ def load_glove(dim):
     print("Loaded Glove data")
     return word2vec
 
-def get_embedding(vocab, dim=50):
+def get_embedding(vocab, dim=50, use_pickle=True):
     fn = "data/glove/myembedding." + str(dim) + "d"+ '.pickle'
-    if os.path.exists(fn) and os.stat(fn).st_size > 0:
+    if os.path.exists(fn) and os.stat(fn).st_size > 0 and use_pickle:
         with open(fn, 'rb') as pickle_file:
             ret = cPickle.load(pickle_file)
     else:

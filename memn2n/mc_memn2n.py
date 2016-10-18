@@ -228,7 +228,7 @@ class MemN2N(object):
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.W))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.H))
 
-    def _inference(self, stories, queries, answerA, answerB, answerC):
+    def _inference(self, stories, queries, answerA, answerB, answerC, Euclidean=True):
         with tf.variable_scope(self._name + str(2)):
             q_emb = tf.nn.embedding_lookup(self.B, queries)
             print('q_emb', q_emb)
@@ -268,31 +268,36 @@ class MemN2N(object):
             print('self._answer_encoding', self._answer_encoding)
             aa_enc = tf.reduce_sum(aa_emb * self._answer_encoding, 1)
             print('u_k', u_k)
-            #aa_ans = tf.sub(aa_enc, u_k)
-            aa_ans =   tf.reduce_sum(tf.square(tf.sub(aa_enc, u_k)), 1)
-            aa_ans = tf.reshape(aa_ans, [-1, 1])
+            aa_ans = tf.sub(aa_enc, u_k)
 
 
 
             ab_emb = tf.nn.embedding_lookup(self.B, answerB)
             ab_enc = tf.reduce_sum(ab_emb * self._answer_encoding, 1)
-            #ab_ans = tf.sub(ab_enc, u_k)
-            ab_ans =   tf.reduce_sum(tf.square(tf.sub(ab_enc, u_k)), 1)
-            ab_ans = tf.reshape(ab_ans, [-1, 1])
+            ab_ans = tf.sub(ab_enc, u_k)
 
 
             ac_emb = tf.nn.embedding_lookup(self.B, answerC)
             ac_enc = tf.reduce_sum(ac_emb * self._answer_encoding, 1)
-            #ac_ans =  tf.sub(ac_enc, u_k)
-            ac_ans =  tf.reduce_sum(tf.square(tf.sub(ac_enc, u_k)), 1)
-            ac_ans = tf.reshape(ac_ans, [-1, 1])
+            ac_ans =  tf.sub(ac_enc, u_k)
+
+            Euclidean = True
+
+            if Euclidean:
+                aa_ans = tf.reduce_sum(tf.square(aa_ans), 1)
+                aa_ans = tf.reshape(aa_ans, [-1, 1])
+                ab_ans =   tf.reduce_sum(tf.square(ab_ans), 1)
+                ab_ans = tf.reshape(ab_ans, [-1, 1])
+                ac_ans =  tf.reduce_sum(tf.square(ac_ans), 1)
+                ac_ans = tf.reshape(ac_ans, [-1, 1])
 
             print('ac_ans', ac_ans)
             ans_3 = tf.concat(1, [aa_ans, ab_ans, ac_ans])
             print('ans_3', ans_3)
             print('self.W', self.W)
-            #return tf.matmul(ans_3, self.W)
-            return ans_3
+            if Euclidean:
+                return ans_3
+            return tf.matmul(ans_3, self.W)
 
     def save_model(self, location):
         saver = tf.train.Saver()

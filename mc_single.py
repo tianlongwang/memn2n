@@ -21,7 +21,7 @@ tf.flags.DEFINE_float("epsilon", 1e-8, "Epsilon value for Adam Optimizer.")
 tf.flags.DEFINE_float("regularization", 0.1, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
 tf.flags.DEFINE_integer("evaluation_interval", 10, "Evaluate and print results every x epochs")
-tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
+tf.flags.DEFINE_integer("batch_size", 128, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 5, "Number of hops in the Memory Network.")
 tf.flags.DEFINE_integer("epochs", 100, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
@@ -55,7 +55,7 @@ vocab = get_vocab(data)
 word_idx = dict((c, i ) for i, c in enumerate(vocab))
 
 
-glove_embedding = get_embedding(vocab)
+glove_embedding = get_embedding(vocab, FLAGS.embedding_size)
 
 
 
@@ -75,8 +75,8 @@ print("Label size", label_size)
 
 # train/validation/test sets
 S, Q, AA,AB,AC, L = vectorize_data(train, word_idx, sentence_size, memory_size, answer_size)
-S,Q,AA,AB,AC,L = perturb(S,Q,AA,AB,AC,L)
 trainS, valS, trainQ, valQ, trainAA, valAA,trainAB, valAB,trainAC, valAC, trainL, valL = cross_validation.train_test_split(S, Q, AA,AB,AC, L, test_size=.2, random_state=FLAGS.random_state)
+#trainS,trainQ,trainAA,trainAB,trainAC,trainL = perturb(trainS,trainQ,trainAA,trainAB,trainAC,trainL)
 testS, testQ, testAA, testAB, testAC, testL= vectorize_data(test, word_idx, sentence_size, memory_size, answer_size)
 
 #print(testS[0])
