@@ -120,7 +120,7 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
     AS = []
     L = []
     label_nums = set([len(dt[2]) for dt in data])
-    assert(len(label_sums) == 1)
+    assert(len(label_nums) == 1)
     label_num = list(label_nums)[0]
     for story, query, answer, label in data:
         lq = max(0, sentence_size - len(query))

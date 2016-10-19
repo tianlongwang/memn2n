@@ -9,7 +9,6 @@ import tensorflow as tf
 import numpy as np
 from six.moves import range
 
-
 def position_encoding(sentence_size, embedding_size):
     J = sentence_size
     d = embedding_size
@@ -127,7 +126,6 @@ class MemN2N(object):
         self._name = name
         self._l2 = l2
 
-
         self._glove_tf = tf.constant(self._glove_embedding)
 
         self._init = tf.random_normal_initializer(stddev=0.1)
@@ -140,6 +138,7 @@ class MemN2N(object):
 
         # cross entropy
         logits = self._inference(self._stories, self._queries, self._answers) # (batch_size, label_size)
+        print('logits', logits)
         cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits, tf.cast(self._labels, tf.float32), name="cross_entropy")
 
         cross_entropy_sum = tf.reduce_sum(cross_entropy, name="cross_entropy_sum")
@@ -224,7 +223,6 @@ class MemN2N(object):
             self.TC = tf.Variable(self._init([self._memory_size, self._embedding_size]), name='TC')
 
             self.H = tf.Variable(self._init([self._embedding_size, self._embedding_size]), name="H")
-            self.W = tf.Variable(self._init([self._embedding_size * 3 , 3]), name="W")
         self._nil_vars = set([self.A.name, self.B.name, self.C.name])
 
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.A))
@@ -232,7 +230,6 @@ class MemN2N(object):
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.C))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.TA))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.TC))
-        tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.W))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.H))
 
     def _inference(self, stories, queries, answers):
@@ -270,41 +267,22 @@ class MemN2N(object):
 
                 u.append(u_k)
 
-            aa_emb = tf.nn.embedding_lookup(self.B, answerA)
-            print('aa_emb', aa_emb)
+            as_emb = tf.nn.embedding_lookup(self.B, answers)
+            print('as_emb', as_emb)
             print('self._answer_encoding', self._answer_encoding)
-            aa_enc = tf.reduce_sum(aa_emb * self._answer_encoding, 1)
+            as_enc = tf.reduce_sum(as_emb * self._answer_encoding, 2)
+            print('as_enc', as_enc)
             print('u_k', u_k)
-            aa_ans = tf.sub(aa_enc, u_k)
+            u_k_l = tf.tile(u_k, [1, self._label_size])
+            u_k_l = tf.reshape(u_k_l, [-1, self._label_size, self._embedding_size])
+            print('u_k_l',u_k_l)
+            as_ans = tf.sub(as_enc, u_k_l)
+            print('as_ans', as_ans)
 
+            as_ans = tf.reduce_sum(tf.square(as_ans), 2)
+            print('as_ans', as_ans)
+            return as_ans
 
-
-            ab_emb = tf.nn.embedding_lookup(self.B, answerB)
-            ab_enc = tf.reduce_sum(ab_emb * self._answer_encoding, 1)
-            ab_ans = tf.sub(ab_enc, u_k)
-
-
-            ac_emb = tf.nn.embedding_lookup(self.B, answerC)
-            ac_enc = tf.reduce_sum(ac_emb * self._answer_encoding, 1)
-            ac_ans =  tf.sub(ac_enc, u_k)
-
-            Euclidean = True
-
-            if Euclidean:
-                aa_ans = tf.reduce_sum(tf.square(aa_ans), 1)
-                aa_ans = tf.reshape(aa_ans, [-1, 1])
-                ab_ans =   tf.reduce_sum(tf.square(ab_ans), 1)
-                ab_ans = tf.reshape(ab_ans, [-1, 1])
-                ac_ans =  tf.reduce_sum(tf.square(ac_ans), 1)
-                ac_ans = tf.reshape(ac_ans, [-1, 1])
-
-            print('ac_ans', ac_ans)
-            ans_3 = tf.concat(1, [aa_ans, ab_ans, ac_ans])
-            print('ans_3', ans_3)
-            print('self.W', self.W)
-            if Euclidean:
-                return ans_3
-            return tf.matmul(ans_3, self.W)
 
     def save_model(self, location):
         saver = tf.train.Saver()
@@ -326,7 +304,7 @@ class MemN2N(object):
         Returns:
             loss: floating-point number, the loss computed for the batch
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._labels:labels}
         loss, loss_op_summary, _, _, loss_ema = self._sess.run([self.loss_op, self.loss_op_summary, self.train_op, self.update_loss_ema, self.loss_ema_op], feed_dict=feed_dict)
         return loss, loss_op_summary, loss_ema
 
@@ -373,7 +351,7 @@ class MemN2N(object):
         return self._sess.run(self.predict_proba_op, feed_dict=feed_dict)
 
     def get_val_acc_summary(self, stories, queries, answers, labels):
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._val_labels: labels}
         return self._sess.run([self.val_acc_op, self.val_acc_summary], feed_dict=feed_dict)
 
     def predict_log_proba(self, stories, queries, answers):
