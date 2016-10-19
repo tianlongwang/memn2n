@@ -9,8 +9,6 @@ import tensorflow as tf
 import numpy as np
 from six.moves import range
 
-from ipdb import set_trace
-
 def position_encoding(sentence_size, embedding_size):
     """
     Position Encoding described in section 4.1 [1]
@@ -130,7 +128,7 @@ class MemN2N(object):
 
 
         # cross entropy
-        logits = self._inference(self._stories, self._queries, self._answerA, self._answerB, self._answerC) # (batch_size, label_size)
+        logits = self._inference(self._stories, self._queries, self._answers) # (batch_size, label_size)
         cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits, tf.cast(self._labels, tf.float32), name="cross_entropy")
 
         cross_entropy_sum = tf.reduce_sum(cross_entropy, name="cross_entropy_sum")
@@ -197,9 +195,7 @@ class MemN2N(object):
     def _build_inputs(self):
         self._stories = tf.placeholder(tf.int32, [None, self._memory_size, self._sentence_size], name="stories")
         self._queries = tf.placeholder(tf.int32, [None, self._sentence_size], name="queries")
-        self._answerA = tf.placeholder(tf.int32, [None,  self._answer_size], name="answerA")
-        self._answerB = tf.placeholder(tf.int32, [None,  self._answer_size], name="answerB")
-        self._answerC = tf.placeholder(tf.int32, [None,  self._answer_size], name="answerC")
+        self._answers = tf.placeholder(tf.int32, [None, self._label_size,  self._answer_size], name="answers")
         self._labels = tf.placeholder(tf.int32, [None, self._label_size], name="labels")
         self._val_labels = tf.placeholder(tf.int32, [None], name="val_labels")#TODO: valuation output as index, not as one hot
 
@@ -228,7 +224,7 @@ class MemN2N(object):
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.W))
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.H))
 
-    def _inference(self, stories, queries, answerA, answerB, answerC, Euclidean=True):
+    def _inference(self, stories, queries, answers):
         with tf.variable_scope(self._name + str(2)):
             q_emb = tf.nn.embedding_lookup(self.B, queries)
             print('q_emb', q_emb)
@@ -308,7 +304,7 @@ class MemN2N(object):
         acc_op = tf.reduce_mean(tf.cast(corr_pred, tf.float32))
         return acc_op
 
-    def batch_fit(self, stories, queries, answerA, answerB, answerC, labels):
+    def batch_fit(self, stories, queries, answers, labels):
         """Runs the training algorithm over the passed batch
 
         Args:
@@ -319,11 +315,11 @@ class MemN2N(object):
         Returns:
             loss: floating-point number, the loss computed for the batch
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answerA: answerA, self._answerB:answerB, self._answerC:answerC, self._labels:labels}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
         loss, loss_op_summary, _, _, loss_ema = self._sess.run([self.loss_op, self.loss_op_summary, self.train_op, self.update_loss_ema, self.loss_ema_op], feed_dict=feed_dict)
         return loss, loss_op_summary, loss_ema
 
-    def predict(self, stories, queries, answerA, answerB, answerC):
+    def predict(self, stories, queries, answers):
         """Predicts answers as one-hot encoding.
 
         Args:
@@ -333,10 +329,10 @@ class MemN2N(object):
         Returns:
             answers: Tensor (None, vocab_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answerA:answerA, self._answerB: answerB, self._answerC: answerC}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
         return self._sess.run(self.predict_op, feed_dict=feed_dict)
 
-    def predict_test(self, stories, queries, answerA, answerB, answerC):
+    def predict_test(self, stories, queries, answers):
         """Predicts answers as one-hot encoding.
 
         Args:
@@ -346,13 +342,13 @@ class MemN2N(object):
         Returns:
             answers, probabilities per hop: Tensor (None, vocab_size), Tensor (None, hops, memory_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answerA:answerA, self._answerB: answerB, self._answerC: answerC}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
         ops = [self.predict_op]
         ops.extend(self.probs_hops)
 
         return self._sess.run(ops, feed_dict=feed_dict)
 
-    def predict_proba(self, stories, queries, answerA, answerB, answerC):
+    def predict_proba(self, stories, queries, answers):
         """Predicts probabilities of answers.
 
         Args:
@@ -362,14 +358,14 @@ class MemN2N(object):
         Returns:
             answers: Tensor (None, vocab_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answerA:answerA, self._answerB: answerB, self._answerC: answerC}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
         return self._sess.run(self.predict_proba_op, feed_dict=feed_dict)
 
-    def get_val_acc_summary(self, stories, queries, answerA, answerB, answerC, labels):
-        feed_dict = {self._stories: stories, self._queries: queries, self._answerA: answerA, self._answerB:answerB, self._answerC: answerC, self._val_labels: labels}
+    def get_val_acc_summary(self, stories, queries, answers, labels):
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
         return self._sess.run([self.val_acc_op, self.val_acc_summary], feed_dict=feed_dict)
 
-    def predict_log_proba(self, stories, queries, answerA, answerB, answerC):
+    def predict_log_proba(self, stories, queries, answers):
         """Predicts log probabilities of answers.
 
         Args:
@@ -378,5 +374,5 @@ class MemN2N(object):
         Returns:
             answers: Tensor (None, vocab_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answerA: answerA, self._answerB:answerB, self._answerC: answerC, self._val_labels: labels}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
         return self._sess.run(self.predict_log_proba_op, feed_dict=feed_dict)

@@ -9,8 +9,6 @@ from memn2n.mc_memn2n import MemN2N
 from itertools import chain
 from six.moves import range
 
-import ipdb
-
 
 import os
 import tensorflow as tf
@@ -75,10 +73,10 @@ print("Answer length", answer_size)
 print("Label size", label_size)
 
 # train/validation/test sets
-S, Q, AA,AB,AC, L = vectorize_data(train, word_idx, sentence_size, memory_size, answer_size)
-trainS, valS, trainQ, valQ, trainAA, valAA,trainAB, valAB,trainAC, valAC, trainL, valL = cross_validation.train_test_split(S, Q, AA,AB,AC, L, test_size=.2, random_state=FLAGS.random_state)
+S, Q, A, L = vectorize_data(train, word_idx, sentence_size, memory_size, answer_size)
+trainS, valS, trainQ, valQ, trainA, valA, trainL, valL = cross_validation.train_test_split(S, Q, A, L, test_size=.2, random_state=FLAGS.random_state)
 #trainS,trainQ,trainAA,trainAB,trainAC,trainL = perturb(trainS,trainQ,trainAA,trainAB,trainAC,trainL)
-testS, testQ, testAA, testAB, testAC, testL= vectorize_data(test, word_idx, sentence_size, memory_size, answer_size)
+testS, testQ, testA, testL= vectorize_data(test, word_idx, sentence_size, memory_size, answer_size)
 
 #print(testS[0])
 
@@ -115,11 +113,9 @@ with tf.Session() as sess:
             end = start + batch_size
             s = trainS[start:end]
             q = trainQ[start:end]
-            aa = trainAA[start:end]
-            ab = trainAB[start:end]
-            ac = trainAC[start:end]
+            a = trainA[start:end]
             l = trainL[start:end]
-            cost_t, cost_summary, cost_ema = model.batch_fit(s, q, aa, ab, ac, l)
+            cost_t, cost_summary, cost_ema = model.batch_fit(s, q, a, l)
             total_cost += cost_t
 
             # writer.add_summary(cost_summary, t*n_train+start)
@@ -131,10 +127,8 @@ with tf.Session() as sess:
                 end = start + batch_size
                 s = trainS[start:end]
                 q = trainQ[start:end]
-                aa = trainAA[start:end]
-                ab = trainAB[start:end]
-                ac = trainAC[start:end]
-                pred = model.predict(s, q, aa, ab, ac)
+                a = trainA[start:end]
+                pred = model.predict(s, q, a)
                 train_preds += list(pred)
 
 #             val_preds = model.predict(valS, valQ)
@@ -144,7 +138,7 @@ with tf.Session() as sess:
             writer.add_summary(tcs, t)
 #             val_acc = metrics.accuracy_score(val_preds, val_labels)
 
-            val_acc, val_acc_summary = model.get_val_acc_summary(valS, valQ, valAA, valAB, valAC, val_labels)
+            val_acc, val_acc_summary = model.get_val_acc_summary(valS, valQ, valA, val_labels)
             writer.add_summary(val_acc_summary, t)
 
             print('-----------------------')
@@ -154,6 +148,6 @@ with tf.Session() as sess:
             print('Validation Accuracy:', val_acc)
             print('-----------------------')
 
-            test_preds = model.predict(testS, testQ, testAA, testAB, testAC)
+            test_preds = model.predict(testS, testQ, testA)
             test_acc = metrics.accuracy_score(test_preds, test_labels)
             print("Testing Accuracy:", test_acc)

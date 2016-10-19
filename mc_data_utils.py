@@ -12,21 +12,21 @@ def load_task(data_dir, task_id):
     Returns a tuple containing the training and testing data for the task.
     '''
     assert task_id in [1,2]
-    task_id= 1
-    data_dir = './data/readworksAll/'
-    train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
-    test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
-    #data_dir = './data/readworksTrainTest2/'
-    #train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
-    #fns = ['readworks_grade1.test.0.1.json','readworks_grade2.test.0.1.json','readworks_grade2.dev.0.1.json']
-    #test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
-    #train_data = []
-    #for fn in fns:
-    #    fn_path = os.path.join(data_dir, fn)
-    #    td = json_get_data(fn_path)
-    #    train_data.extend(td)
+    #task_id= 1
+    #data_dir = './data/readworksAll/'
+    #train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
+    #test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
+    #train_data = json_get_data(train_file)
+    data_dir = './data/readworksTrainTest2/'
+    train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
+    fns = ['readworks_grade1.test.0.1.json','readworks_grade2.test.0.1.json','readworks_grade2.dev.0.1.json']
+    test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
+    train_data = []
+    for fn in fns:
+        fn_path = os.path.join(data_dir, fn)
+        td = json_get_data(fn_path)
+        train_data.extend(td)
     test_data = json_get_data(test_file)
-    train_data = json_get_data(train_file)
     return train_data, test_data
 
 import json
@@ -117,11 +117,11 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
     """
     S = []
     Q = []
-    AA = []
-    AB = []
-    AC = []
+    AS = []
     L = []
-    label_num = 3
+    label_nums = set([len(dt[2]) for dt in data])
+    assert(len(label_sums) == 1)
+    label_num = list(label_nums)[0]
     for story, query, answer, label in data:
         lq = max(0, sentence_size - len(query))
         q = [word_idx[w] for w in query] + [0] * lq
@@ -157,16 +157,15 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
 
         S.append(ss)
         Q.append(q)
-        AA.append(sa[0])
-        AB.append(sa[1])
-        AC.append(sa[2])
+        AS.append(sa)
         L.append(lb)
     Q = pad_sequences(Q, sentence_size)
 
-    return np.array(S), np.array(Q), np.array(AA),np.array(AB),np.array(AC), np.array(L)
+    return np.array(S), np.array(Q), np.array(AS), np.array(L)
 
 
 def perturb(S,Q,AA,AB,AC,L):
+    """deprecated"""
     retS = S
     retQ = Q
     retAA = AA
