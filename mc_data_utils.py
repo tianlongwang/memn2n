@@ -12,19 +12,21 @@ def load_task(data_dir, task_id):
     Returns a tuple containing the training and testing data for the task.
     '''
     assert task_id in [1,2]
-    #data_dir = './data/readworksAll/'
-    #train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
-    #test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
-    data_dir = './data/readworksTrainTest2/'
-    train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
-    fns = ['readworks_grade1.test.0.1.json','readworks_grade2.test.0.1.json','readworks_grade2.dev.0.1.json']
-    test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
-    train_data = []
-    for fn in fns:
-        fn_path = os.path.join(data_dir, fn)
-        td = json_get_data(fn_path)
-        train_data.extend(td)
+    task_id= 1
+    data_dir = './data/readworksAll/'
+    train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
+    test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
+    #data_dir = './data/readworksTrainTest2/'
+    #train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
+    #fns = ['readworks_grade1.test.0.1.json','readworks_grade2.test.0.1.json','readworks_grade2.dev.0.1.json']
+    #test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
+    #train_data = []
+    #for fn in fns:
+    #    fn_path = os.path.join(data_dir, fn)
+    #    td = json_get_data(fn_path)
+    #    train_data.extend(td)
     test_data = json_get_data(test_file)
+    train_data = json_get_data(train_file)
     return train_data, test_data
 
 import json
@@ -237,8 +239,8 @@ def load_glove(dim):
     return word2vec
 
 def get_embedding(vocab, dim=50, use_pickle=1):
-    if dim not in ['50','100','200','300']:
-        print("not using glove")
+    if dim not in [50,100,200,300]:
+        print("Not using glove")
         return np.random.standard_normal([len(vocab),dim])
     print('use pickle', use_pickle)
     fn = "data/glove/myembedding." + str(dim) + "d"+ '.pickle'

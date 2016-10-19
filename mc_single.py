@@ -16,14 +16,14 @@ import os
 import tensorflow as tf
 import numpy as np
 
-tf.flags.DEFINE_float("learning_rate", 0.005, "Learning rate for Adam Optimizer.")
+tf.flags.DEFINE_float("learning_rate", 0.01, "Learning rate for Adam Optimizer.")
 tf.flags.DEFINE_float("epsilon", 1e-8, "Epsilon value for Adam Optimizer.")
 tf.flags.DEFINE_float("regularization", 0.1, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
-tf.flags.DEFINE_integer("evaluation_interval", 10, "Evaluate and print results every x epochs")
-tf.flags.DEFINE_integer("batch_size", 128, "Batch size for training.")
-tf.flags.DEFINE_integer("hops", 5, "Number of hops in the Memory Network.")
-tf.flags.DEFINE_integer("epochs", 250, "Number of epochs to train for.")
+tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
+tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
+tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
+tf.flags.DEFINE_integer("epochs", 100, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
