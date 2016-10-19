@@ -9,7 +9,18 @@ import tensorflow as tf
 import numpy as np
 from six.moves import range
 
+
 def position_encoding(sentence_size, embedding_size):
+    J = sentence_size
+    d = embedding_size
+    l = np.zeros([d,J], dtype=np.float32)
+    for k in range(1,d+1):
+        for j in range(1, J+1):
+            l[k-1,j-1] = (1 - j / float(J)) - (k/float(d))*(1 - 2 * j / float(J))
+    return np.transpose(l)
+
+
+def original_position_encoding(sentence_size, embedding_size):
     """
     Position Encoding described in section 4.1 [1]
     """
