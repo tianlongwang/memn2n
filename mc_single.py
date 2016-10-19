@@ -29,6 +29,7 @@ tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
 tf.flags.DEFINE_string("data_dir", "data/readworksAll/", "Directory containing bAbI tasks")
+tf.flags.DEFINE_string("cache_embedding", 1, "Use embedding cache. If new data from previous one, do not use")
 FLAGS = tf.flags.FLAGS
 
 def get_log_dir_name():
@@ -55,7 +56,7 @@ vocab = get_vocab(data)
 word_idx = dict((c, i ) for i, c in enumerate(vocab))
 
 
-glove_embedding = get_embedding(vocab, FLAGS.embedding_size)
+glove_embedding = get_embedding(vocab, FLAGS.embedding_size, FLAGS.cache_embedding)
 
 
 
