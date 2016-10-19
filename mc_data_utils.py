@@ -237,6 +237,9 @@ def load_glove(dim):
     return word2vec
 
 def get_embedding(vocab, dim=50, use_pickle=1):
+    if dim not in ['50','100','200','300']:
+        print("not using glove")
+        return np.random.standard_normal([len(vocab),dim])
     print('use pickle', use_pickle)
     fn = "data/glove/myembedding." + str(dim) + "d"+ '.pickle'
     if os.path.exists(fn) and os.stat(fn).st_size > 0 and use_pickle == 1:
