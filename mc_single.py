@@ -23,12 +23,13 @@ tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
 tf.flags.DEFINE_integer("evaluation_interval", 10, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 128, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 5, "Number of hops in the Memory Network.")
-tf.flags.DEFINE_integer("epochs", 100, "Number of epochs to train for.")
+tf.flags.DEFINE_integer("epochs", 250, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
 tf.flags.DEFINE_string("data_dir", "data/readworksAll/", "Directory containing bAbI tasks")
+tf.flags.DEFINE_string("cache_embedding", 1, "Use embedding cache. If new data from previous one, do not use")
 FLAGS = tf.flags.FLAGS
 
 def get_log_dir_name():
@@ -55,7 +56,7 @@ vocab = get_vocab(data)
 word_idx = dict((c, i ) for i, c in enumerate(vocab))
 
 
-glove_embedding = get_embedding(vocab, FLAGS.embedding_size)
+glove_embedding = get_embedding(vocab, FLAGS.embedding_size, FLAGS.cache_embedding)
 
 
 
@@ -153,6 +154,6 @@ with tf.Session() as sess:
             print('Validation Accuracy:', val_acc)
             print('-----------------------')
 
-    test_preds = model.predict(testS, testQ, testAA, testAB, testAC)
-    test_acc = metrics.accuracy_score(test_preds, test_labels)
-    print("Testing Accuracy:", test_acc)
+            test_preds = model.predict(testS, testQ, testAA, testAB, testAC)
+            test_acc = metrics.accuracy_score(test_preds, test_labels)
+            print("Testing Accuracy:", test_acc)

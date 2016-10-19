@@ -6,7 +6,7 @@ data/glove/
 
 /.DS_Store
 /.ipynb_checkpoints/
-/logs/
+logs/*
 /output*
 
 /weights/
