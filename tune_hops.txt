@@ -1,2 +1,328 @@
 , 3, ,
 Using TensorFlow backend.
+Started Task: 1
+got train
+Longest sentence length 91
+Longest story length 21
+Answer length 33
+Label size 3
+Training set shape (338, 21, 91)
+Training Size 338
+Validation Size 85
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 91, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(91, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 50) dtype=float32>)
+('aa_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 33, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(33, 50) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 50) dtype=float32>)
+('ac_ans', <tf.Tensor 'MemN2N2/Reshape_2:0' shape=(?, 1) dtype=float32>)
+('ans_3', <tf.Tensor 'MemN2N2/concat:0' shape=(?, 3) dtype=float32>)
+('self.W', <tensorflow.python.ops.variables.Variable object at 0x7f41780ae590>)
+-----------------------
+Epoch 10
+Total Cost: 17703.0444336
+Training Accuracy: 0.988165680473
+Validation Accuracy: 0.458824
+-----------------------
+-----------------------
+Epoch 20
+Total Cost: 9764.56176758
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.470588
+-----------------------
+-----------------------
+Epoch 30
+Total Cost: 6336.41064453
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.4
+-----------------------
+-----------------------
+Epoch 40
+Total Cost: 3917.62573242
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.435294
+-----------------------
+-----------------------
+Epoch 50
+Total Cost: 2811.03924561
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.411765
+-----------------------
+-----------------------
+Epoch 60
+Total Cost: 2039.89477539
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.411765
+-----------------------
+-----------------------
+Epoch 70
+Total Cost: 1498.92807007
+Training Accuracy: 0.985207100592
+Validation Accuracy: 0.4
+-----------------------
+-----------------------
+Epoch 80
+Total Cost: 1111.22872925
+Training Accuracy: 0.991124260355
+Validation Accuracy: 0.435294
+-----------------------
+-----------------------
+Epoch 90
+Total Cost: 762.02671814
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.447059
+-----------------------
+-----------------------
+Epoch 100
+Total Cost: 518.807739258
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.482353
+-----------------------
+Testing Accuracy: 0.486153846154
+, 5, ,
+Using TensorFlow backend.
+Started Task: 1
+got train
+Longest sentence length 91
+Longest story length 21
+Answer length 33
+Label size 3
+Training set shape (338, 21, 91)
+Training Size 338
+Validation Size 85
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 91, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(91, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 50) dtype=float32>)
+('aa_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 33, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(33, 50) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 50) dtype=float32>)
+('ac_ans', <tf.Tensor 'MemN2N2/Reshape_2:0' shape=(?, 1) dtype=float32>)
+('ans_3', <tf.Tensor 'MemN2N2/concat:0' shape=(?, 3) dtype=float32>)
+('self.W', <tensorflow.python.ops.variables.Variable object at 0x7fc7692f1590>)
+-----------------------
+Epoch 10
+Total Cost: 16956.3310547
+Training Accuracy: 0.988165680473
+Validation Accuracy: 0.423529
+-----------------------
+-----------------------
+Epoch 20
+Total Cost: 10013.2299805
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.447059
+-----------------------
+-----------------------
+Epoch 30
+Total Cost: 6722.63574219
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.411765
+-----------------------
+-----------------------
+Epoch 40
+Total Cost: 4575.40625
+Training Accuracy: 0.985207100592
+Validation Accuracy: 0.411765
+-----------------------
+-----------------------
+Epoch 50
+Total Cost: 3217.07421875
+Training Accuracy: 0.991124260355
+Validation Accuracy: 0.458824
+-----------------------
+-----------------------
+Epoch 60
+Total Cost: 2280.58056641
+Training Accuracy: 0.988165680473
+Validation Accuracy: 0.494118
+-----------------------
+-----------------------
+Epoch 70
+Total Cost: 1737.02203369
+Training Accuracy: 0.991124260355
+Validation Accuracy: 0.458824
+-----------------------
+-----------------------
+Epoch 80
+Total Cost: 1272.3727417
+Training Accuracy: 0.988165680473
+Validation Accuracy: 0.505882
+-----------------------
+-----------------------
+Epoch 90
+Total Cost: 941.950683594
+Training Accuracy: 0.991124260355
+Validation Accuracy: 0.517647
+-----------------------
+-----------------------
+Epoch 100
+Total Cost: 733.84552002
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.458824
+-----------------------
+Testing Accuracy: 0.455384615385
+, 7, ,
+Using TensorFlow backend.
+Started Task: 1
+got train
+Longest sentence length 91
+Longest story length 21
+Answer length 33
+Label size 3
+Training set shape (338, 21, 91)
+Training Size 338
+Validation Size 85
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 91, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(91, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 50) dtype=float32>)
+('aa_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 33, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(33, 50) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 50) dtype=float32>)
+('ac_ans', <tf.Tensor 'MemN2N2/Reshape_2:0' shape=(?, 1) dtype=float32>)
+('ans_3', <tf.Tensor 'MemN2N2/concat:0' shape=(?, 3) dtype=float32>)
+('self.W', <tensorflow.python.ops.variables.Variable object at 0x7f34b80d1590>)
+-----------------------
+Epoch 10
+Total Cost: 17541.6547852
+Training Accuracy: 0.988165680473
+Validation Accuracy: 0.458824
+-----------------------
+-----------------------
+Epoch 20
+Total Cost: 9672.296875
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.435294
+-----------------------
+-----------------------
+Epoch 30
+Total Cost: 5876.58093262
+Training Accuracy: 0.985207100592
+Validation Accuracy: 0.423529
+-----------------------
+-----------------------
+Epoch 40
+Total Cost: 3804.71472168
+Training Accuracy: 1.0
+Validation Accuracy: 0.364706
+-----------------------
+-----------------------
+Epoch 50
+Total Cost: 2691.31628418
+Training Accuracy: 1.0
+Validation Accuracy: 0.411765
+-----------------------
+-----------------------
+Epoch 60
+Total Cost: 1752.49633789
+Training Accuracy: 1.0
+Validation Accuracy: 0.411765
+-----------------------
+-----------------------
+Epoch 70
+Total Cost: 1228.58190918
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.447059
+-----------------------
+-----------------------
+Epoch 80
+Total Cost: 905.574523926
+Training Accuracy: 0.994082840237
+Validation Accuracy: 0.388235
+-----------------------
+-----------------------
+Epoch 90
+Total Cost: 636.536560059
+Training Accuracy: 1.0
+Validation Accuracy: 0.364706
+-----------------------
+-----------------------
+Epoch 100
+Total Cost: 384.798789978
+Training Accuracy: 1.0
+Validation Accuracy: 0.411765
+-----------------------
+Testing Accuracy: 0.44
+, 9, ,
+Using TensorFlow backend.
+Started Task: 1
+got train
+Longest sentence length 91
+Longest story length 21
+Answer length 33
+Label size 3
+Training set shape (338, 21, 91)
+Training Size 338
+Validation Size 85
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 91, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(91, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 50) dtype=float32>)
+('aa_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 33, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(33, 50) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 50) dtype=float32>)
+('ac_ans', <tf.Tensor 'MemN2N2/Reshape_2:0' shape=(?, 1) dtype=float32>)
+('ans_3', <tf.Tensor 'MemN2N2/concat:0' shape=(?, 3) dtype=float32>)
+('self.W', <tensorflow.python.ops.variables.Variable object at 0x7f821d8f1590>)
+-----------------------
+Epoch 10
+Total Cost: 17248.7148438
+Training Accuracy: 0.988165680473
+Validation Accuracy: 0.341176
+-----------------------
+-----------------------
+Epoch 20
+Total Cost: 9135.95166016
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.364706
+-----------------------
+-----------------------
+Epoch 30
+Total Cost: 5297.80688477
+Training Accuracy: 0.991124260355
+Validation Accuracy: 0.352941
+-----------------------
+-----------------------
+Epoch 40
+Total Cost: 3586.02380371
+Training Accuracy: 0.997041420118
+Validation Accuracy: 0.341176
+-----------------------
+-----------------------
+Epoch 50
+Total Cost: 2323.25531006
+Training Accuracy: 1.0
+Validation Accuracy: 0.352941
+-----------------------
+-----------------------
+Epoch 60
+Total Cost: 1534.74285889
+Training Accuracy: 1.0
+Validation Accuracy: 0.447059
+-----------------------
+-----------------------
+Epoch 70
+Total Cost: 938.396820068
+Training Accuracy: 1.0
+Validation Accuracy: 0.388235
+-----------------------
+-----------------------
+Epoch 80
+Total Cost: 607.611312866
+Training Accuracy: 0.988165680473
+Validation Accuracy: 0.352941
+-----------------------
+-----------------------
+Epoch 90
+Total Cost: 479.188293457
+Training Accuracy: 1.0
+Validation Accuracy: 0.388235
+-----------------------
+-----------------------
+Epoch 100
+Total Cost: 337.753631592
+Training Accuracy: 1.0
+Validation Accuracy: 0.364706
+-----------------------
+Testing Accuracy: 0.446153846154
