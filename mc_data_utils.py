@@ -17,16 +17,28 @@ def load_task(data_dir, task_id):
     #train_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
     #test_file = os.path.join(data_dir, 'readworks_grade{}.0.1.json'.format(task_id))
     #train_data = json_get_data(train_file)
-    data_dir = './data/readworksTrainTest2/'
-    train_file = os.path.join(data_dir, 'readworks_grade{}.test.0.1.json'.format(task_id))
-    fns = ['readworks_grade1.test.0.1.json','readworks_grade2.test.0.1.json','readworks_grade2.dev.0.1.json']
-    test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
+    data_dir = './data/traintest/train'
     train_data = []
-    for fn in fns:
+    for fn in os.listdir(data_dir):
         fn_path = os.path.join(data_dir, fn)
+        print('Load trainng data from '+fn_path)
         td = json_get_data(fn_path)
         train_data.extend(td)
-    test_data = json_get_data(test_file)
+    data_dir = './data/traintest/test'
+    test_data = []
+    for fn in os.listdir(data_dir):
+        fn_path = os.path.join(data_dir, fn)
+        print('Load testing data from '+fn_path)
+        td = json_get_data(fn_path)
+        test_data.extend(td)
+    #fns = ['readworks_grade1.test.0.1.json','readworks_grade2.test.0.1.json','readworks_grade2.dev.0.1.json']
+    #test_file = os.path.join(data_dir, 'readworks_grade{}.dev.0.1.json'.format(task_id))
+    #train_data = []
+    #for fn in fns:
+    #    fn_path = os.path.join(data_dir, fn)
+    #    td = json_get_data(fn_path)
+    #    train_data.extend(td)
+    #test_data = json_get_data(test_file)
     return train_data, test_data
 
 import json
@@ -51,7 +63,11 @@ def para_to_tokens(para):
     return [sent_to_tokens(sent) for sent in my_sent_tokenize(para)]
 
 
-def json_get_data(fname):
+def json_get_data(fname, label_num = 4):
+    lbs = 'ABCDE'
+    nums = '01234'
+    dadict = dict(zip(lbs[:label_num], ['']*label_num))
+    dldict = dict(zip(lbs[:label_num], nums[:label_num]))
     with open(fname) as f:
       lines = f.read()
     jlines = json.loads(lines)
@@ -64,14 +80,14 @@ def json_get_data(fname):
       s_tokens = para_to_tokens(exjson['story']['text'])
       for qjson in exjson['questions']:
         q_tokens = sent_to_tokens(qjson['text'])
-        a_dict = {'A':'','B':'','C':''}
+        a_dict = dadict.copy()
         for ansjson in qjson['answerChoices']:
           a_dict[ansjson['label']] = ansjson['text']
         a_tokens = []
-        for lab in 'ABC':
+        for lab in list(lbs[:label_num]):
           a_tokens.append(sent_to_tokens(a_dict[lab]))
-        l_dict = {'A':0,'B':1,'C':2}
-        if qjson['correctAnswer'] not in ['A','B','C']:
+        l_dict = dldict.copy()
+        if qjson['correctAnswer'] not in list(lbs[:label_num]):
             print("CorrectAnswer not in 'ABC'")
             print(qjson)
             continue
