@@ -9,6 +9,8 @@ import tensorflow as tf
 import numpy as np
 from six.moves import range
 
+from tensorflow.python.ops import rnn, rnn_cell
+
 def position_encoding(sentence_size, embedding_size):
     J = sentence_size
     d = embedding_size
@@ -126,6 +128,8 @@ class MemN2N(object):
         self._name = name
         self._l2 = l2
 
+        self._rnn_hidden = 50
+
         self._glove_tf = tf.constant(self._glove_embedding)
 
         self._init = tf.random_normal_initializer(stddev=0.1)
@@ -237,7 +241,16 @@ class MemN2N(object):
             q_emb = tf.nn.embedding_lookup(self.B, queries)
             print('q_emb', q_emb)
             print('self._encoding', self._encoding)
-            u_0 = tf.reduce_sum(q_emb * self._encoding, 1)
+            #u_0 = tf.reduce_sum(q_emb * self._encoding, 1)
+
+            q_step = tf.transpose(q_emb, [1,0,2])
+            q_step = tf.reshape(q_step, [-1, self._embedding_size])
+            q_step = tf.split(0,self._sentence_size , q_step)
+            gru_cell = rnn_cell.GRUCell(self._rnn_hidden)
+            outputs, states = rnn.rnn(gru_cell, q_step, dtype=tf.float32)
+            print('states', states)
+            u_0 = states
+
             print('u_0', u_0)
             u = [u_0]
             self.probs_hops = []
