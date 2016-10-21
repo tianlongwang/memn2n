@@ -127,6 +127,7 @@ class MemN2N(object):
         self._opt = tf.train.AdamOptimizer(learning_rate=lr, epsilon=epsilon)
         self._name = name
         self._l2 = l2
+        self._linear = True
 
         self._rnn_hidden = 50
 
@@ -227,6 +228,8 @@ class MemN2N(object):
             self.TC = tf.Variable(self._init([self._memory_size, self._embedding_size]), name='TC')
 
             self.H = tf.Variable(self._init([self._embedding_size, self._embedding_size]), name="H")
+            self.in_linear_start = tf.Variable(True, name='in_linear', trainable=False)
+            self.max_val_acc = tf.Variable(0.0, name='val_acc_variable', trainable=False)
         self._nil_vars = set([self.A.name, self.B.name, self.C.name])
 
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.A))
@@ -239,6 +242,7 @@ class MemN2N(object):
     def _inference(self, stories, queries, answers):
         with tf.variable_scope(self._name + str(2)):
             q_emb = tf.nn.embedding_lookup(self.B, queries)
+            q_emb = tf.nn.dropout(q_emb, 0.2)
             print('q_emb', q_emb)
             print('self._encoding', self._encoding)
             u_0 = tf.reduce_sum(q_emb * self._encoding, 1)
@@ -256,6 +260,7 @@ class MemN2N(object):
             self.probs_hops = []
             for _ in range(self._hops):
                 m_emb = tf.nn.embedding_lookup(self.A, stories)
+                m_emd = tf.nn.dropout(m_emb, 0.2)
                 m = tf.reduce_sum(m_emb * self._encoding, 2) + self.TA
                 # hack to get around no reduce_dot
                 u_temp = tf.transpose(tf.expand_dims(u[-1], -1), [0, 2, 1])
@@ -275,7 +280,7 @@ class MemN2N(object):
 
                 u_k = tf.matmul(u[-1], self.H) + o_k
                 #TRY DROPOUT
-                u_k = tf.nn.dropout(u_k, 0.5)
+                u_k = tf.nn.dropout(u_k, 0.2)
                 # nonlinearity
                 if self._nonlin:
                     u_k = self._nonlin(u_k)
@@ -283,6 +288,7 @@ class MemN2N(object):
                 u.append(u_k)
 
             as_emb = tf.nn.embedding_lookup(self.B, answers)
+            as_emb = tf.nn.dropout(as_emb, 0.2)
             print('as_emb', as_emb)
             print('self._answer_encoding', self._answer_encoding)
             as_enc = tf.reduce_sum(as_emb * self._answer_encoding, 2)
@@ -306,6 +312,7 @@ class MemN2N(object):
     def _get_val_acc(self, pred_op, val_labels):
         corr_pred = tf.equal(tf.cast(pred_op, tf.int32), val_labels)
         acc_op = tf.reduce_mean(tf.cast(corr_pred, tf.float32))
+        self.val_acc
         return acc_op
 
     def batch_fit(self, stories, queries, answers, labels):
