@@ -312,7 +312,6 @@ class MemN2N(object):
     def _get_val_acc(self, pred_op, val_labels):
         corr_pred = tf.equal(tf.cast(pred_op, tf.int32), val_labels)
         acc_op = tf.reduce_mean(tf.cast(corr_pred, tf.float32))
-        self.val_acc
         return acc_op
 
     def batch_fit(self, stories, queries, answers, labels):
