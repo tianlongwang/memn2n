@@ -16,7 +16,7 @@ import numpy as np
 
 tf.flags.DEFINE_float("learning_rate", 0.01, "Learning rate for Adam Optimizer.")
 tf.flags.DEFINE_float("epsilon", 1e-8, "Epsilon value for Adam Optimizer.")
-tf.flags.DEFINE_float("regularization", 0.1, "Regularization.")
+tf.flags.DEFINE_float("regularization", 0.2, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
 tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")

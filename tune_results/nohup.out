@@ -1,0 +1,47 @@
+, 5, , 30
+Using TensorFlow backend.
+/mnt/data1/Develop/MemN2N/My/memn2n/mc_data_utils.py:172: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  lb[label] = 1
+Started Task: 1
+Load trainng data from ./data/traintest/train/mc160.train.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.test.0.1.json
+CorrectAnswer not in 'ABC'
+{u'text': u'What is compared and contrasted in the passage? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'New York City and Chicago', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'international camps and sports camps', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather in different parts of the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'The climate of Ghana is warm all year. The climate of New York City is sometimes cold. What can be concluded from this information? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'All parts of the world have the same climate.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Different parts of the world can have different climates.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'The climate of New York City and the climate of England are alike.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'Why might Ilsa like to eat ice cream in the summer? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'Ilsa likes eating something cold when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Ilsa likes eating something warm when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'Ilsa likes eating something hot when the weather is cold.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'What is a main idea of the story? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'eating stew in Senegal', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'visiting Argentina in the summer', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather around the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'Read these sentences: "Ilsa was excited to meet her camp counselor Itzel when she arrived for her first day at The International Camp in Forest Hills, Queens, in New York City. Itzel asked the campers to sit in a circle, introduce themselves, and share which countries their families were from." What does the word "international" mean? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'having to do with more than one country', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'having to do with being outdoors', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'having to do with playing baseball or soccer', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+Load trainng data from ./data/traintest/train/readworks_grade2.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade3.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.test.0.1.json
+Load trainng data from ./data/traintest/train/readworks_gradek.0.1.json
+Load trainng data from ./data/traintest/train/mc160.dev.0.1.json
+Load testing data from ./data/traintest/test/readworks_grade1.dev.0.1.json
+('use pickle', 1)
+Longest sentence length 128
+Longest story length 171
+Answer length 60
+Label size 4
+Training set shape (2129, 30, 128)
+Training Size 2129
+Validation Size 533
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 128, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(128, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 50) dtype=float32>)
+('as_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 4, 60, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(60, 50) dtype=float32>)
+('as_enc', <tf.Tensor 'MemN2N2/Stune_hops.sh: line 8: 12080 Terminated              python mc_single.py --hops $hop --memory_size $mems
+, 5, , 50
+Using TensorFlow backend.
+tune_hops.sh: line 8: 12163 Killed                  python mc_single.py --hops $hop --memory_size $mems
+, 5, , 70
+Using TensorFlow backend.
+/mnt/data1/Develop/MemN2N/My/memn2n/mc_data_utils.py:172: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  lb[label] = 1
+tune_hops.sh: line 8: 12211 Terminated              python mc_single.py --hops $hop --memory_size $mems

@@ -1,0 +1,232 @@
+128, 0.2, ,
+Using TensorFlow backend.
+/mnt/data1/Develop/MemN2N/My/memn2n/mc_data_utils.py:172: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  lb[label] = 1
+Started Task: 1
+Load trainng data from ./data/traintest/train/mc160.train.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.test.0.1.json
+CorrectAnswer not in 'ABC'
+{u'text': u'What is compared and contrasted in the passage? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'New York City and Chicago', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'international camps and sports camps', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather in different parts of the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'The climate of Ghana is warm all year. The climate of New York City is sometimes cold. What can be concluded from this information? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'All parts of the world have the same climate.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Different parts of the world can have different climates.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'The climate of New York City and the climate of England are alike.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'Why might Ilsa like to eat ice cream in the summer? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'Ilsa likes eating something cold when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Ilsa likes eating something warm when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'Ilsa likes eating something hot when the weather is cold.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'What is a main idea of the story? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'eating stew in Senegal', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'visiting Argentina in the summer', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather around the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'Read these sentences: "Ilsa was excited to meet her camp counselor Itzel when she arrived for her first day at The International Camp in Forest Hills, Queens, in New York City. Itzel asked the campers to sit in a circle, introduce themselves, and share which countries their families were from." What does the word "international" mean? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'having to do with more than one country', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'having to do with being outdoors', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'having to do with playing baseball or soccer', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+Load trainng data from ./data/traintest/train/readworks_grade2.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade3.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.test.0.1.json
+Load trainng data from ./data/traintest/train/readworks_gradek.0.1.json
+Load trainng data from ./data/traintest/train/mc160.dev.0.1.json
+Load testing data from ./data/traintest/test/readworks_grade1.dev.0.1.json
+('use pickle', 1)
+Longest sentence length 128
+Longest story length 171
+Answer length 60
+Label size 4
+Training set shape (2129, 100, 128)
+Training Size 2129
+Validation Size 533
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 128, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(128, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 50) dtype=float32>)
+('as_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 4, 60, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(60, 50) dtype=float32>)
+('as_enc', <tf.Tensor 'MemN2N2/Sum_13:0' shape=(?, 4, 50) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 50) dtype=float32>)
+('u_k_l', <tf.Tensor 'MemN2N2/Reshape:0' shape=(?, 4, 50) dtype=float32>)
+('as_ans', <tf.Tensor 'MemN2N2/Sub:0' shape=(?, 4, 50) dtype=float32>)
+('as_ans', <tf.Tensor 'MemN2N2/Sum_14:0' shape=(?, 4) dtype=float32>)
+('logits', <tf.Tensor 'MemN2N2/Sum_14:0' shape=(?, 4) dtype=float32>)
+-----------------------
+Epoch 1
+Total Cost: 619753.457031
+Training Accuracy: 0.401596993894
+Validation Accuracy: 0.356473
+-----------------------
+Testing Accuracy: 0.424615384615
+-----------------------
+Epoch 2
+Total Cost: 446816.789062
+Training Accuracy: 0.522310944105
+Validation Accuracy: 0.427767
+-----------------------
+Testing Accuracy: 0.424615384615
+-----------------------
+Epoch 3
+Total Cost: 316760.745117
+Training Accuracy: 0.626585251292
+Validation Accuracy: 0.450281
+-----------------------
+Testing Accuracy: 0.396923076923
+-----------------------
+Epoch 4
+Total Cost: 236879.868164
+Training Accuracy: 0.731798966651
+Validation Accuracy: 0.512195
+-----------------------
+Testing Accuracy: 0.406153846154
+-----------------------
+Epoch 5
+Total Cost: 182246.008789
+Training Accuracy: 0.79896665101
+Validation Accuracy: 0.549719
+-----------------------
+Testing Accuracy: 0.44
+-----------------------
+Epoch 6
+Total Cost: 139718.262695
+Training Accuracy: 0.84358853922
+Validation Accuracy: 0.553471
+-----------------------
+Testing Accuracy: 0.433846153846
+-----------------------
+Epoch 7
+Total Cost: 108393.036621
+Training Accuracy: 0.851103804603
+Validation Accuracy: 0.557223
+-----------------------
+Testing Accuracy: 0.436923076923
+-----------------------
+Epoch 8
+Total Cost: 86947.7055664
+Training Accuracy: 0.871301080319
+Validation Accuracy: 0.56848
+-----------------------
+Testing Accuracy: 0.446153846154
+-----------------------
+Epoch 9
+Total Cost: 72849.0734863
+Training Accuracy: 0.888210427431
+Validation Accuracy: 0.564728
+-----------------------
+Testing Accuracy: 0.461538461538
+-----------------------
+Epoch 10
+Total Cost: 63270.7631836
+Training Accuracy: 0.901831845937
+Validation Accuracy: 0.585366
+-----------------------
+Testing Accuracy: 0.470769230769
+-----------------------
+Epoch 11
+Total Cost: 54836.1813965
+Training Accuracy: 0.892437764209
+Validation Accuracy: 0.570356
+-----------------------
+Testing Accuracy: 0.458461538462
+-----------------------
+Epoch 12
+Total Cost: 50731.9555664
+Training Accuracy: 0.901831845937
+Validation Accuracy: 0.572233
+-----------------------
+Testing Accuracy: 0.409230769231
+-----------------------
+Epoch 13
+Total Cost: 45823.4077148
+Training Accuracy: 0.937999060592
+Validation Accuracy: 0.594747
+-----------------------
+Testing Accuracy: 0.44
+-----------------------
+Epoch 14
+Total Cost: 40814.4370117
+Training Accuracy: 0.919680601221
+Validation Accuracy: 0.574109
+-----------------------
+Testing Accuracy: 0.443076923077
+-----------------------
+Epoch 15
+Total Cost: 37329.9313965
+Training Accuracy: 0.933771723814
+Validation Accuracy: 0.600375
+-----------------------
+Testing Accuracy: 0.452307692308
+-----------------------
+Epoch 16
+Total Cost: 33640.3024902
+Training Accuracy: 0.930483795209
+Validation Accuracy: 0.594747
+-----------------------
+Testing Accuracy: 0.443076923077
+-----------------------
+Epoch 17
+Total Cost: 31795.8366699
+Training Accuracy: 0.895255988727
+Validation Accuracy: 0.575985
+-----------------------
+Testing Accuracy: 0.455384615385
+-----------------------
+Epoch 18
+Total Cost: 28987.0631104
+Training Accuracy: 0.888680131517
+Validation Accuracy: 0.570356
+-----------------------
+Testing Accuracy: 0.455384615385
+-----------------------
+Epoch 19
+Total Cost: 28046.5465088
+Training Accuracy: 0.806951620479
+Validation Accuracy: 0.499062
+-----------------------
+Testing Accuracy: 0.449230769231
+-----------------------
+Epoch 20
+Total Cost: 30313.3393555
+Training Accuracy: 0.951620479098
+Validation Accuracy: 0.60788
+-----------------------
+Testing Accuracy: 0.415384615385
+-----------------------
+Epoch 21
+Total Cost: 25447.4355469
+Training Accuracy: 0.938938468765
+Validation Accuracy: 0.589118
+----------tune.sh: line 13: 10776 Terminated              python mc_single.py --task $task --batch_size $db --regularization $l2
+256, 0.2, ,
+Using TensorFlow backend.
+/mnt/data1/Develop/MemN2N/My/memn2n/mc_data_utils.py:172: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  lb[label] = 1
+Started Task: 1
+Load trainng data from ./data/traintest/train/mc160.train.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.test.0.1.json
+CorrectAnswer not in 'ABC'
+{u'text': u'What is compared and contrasted in the passage? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'New York City and Chicago', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'international camps and sports camps', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather in different parts of the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'The climate of Ghana is warm all year. The climate of New York City is sometimes cold. What can be concluded from this information? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'All parts of the world have the same climate.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Different parts of the world can have different climates.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'The climate of New York City and the climate of England are alike.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'Why might Ilsa like to eat ice cream in the summer? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'Ilsa likes eating something cold when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Ilsa likes eating something warm when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'Ilsa likes eating something hot when the weather is cold.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'What is a main idea of the story? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'eating stew in Senegal', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'visiting Argentina in the summer', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather around the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABC'
+{u'text': u'Read these sentences: "Ilsa was excited to meet her camp counselor Itzel when she arrived for her first day at The International Camp in Forest Hills, Queens, in New York City. Itzel asked the campers to sit in a circle, introduce themselves, and share which countries their families were from." What does the word "international" mean? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'having to do with more than one country', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'having to do with being outdoors', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'having to do with playing baseball or soccer', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+Load trainng data from ./data/traintest/train/readworks_grade2.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade3.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.test.0.1.json
+Load trainng data from ./data/traintest/train/readworks_gradek.0.1.json
+Load trainng data from ./data/traintest/train/mc160.dev.0.1.json
+Load testing data from ./data/traintest/test/readworks_grade1.dev.0.1.json
+('use pickle', 1)
+Longest sentence length 128
+Longest story length 171
+Answer length 60
+Label size 4
+Training set shape (2129, 100, 128)
+Training Size 2129
+Validation Size 533
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 128, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(128, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 50) dtype=float32>)
+('as_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 4, 60, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(60, 50) dtype=float32>)
+('as_enc', <tf.Tensor 'MemN2N2/tune.sh: line 13: 11827 Terminated              python mc_single.py --task $task --batch_size $db --regularization $l2
+512, 0.2, ,
+Using TensorFlow backend.
+tune.sh: line 13: 11879 Terminated              python mc_single.py --task $task --batch_size $db --regularization $l2
