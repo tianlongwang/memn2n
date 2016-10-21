@@ -148,8 +148,8 @@ class MemN2N(object):
         cross_entropy_sum = tf.reduce_sum(cross_entropy, name="cross_entropy_sum")
 
         #hinge loss
-        hinge_loss = tf.contrib.losses.hinge_loss(logits, tf.cast(self._labels, tf.float32))
-        hinge_loss_sum = tf.reduce_sum(hinge_loss)
+        #hinge_loss = tf.contrib.losses.hinge_loss(logits, tf.cast(self._labels, tf.float32))
+        #hinge_loss_sum = tf.reduce_sum(hinge_loss)
 
 
         # loss op
@@ -274,6 +274,8 @@ class MemN2N(object):
                 o_k = tf.reduce_sum(c_temp * probs_temp, 2)
 
                 u_k = tf.matmul(u[-1], self.H) + o_k
+                #TRY DROPOUT
+                u_k = tf.nn.dropout(u_k, 0.5)
                 # nonlinearity
                 if self._nonlin:
                     u_k = self._nonlin(u_k)

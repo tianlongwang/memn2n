@@ -63,7 +63,7 @@ def para_to_tokens(para):
     return [sent_to_tokens(sent) for sent in my_sent_tokenize(para)]
 
 
-def json_get_data(fname, label_num = 4):
+def json_get_data(fname, label_num = 3):
     lbs = 'ABCDE'
     nums = '01234'
     dadict = dict(zip(lbs[:label_num], ['']*label_num))
@@ -169,7 +169,7 @@ def vectorize_data(data, word_idx, sentence_size, memory_size,answer_size):
             sa.append([word_idx[w] for w in sentence] + [0] * ls)
 
         lb = np.zeros(label_num)
-        lb[label] = 1
+        lb[int(label)] = 1
 
         S.append(ss)
         Q.append(q)
