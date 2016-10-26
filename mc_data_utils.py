@@ -105,6 +105,7 @@ def get_vocab(data):
         vocab = vocab.union(set(dp[1]))
         vocab = vocab.union(set(chain.from_iterable(dp[2])))
     ret.extend(sorted(list(vocab)))
+    print('Vocal Size', len(ret))
     return ret
 
 

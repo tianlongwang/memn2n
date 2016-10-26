@@ -213,6 +213,7 @@ class MemN2N(object):
         self._answers = tf.placeholder(tf.int32, [None, self._label_size,  self._answer_size], name="answers")
         self._labels = tf.placeholder(tf.int32, [None, self._label_size], name="labels")
         self._val_labels = tf.placeholder(tf.int32, [None], name="val_labels")#TODO: valuation output as index, not as one hot
+        self._linear_start= tf.placeholder(tf.bool,[None] , name="linear_start")
 
     def _build_vars(self):
         with tf.variable_scope(self._name + str(1)):
@@ -228,8 +229,6 @@ class MemN2N(object):
             self.TC = tf.Variable(self._init([self._memory_size, self._embedding_size]), name='TC')
 
             self.H = tf.Variable(self._init([self._embedding_size, self._embedding_size]), name="H")
-            self.in_linear_start = tf.Variable(True, name='in_linear', trainable=False)
-            self.max_val_acc = tf.Variable(0.0, name='val_acc_variable', trainable=False)
         self._nil_vars = set([self.A.name, self.B.name, self.C.name])
 
         tf.add_to_collection('reg_loss', tf.nn.l2_loss(self.A))
@@ -242,7 +241,7 @@ class MemN2N(object):
     def _inference(self, stories, queries, answers):
         with tf.variable_scope(self._name + str(2)):
             q_emb = tf.nn.embedding_lookup(self.B, queries)
-            q_emb = tf.nn.dropout(q_emb, 0.2)
+            #q_emb = tf.nn.dropout(q_emb, 0.2)
             print('q_emb', q_emb)
             print('self._encoding', self._encoding)
             u_0 = tf.reduce_sum(q_emb * self._encoding, 1)
@@ -260,14 +259,21 @@ class MemN2N(object):
             self.probs_hops = []
             for _ in range(self._hops):
                 m_emb = tf.nn.embedding_lookup(self.A, stories)
-                m_emd = tf.nn.dropout(m_emb, 0.2)
+                #m_emd = tf.nn.dropout(m_emb, 0.2)
                 m = tf.reduce_sum(m_emb * self._encoding, 2) + self.TA
                 # hack to get around no reduce_dot
                 u_temp = tf.transpose(tf.expand_dims(u[-1], -1), [0, 2, 1])
                 dotted = tf.reduce_sum(m * u_temp, 2)
 
                 # Calculate probabilities
-                probs = tf.nn.softmax(dotted)
+                #probs = tf.nn.softmax(dotted)
+                #probs = tf.cond(self._linear_start, lambda: tf.identity(dotted), lambda: tf.nn.softmax(dotted))
+                #print('self._linear_start', self._linear_start)
+                print('dotted', dotted)
+                sfm = tf.nn.softmax(dotted)
+                print('sfm', sfm)
+                probs = tf.select(self._linear_start, dotted, sfm )
+                print('probs', probs)
                 self.probs_hops.append(probs)
 
                 probs_temp = tf.transpose(tf.expand_dims(probs, -1), [0, 2, 1])
@@ -280,7 +286,7 @@ class MemN2N(object):
 
                 u_k = tf.matmul(u[-1], self.H) + o_k
                 #TRY DROPOUT
-                u_k = tf.nn.dropout(u_k, 0.2)
+                #u_k = tf.nn.dropout(u_k, 0.2)
                 # nonlinearity
                 if self._nonlin:
                     u_k = self._nonlin(u_k)
@@ -288,7 +294,7 @@ class MemN2N(object):
                 u.append(u_k)
 
             as_emb = tf.nn.embedding_lookup(self.B, answers)
-            as_emb = tf.nn.dropout(as_emb, 0.2)
+            #as_emb = tf.nn.dropout(as_emb, 0.2)
             print('as_emb', as_emb)
             print('self._answer_encoding', self._answer_encoding)
             as_enc = tf.reduce_sum(as_emb * self._answer_encoding, 2)
@@ -314,7 +320,7 @@ class MemN2N(object):
         acc_op = tf.reduce_mean(tf.cast(corr_pred, tf.float32))
         return acc_op
 
-    def batch_fit(self, stories, queries, answers, labels):
+    def batch_fit(self, stories, queries, answers, labels, linear_start):
         """Runs the training algorithm over the passed batch
 
         Args:
@@ -325,11 +331,12 @@ class MemN2N(object):
         Returns:
             loss: floating-point number, the loss computed for the batch
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._labels:labels}
-        loss, loss_op_summary, _, _, loss_ema = self._sess.run([self.loss_op, self.loss_op_summary, self.train_op, self.update_loss_ema, self.loss_ema_op], feed_dict=feed_dict)
-        return loss, loss_op_summary, loss_ema
+        self.linear_start = linear_start
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._labels:labels, self._linear_start:self.linear_start}
+        loss, loss_op_summary, _, _, loss_ema, probs = self._sess.run([self.loss_op, self.loss_op_summary, self.train_op, self.update_loss_ema, self.loss_ema_op, self.probs_hops], feed_dict=feed_dict)
+        return loss, loss_op_summary, loss_ema, probs
 
-    def predict(self, stories, queries, answers):
+    def predict(self, stories, queries, answers, linear_start):
         """Predicts answers as one-hot encoding.
 
         Args:
@@ -339,7 +346,8 @@ class MemN2N(object):
         Returns:
             answers: Tensor (None, vocab_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
+        self.linear_start = linear_start
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:self.linear_start}
         return self._sess.run(self.predict_op, feed_dict=feed_dict)
 
     def predict_test(self, stories, queries, answers):
@@ -352,7 +360,7 @@ class MemN2N(object):
         Returns:
             answers, probabilities per hop: Tensor (None, vocab_size), Tensor (None, hops, memory_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:self.linear_start}
         ops = [self.predict_op]
         ops.extend(self.probs_hops)
 
@@ -368,11 +376,11 @@ class MemN2N(object):
         Returns:
             answers: Tensor (None, vocab_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:self.linear_start}
         return self._sess.run(self.predict_proba_op, feed_dict=feed_dict)
 
-    def get_val_acc_summary(self, stories, queries, answers, labels):
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._val_labels: labels}
+    def get_val_acc_summary(self, stories, queries, answers, labels, linear_start):
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._val_labels: labels, self._linear_start:linear_start}
         return self._sess.run([self.val_acc_op, self.val_acc_summary], feed_dict=feed_dict)
 
     def predict_log_proba(self, stories, queries, answers):
@@ -384,5 +392,5 @@ class MemN2N(object):
         Returns:
             answers: Tensor (None, vocab_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:self.linear_start}
         return self._sess.run(self.predict_log_proba_op, feed_dict=feed_dict)

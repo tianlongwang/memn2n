@@ -8,20 +8,21 @@ from sklearn import cross_validation, metrics
 from memn2n.mc_memn2n import MemN2N
 from itertools import chain
 from six.moves import range
-
+from ipdb import set_trace
 
 import os
 import tensorflow as tf
 import numpy as np
+np.set_printoptions(precision=2)
 
 tf.flags.DEFINE_float("learning_rate", 0.01, "Learning rate for Adam Optimizer.")
 tf.flags.DEFINE_float("epsilon", 1e-8, "Epsilon value for Adam Optimizer.")
-tf.flags.DEFINE_float("regularization", 0.2, "Regularization.")
+tf.flags.DEFINE_float("regularization", 0.1, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
 tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
-tf.flags.DEFINE_integer("epochs", 100, "Number of epochs to train for.")
+tf.flags.DEFINE_integer("epochs", 250, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
@@ -106,17 +107,26 @@ with tf.Session() as sess:
 
     writer = tf.train.SummaryWriter(get_log_dir_name(), sess.graph)
 
+    max_val = 0.0
+    inl = True
+    val_lower_count = 0
     for t in range(1, FLAGS.epochs+1):
         np.random.shuffle(batches)
         total_cost = 0.0
+        if inl and val_lower_count >= 3:
+            inl = False
+        lss = [inl] * n_train
         for start in range(0, n_train, batch_size):
             end = start + batch_size
             s = trainS[start:end]
             q = trainQ[start:end]
             a = trainA[start:end]
             l = trainL[start:end]
-            cost_t, cost_summary, cost_ema = model.batch_fit(s, q, a, l)
+            tt = lss[start:end]
+            cost_t, cost_summary, cost_ema, probs = model.batch_fit(s, q, a, l, tt)
             total_cost += cost_t
+            print('probs', probs[0] )
+            #print(model.probs_hops[-1].eval())
 
             # writer.add_summary(cost_summary, t*n_train+start)
             writer.add_summary(cost_ema, t*n_train+start)
@@ -128,7 +138,8 @@ with tf.Session() as sess:
                 s = trainS[start:end]
                 q = trainQ[start:end]
                 a = trainA[start:end]
-                pred = model.predict(s, q, a)
+                tt = lss[start:end]
+                pred = model.predict(s, q, a, tt)
                 train_preds += list(pred)
 
 #             val_preds = model.predict(valS, valQ)
@@ -138,7 +149,12 @@ with tf.Session() as sess:
             writer.add_summary(tcs, t)
 #             val_acc = metrics.accuracy_score(val_preds, val_labels)
 
-            val_acc, val_acc_summary = model.get_val_acc_summary(valS, valQ, valA, val_labels)
+            lss_val = [inl] * len(valQ)
+            val_acc, val_acc_summary = model.get_val_acc_summary(valS, valQ, valA, val_labels, lss_val)
+            if val_acc > max_val:
+                max_val = val_acc
+            else:
+                val_lower_count += 1
             writer.add_summary(val_acc_summary, t)
 
             print('-----------------------')
@@ -147,7 +163,21 @@ with tf.Session() as sess:
             print('Training Accuracy:', train_acc)
             print('Validation Accuracy:', val_acc)
             print('-----------------------')
-
-            test_preds = model.predict(testS, testQ, testA)
+            print('linear_start: ', inl)
+            print('max_val', max_val)
+            print('val_lower_count', val_lower_count)
+            lss_test = [inl] * len(testQ)
+            test_preds = model.predict(testS, testQ, testA, lss_test)
             test_acc = metrics.accuracy_score(test_preds, test_labels)
+            wrong_idx = np.where(test_labels != test_preds)
+            #print('wrong prediction')
+            #for idx in list(wrong_idx[0]):
+            #    for ls in test[idx][0]:
+            #        print(' '.join(ls))
+            #    print(' '.join(test[idx][1]))
+            #    for ans in test[idx][2]:
+            #        print(' '.join(ans))
+            #    print('Label', test[idx][3])
+            #    print('Predict:')
+            #    print(test_preds[idx])
             print("Testing Accuracy:", test_acc)
