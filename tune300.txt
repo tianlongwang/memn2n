@@ -1,0 +1,122 @@
+Using TensorFlow backend.
+Started Task: 1
+{'__flags': {'evaluation_interval': 1, 'regularization': 0.1, 'embedding_size': 300, 'data_dir': 'data/readworksAll/', 'task_id': 1, 'hops': 3, 'epsilon': 1e-08, 'learning_rate': 0.01, 'batch_size': 64, 'epochs': 250, 'cache_embedding': '0', 'memory_size': 100, 'random_state': None, 'max_grad_norm': 40.0}, '__parsed': True}
+Load trainng data from ./data/traintest/train/readworks_grade2.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.test.0.1.json
+Load testing data from ./data/traintest/test/readworks_grade1.dev.0.1.json
+('Vocal Size', 3646)
+('use pickle', '0')
+start loading glove
+Loaded Glove data
+Longest sentence length 112
+Longest story length 149
+Answer length 51
+Label size 3
+Training set shape (875, 100, 112)
+Training Size 875
+Validation Size 219
+Testing Size 325
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 112, 300) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(112, 300) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/Sum:0' shape=(?, 300) dtype=float32>)
+('dotted', <tf.Tensor 'MemN2N2/Sum_2:0' shape=(?, 100) dtype=float32>)
+('sfm', <tf.Tensor 'MemN2N2/Softmax:0' shape=(?, 100) dtype=float32>)
+('dotted', <tf.Tensor 'MemN2N2/Sum_6:0' shape=(?, 100) dtype=float32>)
+('sfm', <tf.Tensor 'MemN2N2/Softmax_1:0' shape=(?, 100) dtype=float32>)
+('dotted', <tf.Tensor 'MemN2N2/Sum_10:0' shape=(?, 100) dtype=float32>)
+('sfm', <tf.Tensor 'MemN2N2/Softmax_2:0' shape=(?, 100) dtype=float32>)
+('as_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 3, 51, 300) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(51, 300) dtype=float32>)
+('as_enc', <tf.Tensor 'MemN2N2/Sum_13:0' shape=(?, 3, 300) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 300) dtype=float32>)
+('u_k_l', <tf.Tensor 'MemN2N2/Reshape:0' shape=(?, 3, 300) dtype=float32>)
+('as_ans', <tf.Tensor 'MemN2N2/Sub:0' shape=(?, 3, 300) dtype=float32>)
+('as_ans', <tf.Tensor 'MemN2N2/Sum_14:0' shape=(?, 3) dtype=float32>)
+('logits', <tf.Tensor 'MemN2N2/Sum_14:0' shape=(?, 3) dtype=float32>)
+-----------------------
+Epoch 1
+Total Cost: 74657586096.0
+Training Accuracy: 0.386285714286
+Validation Accuracy: 0.347032
+-----------------------
+linear_start:  True
+max_val 0.347032
+val_lower_count 0
+Testing Accuracy: 0.341538461538
+-----------------------
+Epoch 2
+Total Cost: 18888425324.0
+Training Accuracy: 0.427428571429
+Validation Accuracy: 0.369863
+-----------------------
+linear_start:  True
+max_val 0.369863
+val_lower_count 0
+Testing Accuracy: 0.356923076923
+-----------------------
+Epoch 3
+Total Cost: 1055743121.0
+Training Accuracy: 0.394285714286
+Validation Accuracy: 0.319635
+-----------------------
+linear_start:  True
+max_val 0.369863
+val_lower_count 1
+Testing Accuracy: 0.316923076923
+-----------------------
+Epoch 4
+Total Cost: 354455093.25
+Training Accuracy: 0.418285714286
+Validation Accuracy: 0.319635
+-----------------------
+linear_start:  True
+max_val 0.369863
+val_lower_count 2
+Testing Accuracy: 0.369230769231
+-----------------------
+Epoch 5
+Total Cost: 253768640.0
+Training Accuracy: 0.465142857143
+Validation Accuracy: 0.383562
+-----------------------
+linear_start:  True
+max_val 0.383562
+val_lower_count 2
+Testing Accuracy: 0.338461538462
+-----------------------
+Epoch 6
+Total Cost: 342320291.688
+Training Accuracy: 0.452571428571
+Validation Accuracy: 0.260274
+-----------------------
+linear_start:  True
+max_val 0.383562
+val_lower_count 3
+Testing Accuracy: 0.347692307692
+-----------------------
+Epoch 7
+Total Cost: 291095.109375
+Training Accuracy: 0.580571428571
+Validation Accuracy: 0.420091
+-----------------------
+linear_start:  False
+max_val 0.420091
+val_lower_count 3
+Testing Accuracy: 0.427692307692
+-----------------------
+Epoch 8
+Total Cost: 179926.3125
+Training Accuracy: 0.742857142857
+Validation Accuracy: 0.415525
+-----------------------
+linear_start:  False
+max_val 0.420091
+val_lower_count 4
+Testing Accuracy: 0.436923076923
+-----------------------
+Epoch 9
+Total Cost: 118604.109863
+Training Accuracy: 0.848
+Validation Accuracy: 0.424658
+-----------------------
+linear
