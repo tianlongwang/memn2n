@@ -273,7 +273,7 @@ class MemN2N(object):
                 sfm = tf.nn.softmax(dotted)
                 print('sfm', sfm)
                 probs = tf.select(self._linear_start, dotted, sfm )
-                print('probs', probs)
+                #print('probs', probs)
                 self.probs_hops.append(probs)
 
                 probs_temp = tf.transpose(tf.expand_dims(probs, -1), [0, 2, 1])

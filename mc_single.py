@@ -23,7 +23,7 @@ tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results ev
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
 tf.flags.DEFINE_integer("epochs", 250, "Number of epochs to train for.")
-tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
+tf.flags.DEFINE_integer("embedding_size", 20, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
@@ -45,6 +45,7 @@ def get_log_dir_name():
     return os.path.join('./logs', str(ti), log_dir_name)
 
 print("Started Task:", FLAGS.task_id)
+print(FLAGS.__dict__)
 
 # task data
 train, test = load_task(FLAGS.data_dir, FLAGS.task_id)
@@ -125,7 +126,7 @@ with tf.Session() as sess:
             tt = lss[start:end]
             cost_t, cost_summary, cost_ema, probs = model.batch_fit(s, q, a, l, tt)
             total_cost += cost_t
-            print('probs', probs[0] )
+            #print('probs', probs[0] )
             #print(model.probs_hops[-1].eval())
 
             # writer.add_summary(cost_summary, t*n_train+start)

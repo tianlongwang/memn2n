@@ -45,6 +45,8 @@ import json
 from nltk import sent_tokenize, word_tokenize
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
+from nltk.stem import PorterStemmer
+stemmer = PorterStemmer()
 
 def my_sent_tokenize(txt):
     tmp = sent_tokenize(txt)
@@ -57,7 +59,7 @@ def my_sent_tokenize(txt):
     return ret
 
 def sent_to_tokens(sent):
-    return [lemmatizer.lemmatize(tmp) for tmp in word_tokenize(sent.lower())]
+    return [stemmer.stem(lemmatizer.lemmatize(tmp)) for tmp in word_tokenize(sent.lower())]
 
 def para_to_tokens(para):
     return [sent_to_tokens(sent) for sent in my_sent_tokenize(para)]
