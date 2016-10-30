@@ -23,7 +23,7 @@ tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results ev
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
 tf.flags.DEFINE_integer("epochs", 250, "Number of epochs to train for.")
-tf.flags.DEFINE_integer("embedding_size", 20, "Embedding size for embedding matrices.")
+tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
@@ -114,7 +114,7 @@ with tf.Session() as sess:
     for t in range(1, FLAGS.epochs+1):
         np.random.shuffle(batches)
         total_cost = 0.0
-        if inl and val_lower_count >= 3:
+        if inl and val_lower_count >= 5:
             inl = False
         lss = [inl] * n_train
         for start in range(0, n_train, batch_size):
@@ -152,7 +152,7 @@ with tf.Session() as sess:
 
             lss_val = [inl] * len(valQ)
             val_acc, val_acc_summary = model.get_val_acc_summary(valS, valQ, valA, val_labels, lss_val)
-            if val_acc > max_val:
+            if val_acc >= max_val:
                 max_val = val_acc
             else:
                 val_lower_count += 1
@@ -163,7 +163,6 @@ with tf.Session() as sess:
             print('Total Cost:', total_cost)
             print('Training Accuracy:', train_acc)
             print('Validation Accuracy:', val_acc)
-            print('-----------------------')
             print('linear_start: ', inl)
             print('max_val', max_val)
             print('val_lower_count', val_lower_count)
