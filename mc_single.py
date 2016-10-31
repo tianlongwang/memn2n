@@ -134,12 +134,20 @@ batch_size = FLAGS.batch_size
 batches = zip(range(0, n_train-batch_size, batch_size), range(batch_size, n_train, batch_size))
 
 
-best_test_accs = -1
+best_test_acc = -1
+best_test_epoch = -1
 best_val_accs = -1
 best_val_epochs = -1
 best_val_update_epoch = -1
 stop_early = False
 
+
+print('save vocab to pickle')
+res = {'vocab': vocab, 'w_idx': word_idx, 'sentence_size': sentence_size, 'memory_size': memory_size, 'answer_size': answer_size}
+with open('./save/vocab_data.pickle', 'wb') as fl:
+    pickle.dump(res, fl)
+
+print('start session')
 with tf.Session() as sess:
     model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, FLAGS.embedding_size, answer_size, label_size, glove_embedding = glove_embedding,session=sess,
                      l2=FLAGS.regularization, nonlin=tf.nn.relu)
@@ -222,30 +230,22 @@ with tf.Session() as sess:
             #    print('Predict:')
             #    print(test_preds[idx])
             print("Testing Accuracy:", test_acc)
-     	    if best_
+     	    if test_acc > best_test_acc:
+                best_test_epoch = i
+                best_test_acc = test_acc
+                if train_acc > 0.95:
+                    model.save_model(get_wt_dir_name())
+
+                    output_file = FLAGS.output_file.format(FLAGS.learning_rate, FLAGS.regularization)
+                    print('Writing final results to {}'.format(output_file))
+                    df = {
+                    'Testing Accuracy': best_test_acc,
+                    'Best Epoch': best_test_epoch
+                    }
+                    df.to_csv('./save/' + output_file)
 	    if i - FLAGS.early >= best_test_epoch:
-		stop_early = True
+	     	stop_early = True
+                break
 
-        # Write final results to csv file and save model
-        if stop_early or i == FLAGS.epochs:
-
-            # save model data
-            model.save_model(get_wt_dir_name())
-            res = {'vocab': vocab, 'w_idx': word_idx, 'sentence_size': sentence_size, 'memory_size': memory_size}
-            with open('./save/vocab_data.pickle', 'wb') as fl:
-              pickle.dump(res, fl)
-
-            output_file = FLAGS.output_file.format(FLAGS.learning_rate, FLAGS.regularization)
-            print('Writing final results to {}'.format(output_file))
-            df = pd.DataFrame({
-            'Training Accuracy': best_train_accs,
-            'Validation Accuracy': best_val_accs,
-            'Testing Accuracy': best_test_accs,
-            'Best Epoch': best_val_epochs
-            }, index=range(1, 21))
-            df.index.name = 'Task'
-            df.to_csv('./save/' + output_file)
-            if stop_early:
-		break
 
 
