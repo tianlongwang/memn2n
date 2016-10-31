@@ -65,7 +65,7 @@ def para_to_tokens(para):
     return [sent_to_tokens(sent) for sent in my_sent_tokenize(para)]
 
 
-def json_get_data(fname, label_num = 3):
+def json_get_data(fname, label_num = 4):
     lbs = 'ABCDE'
     nums = '01234'
     dadict = dict(zip(lbs[:label_num], ['']*label_num))
@@ -90,7 +90,7 @@ def json_get_data(fname, label_num = 3):
           a_tokens.append(sent_to_tokens(a_dict[lab]))
         l_dict = dldict.copy()
         if qjson['correctAnswer'] not in list(lbs[:label_num]):
-            print("CorrectAnswer not in 'ABC'")
+            print("CorrectAnswer not in 'ABCD'")
             print(qjson)
             continue
         true_ans = l_dict[qjson['correctAnswer']]

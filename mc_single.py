@@ -8,7 +8,7 @@ from sklearn import cross_validation, metrics
 from memn2n.mc_memn2n import MemN2N
 from itertools import chain
 from six.moves import range
-from ipdb import set_trace
+import pickle
 
 import os
 import tensorflow as tf
@@ -21,14 +21,16 @@ tf.flags.DEFINE_float("regularization", 0.1, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
 tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
-tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
+tf.flags.DEFINE_integer("hops", 5, "Number of hops in the Memory Network.")
 tf.flags.DEFINE_integer("epochs", 250, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
-tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
+tf.flags.DEFINE_integer("early", 50, "Number of epochs for early stopping. Should be divisible by evaluation_interval.")
+tf.flags.DEFINE_integer("memory_size", 40, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
 tf.flags.DEFINE_string("data_dir", "data/readworksAll/", "Directory containing bAbI tasks")
 tf.flags.DEFINE_string("cache_embedding", 1, "Use embedding cache. If new data from previous one, do not use")
+tf.flags.DEFINE_string("output_file", "scores.learningrate_{}.regularization_{}.csv", "Name of output file for accuracy scores.")
 FLAGS = tf.flags.FLAGS
 
 def get_log_dir_name():
@@ -42,7 +44,35 @@ def get_log_dir_name():
     reg = FLAGS.regularization
 
     log_dir_name = "lr={0}_eps={1}_mgn={2}_hp={3}_es={4}_ms={5}_reg={6}".format(lr, eps, mgn, hp, es, ms, reg)
-    return os.path.join('./logs', str(ti), log_dir_name)
+    return os.path.join('./logs/', str(ti), log_dir_name)
+
+
+
+def get_wt_dir_name():
+    lr = FLAGS.learning_rate
+    eps = FLAGS.epsilon
+    mgn = FLAGS.max_grad_norm
+    hp = FLAGS.hops
+    es = FLAGS.embedding_size
+    ms = FLAGS.memory_size
+    # ti = FLAGS.task_id
+    reg = FLAGS.regularization
+
+    log_dir_name = "lr={0}_eps={1}_mgn={2}_hp={3}_es={4}_ms={5}_reg={6}".format(lr, eps, mgn, hp, es, ms, reg)
+    return os.path.join('./save', log_dir_name)
+
+
+
+
+def gen_writers(sess, base_dir):
+    writers = {}
+    writers["loss"] = tf.train.SummaryWriter(os.path.join(base_dir, "loss") , sess.graph)
+
+    for i in range(1, 21):
+        writers["task{0}".format(i)] = tf.train.SummaryWriter(os.path.join(base_dir, "task{0}".format(i)), sess.graph)
+
+    return writers
+
 
 print("Started Task:", FLAGS.task_id)
 print(FLAGS.__dict__)
@@ -102,6 +132,14 @@ batch_size = FLAGS.batch_size
 
 
 batches = zip(range(0, n_train-batch_size, batch_size), range(batch_size, n_train, batch_size))
+
+
+best_test_accs = -1
+best_val_accs = -1
+best_val_epochs = -1
+best_val_update_epoch = -1
+stop_early = False
+
 with tf.Session() as sess:
     model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, FLAGS.embedding_size, answer_size, label_size, glove_embedding = glove_embedding,session=sess,
                      l2=FLAGS.regularization, nonlin=tf.nn.relu)
@@ -109,6 +147,7 @@ with tf.Session() as sess:
     writer = tf.train.SummaryWriter(get_log_dir_name(), sess.graph)
 
     max_val = 0.0
+    max_test = 0.0
     inl = True
     val_lower_count = 0
     for t in range(1, FLAGS.epochs+1):
@@ -154,6 +193,7 @@ with tf.Session() as sess:
             val_acc, val_acc_summary = model.get_val_acc_summary(valS, valQ, valA, val_labels, lss_val)
             if val_acc >= max_val:
                 max_val = val_acc
+                val_lower_count = 0
             else:
                 val_lower_count += 1
             writer.add_summary(val_acc_summary, t)
@@ -169,6 +209,7 @@ with tf.Session() as sess:
             lss_test = [inl] * len(testQ)
             test_preds = model.predict(testS, testQ, testA, lss_test)
             test_acc = metrics.accuracy_score(test_preds, test_labels)
+
             wrong_idx = np.where(test_labels != test_preds)
             #print('wrong prediction')
             #for idx in list(wrong_idx[0]):
@@ -181,3 +222,30 @@ with tf.Session() as sess:
             #    print('Predict:')
             #    print(test_preds[idx])
             print("Testing Accuracy:", test_acc)
+     	    if best_
+	    if i - FLAGS.early >= best_test_epoch:
+		stop_early = True
+
+        # Write final results to csv file and save model
+        if stop_early or i == FLAGS.epochs:
+
+            # save model data
+            model.save_model(get_wt_dir_name())
+            res = {'vocab': vocab, 'w_idx': word_idx, 'sentence_size': sentence_size, 'memory_size': memory_size}
+            with open('./save/vocab_data.pickle', 'wb') as fl:
+              pickle.dump(res, fl)
+
+            output_file = FLAGS.output_file.format(FLAGS.learning_rate, FLAGS.regularization)
+            print('Writing final results to {}'.format(output_file))
+            df = pd.DataFrame({
+            'Training Accuracy': best_train_accs,
+            'Validation Accuracy': best_val_accs,
+            'Testing Accuracy': best_test_accs,
+            'Best Epoch': best_val_epochs
+            }, index=range(1, 21))
+            df.index.name = 'Task'
+            df.to_csv('./save/' + output_file)
+            if stop_early:
+		break
+
+
