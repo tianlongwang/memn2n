@@ -241,7 +241,7 @@ class MemN2N(object):
     def _inference(self, stories, queries, answers):
         with tf.variable_scope(self._name + str(2)):
             q_emb = tf.nn.embedding_lookup(self.B, queries)
-            q_emb = tf.nn.dropout(q_emb, 0.1)
+            #q_emb = tf.nn.dropout(q_emb, 0.1)
             print('q_emb', q_emb)
             print('self._encoding', self._encoding)
             #u_0 = tf.reduce_sum(q_emb * self._encoding, 1)
@@ -259,7 +259,7 @@ class MemN2N(object):
             self.probs_hops = []
             for _ in range(self._hops):
                 m_emb = tf.nn.embedding_lookup(self.A, stories)
-                m_emd = tf.nn.dropout(m_emb, 0.1)
+                #m_emd = tf.nn.dropout(m_emb, 0.1)
                 m = tf.reduce_sum(m_emb * self._encoding, 2) + self.TA
                 # hack to get around no reduce_dot
                 u_temp = tf.transpose(tf.expand_dims(u[-1], -1), [0, 2, 1])
@@ -294,7 +294,7 @@ class MemN2N(object):
                 u.append(u_k)
 
             as_emb = tf.nn.embedding_lookup(self.B, answers)
-            as_emb = tf.nn.dropout(as_emb, 0.1)
+            #as_emb = tf.nn.dropout(as_emb, 0.1)
             print('as_emb', as_emb)
             print('self._answer_encoding', self._answer_encoding)
             as_enc = tf.reduce_sum(as_emb * self._answer_encoding, 2)

@@ -1,1 +1,1 @@
-{'Testing Accuracy': 0.4375, 'Best Epoch': 55}
+{'Testing Accuracy': 0.3775, 'Best Epoch': 7}
