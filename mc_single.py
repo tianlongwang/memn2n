@@ -22,7 +22,7 @@ tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
 tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
 tf.flags.DEFINE_integer("hops", 5, "Number of hops in the Memory Network.")
-tf.flags.DEFINE_integer("epochs", 250, "Number of epochs to train for.")
+tf.flags.DEFINE_integer("epochs", 1024, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("early", 50, "Number of epochs for early stopping. Should be divisible by evaluation_interval.")
 tf.flags.DEFINE_integer("memory_size", 40, "Maximum size of memory.")
@@ -30,7 +30,7 @@ tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
 tf.flags.DEFINE_string("data_dir", "data/readworksAll/", "Directory containing bAbI tasks")
 tf.flags.DEFINE_string("cache_embedding", 1, "Use embedding cache. If new data from previous one, do not use")
-tf.flags.DEFINE_string("output_file", "scores.learningrate_{}.regularization_{}.csv", "Name of output file for accuracy scores.")
+tf.flags.DEFINE_string("output_file", "scores.learningrate_{}.regularization_{}.txt", "Name of output file for accuracy scores.")
 FLAGS = tf.flags.FLAGS
 
 def get_log_dir_name():
@@ -231,21 +231,26 @@ with tf.Session() as sess:
             #    print(test_preds[idx])
             print("Testing Accuracy:", test_acc)
      	    if test_acc > best_test_acc:
-                best_test_epoch = i
+                best_test_epoch = t
+                print('best_test_epoch', best_test_epoch)
                 best_test_acc = test_acc
-                if train_acc > 0.95:
-                    model.save_model(get_wt_dir_name())
+                print('best_test_acc', best_test_acc)
+                print('Saving Models')
+                model.save_model(get_wt_dir_name())
 
-                    output_file = FLAGS.output_file.format(FLAGS.learning_rate, FLAGS.regularization)
-                    print('Writing final results to {}'.format(output_file))
-                    df = {
-                    'Testing Accuracy': best_test_acc,
-                    'Best Epoch': best_test_epoch
-                    }
-                    df.to_csv('./save/' + output_file)
-	    if i - FLAGS.early >= best_test_epoch:
-	     	stop_early = True
-                break
+                output_file = FLAGS.output_file.format(FLAGS.learning_rate, FLAGS.regularization)
+                print('Writing final results to {}'.format(output_file))
+                df = {
+                'Testing Accuracy': best_test_acc,
+                'Best Epoch': best_test_epoch
+                }
+                with open('./save/' + output_file, 'w') as fw:
+                    fw.write(repr(df))
+                if train_acc > 0.95:
+	            if t - FLAGS.early >= best_test_epoch:
+                        print('stop EALRY')
+	     	        stop_early = True
+                        break
 
 
 
