@@ -28,9 +28,10 @@ def get_answer():
     data = json.loads(request.form['data'])
     sentences = data['sentences']
     question = data['question']
+    choices = data['choices']
 
-    testS, testQ, testAA, testAB, testAC, testL  = process_data(sentences, question)
-    answer, answer_probability, mem_probs = get_pred(testS, testQ, testAA, testAB, testAC)
+    testS, testQ, testA = process_data(sentences, question, choices)
+    answer, answer_probability, mem_probs = get_pred(testS, testQ)
 
     memory_probabilities = np.round(mem_probs, 4)
 
