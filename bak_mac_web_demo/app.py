@@ -29,8 +29,8 @@ def get_answer():
     sentences = data['sentences']
     question = data['question']
 
-    testS, testQ, testA = process_data(sentences, question)
-    answer, answer_probability, mem_probs = get_pred(testS, testQ)
+    testS, testQ, testAA, testAB, testAC, testL  = process_data(sentences, question)
+    answer, answer_probability, mem_probs = get_pred(testS, testQ, testAA, testAB, testAC)
 
     memory_probabilities = np.round(mem_probs, 4)
 

@@ -33,8 +33,6 @@ model = MemN2N(config["batch"],
                config["sentence_size"],
                config["memory_size"],
                config["embedding_size"],
-               answer_size,
-               label_size,
                session=sess,
                hops=config["hops"],
                max_grad_norm=config["max_grad_norm"],
@@ -48,9 +46,9 @@ model = MemN2N(config["batch"],
 # Uncomment to see if the weights were loaded correctly
 # print(sess.run(model.A))
 
-def get_pred(testS, testQ, testAA, testAB, testAC):
-    ps = model.predict_proba(testS, testQ,  testAA, testAB, testAC)
-    op = model.predict_test(testS, testQ,  testAA, testAB, testAC)
+def get_pred(testS, testQ):
+    ps = model.predict_proba(testS, testQ)
+    op = model.predict_test(testS, testQ)
 
     answer = op[0][0]
     answer_probability = float(np.max(ps))

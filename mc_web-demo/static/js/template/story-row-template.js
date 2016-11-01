@@ -3,7 +3,7 @@ define([], function() {
     return '<div class="col-sm-6 col-md-4">' +
             '<div class="thumbnail">' +
               '<div class="caption">' +
-                '<h5>Task <%= task %></h5>' +
+                '<h5>Task -_-Where r u-_- <%= task %></h5>' +
                 '<div class="well"><%= story %></div>' +
                 '<h5><%= question %></h5>' +
                 '<span class="label label-default"><%= answer %></span>' +
