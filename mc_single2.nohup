@@ -1,0 +1,32 @@
+Using TensorFlow backend.
+/home/tianlong/anaconda2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+Started Task: 1
+{'__flags': {'evaluation_interval': 1, 'regularization': 0.1, 'embedding_size': 50, 'data_dir': 'data/readworksAll/', 'task_id': 1, 'hops': 3, 'epsilon': 1e-08, 'learning_rate': 0.01, 'output_file': 'scores.learningrate_{}.regularization_{}.txt', 'batch_size': 64, 'epochs': 1024, 'cache_embedding': 1, 'memory_size': 100, 'random_state': None, 'max_grad_norm': 40.0, 'early': 50}, '__parsed': True}
+Load trainng data from ./data/traintest/train/readworks_grade1.0.1.json
+Load trainng data from ./data/traintest/train/mc160.train.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade3.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.test.0.1.json
+Load trainng data from ./data/traintest/train/readworks_gradek.0.1.json
+Load trainng data from ./data/traintest/train/mc160.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade4.0.1.json
+Load testing data from ./data/traintest/test/readworks_grade2.test.0.1.json
+CorrectAnswer not in 'ABCD'
+{u'text': u'What is compared and contrasted in the passage? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'New York City and Chicago', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'international camps and sports camps', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather in different parts of the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'The climate of Ghana is warm all year. The climate of New York City is sometimes cold. What can be concluded from this information? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'All parts of the world have the same climate.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Different parts of the world can have different climates.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'The climate of New York City and the climate of England are alike.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'Why might Ilsa like to eat ice cream in the summer? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'Ilsa likes eating something cold when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Ilsa likes eating something warm when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'Ilsa likes eating something hot when the weather is cold.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'What is a main idea of the story? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'eating stew in Senegal', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'visiting Argentina in the summer', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather around the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'Read these sentences: "Ilsa was excited to meet her camp counselor Itzel when she arrived for her first day at The International Camp in Forest Hills, Queens, in New York City. Itzel asked the campers to sit in a circle, introduce themselves, and share which countries their families were from." What does the word "international" mean? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'having to do with more than one country', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'having to do with being outdoors', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'having to do with playing baseball or soccer', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+('Vocal Size', 7022)
+('use pickle', 1)
+Longest sentence length 198
+Longest story length 171
+Answer length 60
+Label size 4
+Training set shape (2363, 10

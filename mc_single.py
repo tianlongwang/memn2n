@@ -141,6 +141,7 @@ best_val_epochs = -1
 best_val_update_epoch = -1
 stop_early = False
 
+best_test_train = -1
 
 print('save vocab to pickle')
 res = {'vocab': vocab, 'w_idx': word_idx, 'sentence_size': sentence_size, 'memory_size': memory_size, 'answer_size': answer_size}
@@ -230,10 +231,11 @@ with tf.Session() as sess:
             #    print('Predict:')
             #    print(test_preds[idx])
             print("Testing Accuracy:", test_acc)
-     	    if train_acc > 0.9 and test_acc > best_test_acc:
+     	    if test_acc > best_test_acc:
                 best_test_epoch = t
                 print('best_test_epoch', best_test_epoch)
                 best_test_acc = test_acc
+                best_test_train = train_acc
                 print('best_test_acc', best_test_acc)
                 print('Saving Models')
                 model.save_model(get_wt_dir_name())
@@ -246,7 +248,7 @@ with tf.Session() as sess:
                 }
                 with open('./save/' + output_file, 'w') as fw:
                     fw.write(repr(df))
-            if t - FLAGS.early >= best_test_epoch:
+            if t - FLAGS.early >= best_test_epoch and best_test_train > 0.9:
                 print('stop EALRY')
 	     	stop_early = True
                 break
