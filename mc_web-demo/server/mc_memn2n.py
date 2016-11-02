@@ -201,6 +201,7 @@ class MemN2N(object):
 
         if restoreLoc is not None:
             saver = tf.train.Saver()
+            print('Restoring model weights')
             saver.restore(self._sess, restoreLoc)
         else:
             init_op = tf.initialize_all_variables()
