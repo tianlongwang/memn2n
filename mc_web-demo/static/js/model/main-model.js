@@ -5,6 +5,7 @@ define(["backbone"], function(Backbone) {
             "hop": 0,
             "story": [],
             "question": "",
+			"choices":"",
             "answer": "",
             "correctAnswer": "",
             "answerProbability": 0,
@@ -14,7 +15,8 @@ define(["backbone"], function(Backbone) {
         getAnswer: function () {
             var data = {
                 "sentences": this.get("story"),
-                "question": this.get("question")
+                "question": this.get("question"),
+				"choices": this.get("choices")
             };
 
             $.post('answer', {

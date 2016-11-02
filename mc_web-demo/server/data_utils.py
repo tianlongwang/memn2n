@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 
 
-with open('server/model/vocab_data.pickle', 'rb') as handle:
+with open('../save/vocab_data.pickle', 'rb') as handle:
   vocab_data = pickle.load(handle)
 
 decode_dict = {v:k for k,v in vocab_data['w_idx'].iteritems()}
@@ -16,61 +16,27 @@ def tokenize(sent):
     return [x.strip() for x in re.split('(\W+)?', sent) if x.strip()]
 
 
-def vectorize_data(data, word_idx, sentence_size, memory_size):
-    """
-    Vectorize stories and queries.
-
-    If a sentence length < sentence_size, the sentence will be padded with 0's.
-
-    If a story length < memory_size, the story will be padded with empty memories.
-    Empty memories are 1-D arrays of length sentence_size filled with 0's.
-
-    The answer array is returned as a one-hot encoding.
-    """
-    S = []
-    Q = []
-    A = []
-    for story, query, answer in data:
-        ss = []
-        for i, sentence in enumerate(story, 1):
-            ls = max(0, sentence_size - len(sentence))
-            ss.append([word_idx[w] for w in sentence] + [0] * ls)
-
-        # take only the most recent sentences that fit in memory
-        ss = ss[::-1][:memory_size][::-1]
-
-        # pad to memory_size
-        lm = max(0, memory_size - len(ss))
-        for _ in range(lm):
-            ss.append([0] * sentence_size)
-
-        lq = max(0, sentence_size - len(query))
-        q = [word_idx[w] for w in query] + [0] * lq
-
-        y = np.zeros(len(word_idx) + 1) # 0 is reserved for nil word
-        for a in answer:
-            y[word_idx[a]] = 1
-
-        S.append(ss)
-        Q.append(q)
-        A.append(y)
-    return np.array(S), np.array(Q), np.array(A)
-
+from mc_data_utils import vectorize_data, sent_to_tokens, para_to_tokens
 
 def decode(index):
     return decode_dict.get(index, 'unknown')
 
 
-def process_data(sentences, question):
-    sent_t = [tokenize(s.lower()) for s in sentences]
-    sent_t = [filter(lambda x: x != ".", s) for s in sent_t]
+def process_data(sentences, question, choices):
+    print('sentences', sentences)
+    sent_t = [sent_to_tokens(tmp) for tmp in sentences]
+    print('sent_t', sent_t)
+    #sent_t = [filter(lambda x: x != ".", s) for s in sent_t]
 
-    q_t = tokenize(question.lower())
-    if q_t[-1] == "?":
-        q_t = q_t[:-1]
+    q_t = sent_to_tokens(question)
+    #if q_t[-1] == "?":
+    #    q_t = q_t[:-1]
 
-    data = [(sent_t, q_t, ['where'])]
+    choices_t = choices.split('|')
+    c_t = [sent_to_tokens(tmp) for tmp in choices_t]
 
-    testS, testQ, testA = vectorize_data(data, vocab_data['w_idx'], vocab_data['sentence_size'], vocab_data['memory_size'])
+    data = [(sent_t, q_t, c_t,'0' )]
 
-    return testS, testQ, testA
+    testS, testQ, testAS, testL = vectorize_data(data, vocab_data['w_idx'], vocab_data['sentence_size'], vocab_data['memory_size'], vocab_data['answer_size'])
+
+    return testS, testQ, testAS, testL
