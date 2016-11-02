@@ -28,7 +28,7 @@ config = {
     'lr': 0.001
 }
 
-restore_location = '../save/checkpoint'
+restore_location = '../save/lr=0.01_eps=1e-08_mgn=40.0_hp=3_es=50_ms=100_reg=0.1'
 print(restore_location)
 
 sess = tf.Session()
