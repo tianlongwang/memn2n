@@ -19,6 +19,7 @@ define(['template/input-template', 'backbone', 'view/story-loader-view'], functi
 
             this.$story = this.$el.find('.story-text');
             this.$question = this.$el.find('.question-text');
+            this.$choices= this.$el.find('.choices-text');
 
 	          this.storyLoaderView = new StoryLoaderView({ model: this.model, el: this.$el.find('.story-load-btn') });
             //.append(this.storyLoaderView.render().$el);
@@ -27,12 +28,14 @@ define(['template/input-template', 'backbone', 'view/story-loader-view'], functi
         _onAnswerClick: function () {
             var story = this.$story.val().trim(),
                 question = this.$question.val().trim(),
+				choices = this.$choices.val().trim(),
                 sentences;
 
             sentences = story.split('\n');
 
             this.model.set("story", sentences);
             this.model.set("question", question);
+            this.model.set("choices", choices);
 
             if (!!story && !!question) {
                 this.model.getAnswer();
@@ -44,9 +47,10 @@ define(['template/input-template', 'backbone', 'view/story-loader-view'], functi
             this.model.set('correctAnswer', '', {silent: true})
         },
 
-        setValues: function (story, question) {
+        setValues: function (story, question, choices) {
             this.$story.val(story);
             this.$question.val(question);
+            this.$choices.val(choices);
         }
 
     });

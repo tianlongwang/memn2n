@@ -18,12 +18,12 @@ config = {
     'embedding_size': 50,
     'hops': 3,
     'max_grad_norm': 40.0,
-    'regularization': 1e-5,
+    'regularization': 0.1,
     'epsilon': 1e-8,
     'lr': 0.001
 }
 
-restore_location = 'server/model/weights/wts_pe'
+restore_location = '../../save/lr=0.01_eps=1e-08_mgn=40.0_hp=5_es=50_ms=40_reg=0.1'
 print(restore_location)
 
 sess = tf.Session()
@@ -46,7 +46,7 @@ model = MemN2N(config["batch"],
 # Uncomment to see if the weights were loaded correctly
 # print(sess.run(model.A))
 
-def get_pred(testS, testQ):
+def get_pred(testS, testQ, testAS):
     ps = model.predict_proba(testS, testQ)
     op = model.predict_test(testS, testQ)
 
