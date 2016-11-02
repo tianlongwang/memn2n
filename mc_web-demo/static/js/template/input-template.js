@@ -6,6 +6,8 @@ define([], function() {
             '<textarea rows="10" class="story-text form-control" placeholder="Story" />' +
             '<h3>Question</h3>' +
             '<input type="text" class="question-text form-control" placeholder="Question" />' +
+            '<h3>Choices</h3>' +
+            '<input type="text" class="choices-text form-control" placeholder="Choices" />' +
             '<br/>'+
             '<button class="btn btn-primary btn-answer">Answer</button>' +
             '<div class="story-load-btn">Answer</div>' +

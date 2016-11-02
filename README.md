@@ -1,3 +1,13 @@
+##Implemented MemN2n for multiple choices questions
+The 'mc' prefix are the multiple choices version of the model
+
+The data are from readworks and mctest. 
+
+I also implemented linear start as documented in the original paper.
+
+Tianlong Wang 2016
+
+
 # MemN2N
 
 Implementation of [End-To-End Memory Networks](http://arxiv.org/abs/1503.08895) with sklearn-like interface using Tensorflow. Tasks are from the [bAbl](http://arxiv.org/abs/1502.05698) dataset.
