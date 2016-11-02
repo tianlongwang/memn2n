@@ -59,7 +59,8 @@ def get_wt_dir_name():
     reg = FLAGS.regularization
 
     log_dir_name = "lr={0}_eps={1}_mgn={2}_hp={3}_es={4}_ms={5}_reg={6}".format(lr, eps, mgn, hp, es, ms, reg)
-    return os.path.join('./save', log_dir_name)
+    # return os.path.join('./save/weights', log_dir_name)
+    return os.path.join('./save/weights/wts_pe')
 
 
 
