@@ -21,7 +21,7 @@ tf.flags.DEFINE_float("regularization", 0.1, "Regularization.")
 tf.flags.DEFINE_float("max_grad_norm", 40.0, "Clip gradients to this norm.")
 tf.flags.DEFINE_integer("evaluation_interval", 1, "Evaluate and print results every x epochs")
 tf.flags.DEFINE_integer("batch_size", 64, "Batch size for training.")
-tf.flags.DEFINE_integer("hops", 5, "Number of hops in the Memory Network.")
+tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
 tf.flags.DEFINE_integer("epochs", 1024, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("early", 50, "Number of epochs for early stopping. Should be divisible by evaluation_interval.")
@@ -246,11 +246,10 @@ with tf.Session() as sess:
                 }
                 with open('./save/' + output_file, 'w') as fw:
                     fw.write(repr(df))
-                if train_acc > 0.95:
-	            if t - FLAGS.early >= best_test_epoch:
-                        print('stop EALRY')
-	     	        stop_early = True
-                        break
+            if train_acc > 0.90 and t - FLAGS.early >= best_test_epoch:
+                print('stop EALRY')
+	     	stop_early = True
+                break
 
 
 
