@@ -1592,4 +1592,365 @@ Validation Accuracy: 0.554992
 linear_start:  False
 max_val 0.619289
 val_lower_count 58
-Testing A
+Testing Accuracy: 0.4275
+-----------------------
+Epoch 165
+Total Cost: 54667.305542
+Training Accuracy: 0.884892086331
+Validation Accuracy: 0.541455
+linear_start:  False
+max_val 0.619289
+val_lower_count 59
+Testing Accuracy: 0.43
+-----------------------
+Epoch 166
+Total Cost: 56364.1541748
+Training Accuracy: 0.884468895472
+Validation Accuracy: 0.554992
+linear_start:  False
+max_val 0.619289
+val_lower_count 60
+Testing Accuracy: 0.4125
+-----------------------
+Epoch 167
+Total Cost: 57942.8309326
+Training Accuracy: 0.884468895472
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.619289
+val_lower_count 61
+Testing Accuracy: 0.4075
+-----------------------
+Epoch 168
+Total Cost: 59740.539917
+Training Accuracy: 0.884468895472
+Validation Accuracy: 0.554992
+linear_start:  False
+max_val 0.619289
+val_lower_count 62
+Testing Accuracy: 0.415
+-----------------------
+Epoch 169
+Total Cost: 61508.5715332
+Training Accuracy: 0.887854422344
+Validation Accuracy: 0.566836
+linear_start:  False
+max_val 0.619289
+val_lower_count 63
+Testing Accuracy: 0.4125
+-----------------------
+Epoch 170
+Total Cost: 63152.5407715
+Training Accuracy: 0.891663140076
+Validation Accuracy: 0.56176
+linear_start:  False
+max_val 0.619289
+val_lower_count 64
+Testing Accuracy: 0.3925
+-----------------------
+Epoch 171
+Total Cost: 64928.4133301
+Training Accuracy: 0.891663140076
+Validation Accuracy: 0.553299
+linear_start:  False
+max_val 0.619289
+val_lower_count 65
+Testing Accuracy: 0.4
+-----------------------
+Epoch 172
+Total Cost: 66667.8551025
+Training Accuracy: 0.891239949217
+Validation Accuracy: 0.556684
+linear_start:  False
+max_val 0.619289
+val_lower_count 66
+Testing Accuracy: 0.4025
+-----------------------
+Epoch 173
+Total Cost: 68392.7952881
+Training Accuracy: 0.882776132036
+Validation Accuracy: 0.549915
+linear_start:  False
+max_val 0.619289
+val_lower_count 67
+Testing Accuracy: 0.4025
+-----------------------
+Epoch 174
+Total Cost: 70194.6313477
+Training Accuracy: 0.891663140076
+Validation Accuracy: 0.553299
+linear_start:  False
+max_val 0.619289
+val_lower_count 68
+Testing Accuracy: 0.395
+-----------------------
+Epoch 175
+Total Cost: 71932.5579834
+Training Accuracy: 0.889547185781
+Validation Accuracy: 0.563452
+linear_start:  False
+max_val 0.619289
+val_lower_count 69
+Testing Accuracy: 0.3975
+-----------------------
+Epoch 176
+Total Cost: 73679.015625
+Training Accuracy: 0.896318239526
+Validation Accuracy: 0.568528
+linear_start:  False
+max_val 0.619289
+val_lower_count 70
+Testing Accuracy: 0.3825
+-----------------------
+Epoch 177
+Total Cost: 75672.8140869
+Training Accuracy: 0.891663140076
+Validation Accuracy: 0.565144
+linear_start:  False
+max_val 0.619289
+val_lower_count 71
+Testing Accuracy: 0.4
+-----------------------
+Epoch 178
+Total Cost: 77473.9904785
+Training Accuracy: 0.893779094372
+Validation Accuracy: 0.554992
+linear_start:  False
+max_val 0.619289
+val_lower_count 72
+Testing Accuracy: 0.385
+-----------------------
+Epoch 179
+Total Cost: 79221.7126465
+Training Accuracy: 0.898011002962
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.619289
+val_lower_count 73
+Testing Accuracy: 0.395
+-----------------------
+Epoch 180
+Total Cost: 81181.7414551
+Training Accuracy: 0.900973338976
+Validation Accuracy: 0.568528
+linear_start:  False
+max_val 0.619289
+val_lower_count 74
+Testing Accuracy: 0.395
+-----------------------
+Epoch 181
+Total Cost: 83002.0734863
+Training Accuracy: 0.894202285231
+Validation Accuracy: 0.566836
+linear_start:  False
+max_val 0.619289
+val_lower_count 75
+Testing Accuracy: 0.4125
+-----------------------
+Epoch 182
+Total Cost: 84909.1328125
+Training Accuracy: 0.902242911553
+Validation Accuracy: 0.573604
+linear_start:  False
+max_val 0.619289
+val_lower_count 76
+Testing Accuracy: 0.3875
+-----------------------
+Epoch 183
+Total Cost: 86784.1306152
+Training Accuracy: 0.895895048667
+Validation Accuracy: 0.566836
+linear_start:  False
+max_val 0.619289
+val_lower_count 77
+Testing Accuracy: 0.3975
+-----------------------
+Epoch 184
+Total Cost: 88600.8085938
+Training Accuracy: 0.896741430385
+Validation Accuracy: 0.565144
+linear_start:  False
+max_val 0.619289
+val_lower_count 78
+Testing Accuracy: 0.4
+-----------------------
+Epoch 185
+Total Cost: 90413.5239258
+Training Accuracy: 0.889547185781
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.619289
+val_lower_count 79
+Testing Accuracy: 0.3975
+-----------------------
+Epoch 186
+Total Cost: 92323.0039062
+Training Accuracy: 0.89885738468
+Validation Accuracy: 0.558376
+linear_start:  False
+max_val 0.619289
+val_lower_count 80
+Testing Accuracy: 0.4025
+-----------------------
+Epoch 187
+Total Cost: 94222.9594727
+Training Accuracy: 0.900126957258
+Validation Accuracy: 0.563452
+linear_start:  False
+max_val 0.619289
+val_lower_count 81
+Testing Accuracy: 0.395
+-----------------------
+Epoch 188
+Total Cost: 96008.0756836
+Training Accuracy: 0.902666102412
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.619289
+val_lower_count 82
+Testing Accuracy: 0.405
+-----------------------
+Epoch 189
+Total Cost: 97835.3830566
+Training Accuracy: 0.898011002962
+Validation Accuracy: 0.57022
+linear_start:  False
+max_val 0.619289
+val_lower_count 83
+Testing Accuracy: 0.405
+-----------------------
+Epoch 190
+Total Cost: 99650.8994141
+Training Accuracy: 0.895471857808
+Validation Accuracy: 0.565144
+linear_start:  False
+max_val 0.619289
+val_lower_count 84
+Testing Accuracy: 0.4075
+-----------------------
+Epoch 191
+Total Cost: 101519.563477
+Training Accuracy: 0.901396529835
+Validation Accuracy: 0.565144
+linear_start:  False
+max_val 0.619289
+val_lower_count 85
+Testing Accuracy: 0.39
+-----------------------
+Epoch 192
+Total Cost: 103434.070312
+Training Accuracy: 0.897164621244
+Validation Accuracy: 0.558376
+linear_start:  False
+max_val 0.619289
+val_lower_count 86
+Testing Accuracy: 0.39
+-----------------------
+Epoch 193
+Total Cost: 105213.847656
+Training Accuracy: 0.89885738468
+Validation Accuracy: 0.585448
+linear_start:  False
+max_val 0.619289
+val_lower_count 87
+Testing Accuracy: 0.4025
+-----------------------
+Epoch 194
+Total Cost: 107244.381836
+Training Accuracy: 0.907744392721
+Validation Accuracy: 0.573604
+linear_start:  False
+max_val 0.619289
+val_lower_count 88
+Testing Accuracy: 0.4025
+-----------------------
+Epoch 195
+Total Cost: 109074.720215
+Training Accuracy: 0.914515446466
+Validation Accuracy: 0.580372
+linear_start:  False
+max_val 0.619289
+val_lower_count 89
+Testing Accuracy: 0.3975
+-----------------------
+Epoch 196
+Total Cost: 110978.561279
+Training Accuracy: 0.899703766399
+Validation Accuracy: 0.583756
+linear_start:  False
+max_val 0.619289
+val_lower_count 90
+Testing Accuracy: 0.405
+-----------------------
+Epoch 197
+Total Cost: 112958.948975
+Training Accuracy: 0.90351248413
+Validation Accuracy: 0.57868
+linear_start:  False
+max_val 0.619289
+val_lower_count 91
+Testing Accuracy: 0.4075
+-----------------------
+Epoch 198
+Total Cost: 114831.002197
+Training Accuracy: 0.896741430385
+Validation Accuracy: 0.568528
+linear_start:  False
+max_val 0.619289
+val_lower_count 92
+Testing Accuracy: 0.385
+-----------------------
+Epoch 199
+Total Cost: 116768.096436
+Training Accuracy: 0.907321201862
+Validation Accuracy: 0.571912
+linear_start:  False
+max_val 0.619289
+val_lower_count 93
+Testing Accuracy: 0.395
+-----------------------
+Epoch 200
+Total Cost: 118597.854492
+Training Accuracy: 0.899703766399
+Validation Accuracy: 0.582064
+linear_start:  False
+max_val 0.619289
+val_lower_count 94
+Testing Accuracy: 0.39
+-----------------------
+Epoch 201
+Total Cost: 120552.712891
+Training Accuracy: 0.906474820144
+Validation Accuracy: 0.58714
+linear_start:  False
+max_val 0.619289
+val_lower_count 95
+Testing Accuracy: 0.3875
+-----------------------
+Epoch 202
+Total Cost: 122585.914307
+Training Accuracy: 0.906898011003
+Validation Accuracy: 0.57022
+linear_start:  False
+max_val 0.619289
+val_lower_count 96
+Testing Accuracy: 0.375
+-----------------------
+Epoch 203
+Total Cost: 124651.115967
+Training Accuracy: 0.916208209903
+Validation Accuracy: 0.57868
+linear_start:  False
+max_val 0.619289
+val_lower_count 97
+Testing Accuracy: 0.38
+-----------------------
+Epoch 204
+Total Cost: 126499.796875
+Training Accuracy: 0.910706728735
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.619289
+val_lower_count 98
+Testing Accuracy: 0.3875
+stop EALRY

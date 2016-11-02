@@ -25,7 +25,7 @@ tf.flags.DEFINE_integer("hops", 3, "Number of hops in the Memory Network.")
 tf.flags.DEFINE_integer("epochs", 1024, "Number of epochs to train for.")
 tf.flags.DEFINE_integer("embedding_size", 50, "Embedding size for embedding matrices.")
 tf.flags.DEFINE_integer("early", 50, "Number of epochs for early stopping. Should be divisible by evaluation_interval.")
-tf.flags.DEFINE_integer("memory_size", 40, "Maximum size of memory.")
+tf.flags.DEFINE_integer("memory_size", 100, "Maximum size of memory.")
 tf.flags.DEFINE_integer("task_id", 1, "bAbI task id, 1 <= id <= 20")
 tf.flags.DEFINE_integer("random_state", None, "Random state.")
 tf.flags.DEFINE_string("data_dir", "data/readworksAll/", "Directory containing bAbI tasks")
@@ -230,7 +230,7 @@ with tf.Session() as sess:
             #    print('Predict:')
             #    print(test_preds[idx])
             print("Testing Accuracy:", test_acc)
-     	    if test_acc > best_test_acc:
+     	    if train_acc > 0.9 and test_acc > best_test_acc:
                 best_test_epoch = t
                 print('best_test_epoch', best_test_epoch)
                 best_test_acc = test_acc
@@ -246,7 +246,7 @@ with tf.Session() as sess:
                 }
                 with open('./save/' + output_file, 'w') as fw:
                     fw.write(repr(df))
-            if train_acc > 0.90 and t - FLAGS.early >= best_test_epoch:
+            if t - FLAGS.early >= best_test_epoch:
                 print('stop EALRY')
 	     	stop_early = True
                 break
