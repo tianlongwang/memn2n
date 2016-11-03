@@ -10,6 +10,65 @@ max_memory_size is the maximum size allowed during training
 memory_size is the actual memory size used based on max story size
 """
 
+
+
+import cPickle
+def load_glove(dim):
+    """ Loads GloVe data.
+    :param dim: word vector size (50, 100, 200)
+    :return: GloVe word table
+    """
+    word2vec = {}
+    print('start loading glove')
+
+    path = "../data/glove/glove.6B." + str(dim) + 'd'
+    fn = path+ '.cache'
+    if os.path.exists(fn) and os.stat(fn).st_size > 0:
+        with open(fn, 'rb') as cache_file:
+            word2vec = cPickle.load(cache_file)
+
+    else:
+        # Load n create cache
+        with open(path + '.txt') as f:
+            for line in f:
+                l = line.split()
+                word2vec[l[0]] = [float(x) for x in l[1:]]
+
+        with open(path + '.cache', 'wb') as cache_file:
+            cPickle.dump(word2vec, cache_file)
+
+    print("Loaded Glove data")
+    return word2vec
+
+
+def get_embedding(vocab, dim=50, use_pickle=1):
+    if dim not in [50,100,200,300]:
+        print("Not using glove")
+        return np.random.standard_normal([len(vocab),dim])
+    print('use pickle', use_pickle)
+    fn = "../data/glove/myembedding." + str(dim) + "d"+ '.pickle'
+    if os.path.exists(fn) and os.stat(fn).st_size > 0 and use_pickle == 1:
+        with open(fn, 'rb') as pickle_file:
+            ret = cPickle.load(pickle_file)
+    else:
+        wv = load_glove(dim)
+        ret = np.zeros([len(vocab), dim])
+        for ii in range(len(vocab)):
+            if ii == 0:
+                continue
+            else:
+                if vocab[ii] in wv:
+                    ret[ii,:] = wv[vocab[ii]]
+                else:
+                    ret[ii,:] = np.random.randn(dim) * 0.5
+
+        with open(fn, 'wb') as pickle_write:
+            cPickle.dump(ret, pickle_write)
+    return ret
+
+
+
+
 with open('../save/vocab_data.pickle', 'rb') as handle:
   vocab_data = pickle.load(handle)
 
@@ -46,3 +105,7 @@ def get_pred(testS, testQ, testAS):
     print('answer_probability', answer_probability)
     mem_probs = np.vstack(op[1:]).T[testS[0].any(axis=1)]
     return answer, answer_probability, mem_probs
+
+
+
+
