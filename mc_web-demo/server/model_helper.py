@@ -1,4 +1,5 @@
 from mc_memn2n import MemN2N
+from mc_data_utils import get_embedding
 import tensorflow as tf
 import numpy as np
 import os
@@ -13,42 +14,23 @@ memory_size is the actual memory size used based on max story size
 with open('../save/vocab_data.pickle', 'rb') as handle:
   vocab_data = pickle.load(handle)
 
+answer_size  = 60
+vocab_size = 7023
+embedding_size = 50
+batch_size = 64
+memory_size = 100
+label_size = 4
+l2 = 0.1
+restoreLoc = '../save/weights/myweights'
+sentence_size = vocab_data['sentence_size']
+glove_embedding = get_embedding(vocab_data['vocab'], embedding_size, 1)
 
-config = {
-    'batch': 64,
-    'vocab_size': len(vocab_data['vocab']),
-    'sentence_size': vocab_data['sentence_size'],
-    'max_memory_size': vocab_data['memory_size'],
-    'memory_size': vocab_data['memory_size'],
-    'embedding_size': 50,
-    'hops': 3,
-    'max_grad_norm': 40.0,
-    'regularization': 0.1,
-    'epsilon': 1e-8,
-    'lr': 0.001
-}
 
-restore_location = '../save/weights/wts_pe'
-print(restore_location)
 
 sess = tf.Session()
 
-model = MemN2N(batch_size=config["batch"],
-               vocab_size=config["vocab_size"],
-               sentence_size=config["sentence_size"],
-               memory_size=config["memory_size"],
-               embedding_size=config["embedding_size"],
-               answer_size=vocab_data['answer_size'],
-               label_size=4,
-               glove_embedding=np.random.standard_normal([config['vocab_size'], config['embedding_size']]),
-               session=sess,
-               hops=config["hops"],
-               max_grad_norm=config["max_grad_norm"],
-               l2=config["regularization"],
-               lr=config["lr"],
-               epsilon=config["epsilon"],
-               nonlin=tf.nn.relu,
-               restoreLoc=restore_location)
+
+model = MemN2N(batch_size, vocab_size, sentence_size, memory_size, embedding_size, answer_size, label_size,   glove_embedding = glove_embedding,session=sess, l2=l2, nonlin=tf.nn.relu, restoreLoc=restoreLoc)
 
 print('finished load model')
 
