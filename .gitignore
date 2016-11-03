@@ -38,3 +38,4 @@ logs/*
 /Untitled1.ipynb
 /stanfordparser/*
 /tune_results
+nohup.log

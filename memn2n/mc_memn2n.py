@@ -116,7 +116,7 @@ class MemN2N(object):
         frame = inspect.currentframe()
         print('Memn2n Model Input')
         _, _, _, values = inspect.getargvalues(frame)
-        print(valules)
+        print(values)
         self._batch_size = batch_size
         self._vocab_size = vocab_size
         self._sentence_size = sentence_size
