@@ -1,5 +1,4 @@
 from mc_memn2n import MemN2N
-from mc_data_utils import get_embedding
 import tensorflow as tf
 import numpy as np
 import os
