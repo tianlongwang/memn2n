@@ -1,3 +1,8 @@
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
 define(['template/input-template', 'backbone', 'view/story-loader-view'], function(inputTemplate, Backbone, StoryLoaderView) {
 
    var  InputView = Backbone.View.extend({
@@ -6,6 +11,7 @@ define(['template/input-template', 'backbone', 'view/story-loader-view'], functi
             'click .btn-answer': '_onAnswerClick',
             'change .story-text': '_onTextChanged',
             'change .question-text': '_onTextChanged',
+            'change .choices-text': '_onTextChanged',
         },
 
         initialize: function() {
@@ -31,7 +37,12 @@ define(['template/input-template', 'backbone', 'view/story-loader-view'], functi
 				choices = this.$choices.val().trim(),
                 sentences;
 
+			//sentences = story.replaceAll('.','\n');
+			//sentences = sentences.replaceAll('?','\n');
+			//sentences = sentences.replaceAll('!','\n');
+            //sentences = sentences.split('\n');
             sentences = story.split('\n');
+			
 
             this.model.set("story", sentences);
             this.model.set("question", question);

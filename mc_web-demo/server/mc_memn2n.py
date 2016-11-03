@@ -365,7 +365,7 @@ class MemN2N(object):
         Returns:
             answers, probabilities per hop: Tensor (None, vocab_size), Tensor (None, hops, memory_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:self.linear_start}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:[False] * len(queries)}
         ops = [self.predict_op]
         ops.extend(self.probs_hops)
 
@@ -381,7 +381,7 @@ class MemN2N(object):
         Returns:
             answers: Tensor (None, vocab_size)
         """
-        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:self.linear_start}
+        feed_dict = {self._stories: stories, self._queries: queries, self._answers: answers, self._linear_start:[False] * len(queries)}
         return self._sess.run(self.predict_proba_op, feed_dict=feed_dict)
 
     def get_val_acc_summary(self, stories, queries, answers, labels, linear_start):

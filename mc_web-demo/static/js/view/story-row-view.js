@@ -14,6 +14,7 @@ define(['template/story-row-template', 'backbone'], function(storyTemplate, Back
             var template = _.template(storyTemplate, {
                 story: this.story.s,
                 question: this.story.q,
+				choices: this.story.c,
                 answer: this.story.a,
                 task: this.story.t
             });
@@ -31,7 +32,7 @@ define(['template/story-row-template', 'backbone'], function(storyTemplate, Back
                 "memoryProbabilities": []
             });
 
-            app.inputView.setValues(this.story.s, this.story.q);
+            app.inputView.setValues(this.story.s, this.story.q, this.story.c);
 
             $('#myModal').modal('hide');
         }

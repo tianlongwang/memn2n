@@ -24,6 +24,7 @@ def decode(index):
 
 def process_data(sentences, question, choices):
     print('sentences', sentences)
+    #sent_t = para_to_tokens(sentences)
     sent_t = [sent_to_tokens(tmp) for tmp in sentences]
     print('sent_t', sent_t)
     #sent_t = [filter(lambda x: x != ".", s) for s in sent_t]
@@ -33,6 +34,11 @@ def process_data(sentences, question, choices):
     #    q_t = q_t[:-1]
 
     choices_t = choices.split('|')
+    if len(choices_t) == 2:
+        choices_t.append('')
+        choices_t.append('')
+    if len(choices_t) == 3:
+        choices_t.append('')
     c_t = [sent_to_tokens(tmp) for tmp in choices_t]
 
     data = [(sent_t, q_t, c_t,'0' )]
