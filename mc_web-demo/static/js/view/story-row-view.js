@@ -32,7 +32,7 @@ define(['template/story-row-template', 'backbone'], function(storyTemplate, Back
                 "memoryProbabilities": []
             });
 
-            app.inputView.setValues(this.story.s, this.story.q);
+            app.inputView.setValues(this.story.s, this.story.q, this.story.c);
 
             $('#myModal').modal('hide');
         }

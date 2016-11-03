@@ -6,6 +6,7 @@ define(['template/input-template', 'backbone', 'view/story-loader-view'], functi
             'click .btn-answer': '_onAnswerClick',
             'change .story-text': '_onTextChanged',
             'change .question-text': '_onTextChanged',
+            'change .choices-text': '_onTextChanged',
         },
 
         initialize: function() {
@@ -31,7 +32,12 @@ define(['template/input-template', 'backbone', 'view/story-loader-view'], functi
 				choices = this.$choices.val().trim(),
                 sentences;
 
+			sentences = story.replace('.','\n');
+			sentences = sentences.replace('?','\n');
+			sentences = sentences.replace('!','\n');
             sentences = story.split('\n');
+            //sentences = story;
+			
 
             this.model.set("story", sentences);
             this.model.set("question", question);
