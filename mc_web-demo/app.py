@@ -38,8 +38,10 @@ def get_answer():
 
     memory_probabilities = np.round(mem_probs, 4)
 
+    answer_dict = 'ABCD'
+
     response = {
-        "answer": decode(answer),
+        "answer": answer_dict[int(answer)],
         "answerProbability": answer_probability,
         "memoryProbabilities": memory_probabilities.tolist()
     }
