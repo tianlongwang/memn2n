@@ -35,6 +35,7 @@ def get_answer():
     print('testL', testL)
 
     answer, answer_probability, mem_probs = get_pred(testS, testQ, testAS)
+    print('answer', answer)
 
     memory_probabilities = np.round(mem_probs, 4)
 
@@ -45,6 +46,8 @@ def get_answer():
         "answerProbability": answer_probability,
         "memoryProbabilities": memory_probabilities.tolist()
     }
+
+    print('response', response)
 
     return jsonify(response)
 
