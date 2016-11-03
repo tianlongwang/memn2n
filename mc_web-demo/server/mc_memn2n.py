@@ -4,6 +4,7 @@ The implementation is based on http://arxiv.org/abs/1503.08895 [1]
 """
 from __future__ import absolute_import
 from __future__ import division
+import inspect
 
 import tensorflow as tf
 import numpy as np
@@ -112,7 +113,10 @@ class MemN2N(object):
 
             name: Name of the End-To-End Memory Network. Defaults to `MemN2N`.
         """
-
+        frame = inspect.currentframe()
+        print('Memn2n Model Input')
+        _, _, _, values = inspect.getargvalues(frame)
+        print(valules)
         self._batch_size = batch_size
         self._vocab_size = vocab_size
         self._sentence_size = sentence_size
