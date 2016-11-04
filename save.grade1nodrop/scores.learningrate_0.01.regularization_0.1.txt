@@ -1,0 +1,1 @@
+{'Testing Accuracy': 0.4646153846153846, 'Best Epoch': 12}
