@@ -1,0 +1,495 @@
+Using TensorFlow backend.
+/home/tianlong/anaconda2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+Started Task: 1
+{'__flags': {'evaluation_interval': 1, 'regularization': 0.2, 'embedding_size': 50, 'data_dir': 'data/readworksAll/', 'task_id': 1, 'hops': 3, 'epsilon': 1e-08, 'learning_rate': 0.01, 'output_file': 'scores.learningrate_{}.regularization_{}.txt', 'batch_size': 64, 'epochs': 1024, 'cache_embedding': 1, 'memory_size': 50, 'random_state': None, 'max_grad_norm': 40.0, 'early': 50}, '__parsed': True}
+Load trainng data from ./data/traintest/train/readworks_grade1.0.1.json
+Load trainng data from ./data/traintest/train/mc160.train.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade2.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade3.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade1.test.0.1.json
+Load trainng data from ./data/traintest/train/readworks_gradek.0.1.json
+Load trainng data from ./data/traintest/train/mc160.dev.0.1.json
+Load trainng data from ./data/traintest/train/readworks_grade4.0.1.json
+Load testing data from ./data/traintest/test/readworks_grade2.test.0.1.json
+CorrectAnswer not in 'ABCD'
+{u'text': u'What is compared and contrasted in the passage? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'New York City and Chicago', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'international camps and sports camps', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather in different parts of the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'The climate of Ghana is warm all year. The climate of New York City is sometimes cold. What can be concluded from this information? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'All parts of the world have the same climate.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Different parts of the world can have different climates.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'The climate of New York City and the climate of England are alike.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'Why might Ilsa like to eat ice cream in the summer? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'Ilsa likes eating something cold when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'Ilsa likes eating something warm when the weather is hot.', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'Ilsa likes eating something hot when the weather is cold.', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'What is a main idea of the story? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'eating stew in Senegal', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'visiting Argentina in the summer', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'weather around the world', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+CorrectAnswer not in 'ABCD'
+{u'text': u'Read these sentences: "Ilsa was excited to meet her camp counselor Itzel when she arrived for her first day at The International Camp in Forest Hills, Queens, in New York City. Itzel asked the campers to sit in a circle, introduce themselves, and share which countries their families were from." What does the word "international" mean? ', u'correctAnswer': u'', u'answerChoices': [{u'text': u'having to do with more than one country', u'featureValueMap': {}, u'passageList': [], u'label': u'A'}, {u'text': u'having to do with being outdoors', u'featureValueMap': {}, u'passageList': [], u'label': u'B'}, {u'text': u'having to do with playing baseball or soccer', u'featureValueMap': {}, u'passageList': [], u'label': u'C'}]}
+('Vocal Size', 7022)
+('use pickle', 1)
+Longest sentence length 198
+Longest story length 171
+Answer length 60
+Label size 4
+Training set shape (2363, 50, 198)
+Training Size 2363
+Validation Size 591
+Testing Size 400
+save vocab to pickle
+start session
+Memn2n Model Input
+{'answer_size': 60, 'vocab_size': 7023, 'embedding_size': 50, 'nonlin': <function relu at 0x7f054b6a8578>, 'name': 'MemN2N', 'encoding': <function position_encoding at 0x7f051de367d0>, 'hops': 3, 'epsilon': 1e-08, 'frame': <frame object at 0x13fc0bd0>, 'memory_size': 50, 'sentence_size': 198, 'glove_embedding': array([[ 0.  ,  0.  ,  0.  , ...,  0.  ,  0.  ,  0.  ],
+       [-0.58,  0.39,  0.65, ..., -1.23,  0.47,  0.79],
+       [ 0.44,  0.9 ,  1.41, ...,  0.07, -0.69,  0.81],
+       ..., 
+       [-0.78,  0.35, -0.1 , ...,  0.27,  0.58, -0.48],
+       [-0.09, -0.65, -0.05, ...,  0.28,  0.32, -0.25],
+       [-0.4 ,  0.44,  0.51, ...,  0.23,  0.18, -0.21]]), 'session': <tensorflow.python.client.session.Session object at 0x7f051de3f810>, 'l2': 0.2, 'batch_size': 64, 'restoreLoc': None, 'max_grad_norm': 40.0, 'lr': 0.01, 'label_size': 4, 'self': <memn2n.mc_memn2n.MemN2N object at 0x7f051de3f290>}
+('q_emb', <tf.Tensor 'MemN2N2/embedding_lookup:0' shape=(?, 198, 50) dtype=float32>)
+('self._encoding', <tf.Tensor 'encoding:0' shape=(198, 50) dtype=float32>)
+('states', <tf.Tensor 'MemN2N2/RNN/GRUCell_197/add:0' shape=(?, 50) dtype=float32>)
+('u_0', <tf.Tensor 'MemN2N2/RNN/GRUCell_197/add:0' shape=(?, 50) dtype=float32>)
+('dotted', <tf.Tensor 'MemN2N2/Sum_1:0' shape=(?, 50) dtype=float32>)
+('sfm', <tf.Tensor 'MemN2N2/Softmax:0' shape=(?, 50) dtype=float32>)
+('dotted', <tf.Tensor 'MemN2N2/Sum_5:0' shape=(?, 50) dtype=float32>)
+('sfm', <tf.Tensor 'MemN2N2/Softmax_1:0' shape=(?, 50) dtype=float32>)
+('dotted', <tf.Tensor 'MemN2N2/Sum_9:0' shape=(?, 50) dtype=float32>)
+('sfm', <tf.Tensor 'MemN2N2/Softmax_2:0' shape=(?, 50) dtype=float32>)
+('as_emb', <tf.Tensor 'MemN2N2/embedding_lookup_7:0' shape=(?, 4, 60, 50) dtype=float32>)
+('self._answer_encoding', <tf.Tensor 'answer_encoding:0' shape=(60, 50) dtype=float32>)
+('as_enc', <tf.Tensor 'MemN2N2/Sum_12:0' shape=(?, 4, 50) dtype=float32>)
+('u_k', <tf.Tensor 'MemN2N2/Relu_2:0' shape=(?, 50) dtype=float32>)
+('u_k_l', <tf.Tensor 'MemN2N2/Reshape_1:0' shape=(?, 4, 50) dtype=float32>)
+('as_ans', <tf.Tensor 'MemN2N2/Sub:0' shape=(?, 4, 50) dtype=float32>)
+('as_ans', <tf.Tensor 'MemN2N2/Sum_13:0' shape=(?, 4) dtype=float32>)
+('logits', <tf.Tensor 'MemN2N2/Sum_13:0' shape=(?, 4) dtype=float32>)
+-----------------------
+Epoch 1
+Total Cost: 56286740.4336
+Training Accuracy: 0.356326703343
+Validation Accuracy: 0.343486
+linear_start:  True
+max_val 0.343486
+val_lower_count 0
+Testing Accuracy: 0.3175
+best_test_epoch 1
+best_test_acc 0.3175
+Saving Models
+Writing final results to scores.learningrate_0.01.regularization_0.2.txt
+-----------------------
+Epoch 2
+Total Cost: 20173282.1172
+Training Accuracy: 0.338552687262
+Validation Accuracy: 0.328257
+linear_start:  True
+max_val 0.343486
+val_lower_count 1
+Testing Accuracy: 0.255
+-----------------------
+Epoch 3
+Total Cost: 9492390.51953
+Training Accuracy: 0.395683453237
+Validation Accuracy: 0.382403
+linear_start:  True
+max_val 0.382403
+val_lower_count 0
+Testing Accuracy: 0.29
+-----------------------
+Epoch 4
+Total Cost: 19472141.7734
+Training Accuracy: 0.381294964029
+Validation Accuracy: 0.380711
+linear_start:  True
+max_val 0.382403
+val_lower_count 1
+Testing Accuracy: 0.355
+best_test_epoch 4
+best_test_acc 0.355
+Saving Models
+Writing final results to scores.learningrate_0.01.regularization_0.2.txt
+-----------------------
+Epoch 5
+Total Cost: 1123639.27734
+Training Accuracy: 0.440964875159
+Validation Accuracy: 0.411168
+linear_start:  True
+max_val 0.411168
+val_lower_count 0
+Testing Accuracy: 0.3375
+-----------------------
+Epoch 6
+Total Cost: 2616716.45361
+Training Accuracy: 0.518831993229
+Validation Accuracy: 0.434856
+linear_start:  True
+max_val 0.434856
+val_lower_count 0
+Testing Accuracy: 0.3375
+-----------------------
+Epoch 7
+Total Cost: 206797.70752
+Training Accuracy: 0.584426576386
+Validation Accuracy: 0.465313
+linear_start:  True
+max_val 0.465313
+val_lower_count 0
+Testing Accuracy: 0.3425
+-----------------------
+Epoch 8
+Total Cost: 154639.27124
+Training Accuracy: 0.603470165044
+Validation Accuracy: 0.472081
+linear_start:  True
+max_val 0.472081
+val_lower_count 0
+Testing Accuracy: 0.3575
+best_test_epoch 8
+best_test_acc 0.3575
+Saving Models
+Writing final results to scores.learningrate_0.01.regularization_0.2.txt
+-----------------------
+Epoch 9
+Total Cost: 190326.333008
+Training Accuracy: 0.662716885315
+Validation Accuracy: 0.441624
+linear_start:  True
+max_val 0.472081
+val_lower_count 1
+Testing Accuracy: 0.365
+best_test_epoch 9
+best_test_acc 0.365
+Saving Models
+Writing final results to scores.learningrate_0.01.regularization_0.2.txt
+-----------------------
+Epoch 10
+Total Cost: 267984.469482
+Training Accuracy: 0.73381294964
+Validation Accuracy: 0.475465
+linear_start:  True
+max_val 0.475465
+val_lower_count 0
+Testing Accuracy: 0.395
+best_test_epoch 10
+best_test_acc 0.395
+Saving Models
+Writing final results to scores.learningrate_0.01.regularization_0.2.txt
+-----------------------
+Epoch 11
+Total Cost: 123168.260742
+Training Accuracy: 0.756242065171
+Validation Accuracy: 0.489002
+linear_start:  True
+max_val 0.489002
+val_lower_count 0
+Testing Accuracy: 0.3725
+-----------------------
+Epoch 12
+Total Cost: 132917.786255
+Training Accuracy: 0.821836648328
+Validation Accuracy: 0.510998
+linear_start:  True
+max_val 0.510998
+val_lower_count 0
+Testing Accuracy: 0.4325
+best_test_epoch 12
+best_test_acc 0.4325
+Saving Models
+Writing final results to scores.learningrate_0.01.regularization_0.2.txt
+-----------------------
+Epoch 13
+Total Cost: 69931.2719727
+Training Accuracy: 0.821836648328
+Validation Accuracy: 0.500846
+linear_start:  True
+max_val 0.510998
+val_lower_count 1
+Testing Accuracy: 0.415
+-----------------------
+Epoch 14
+Total Cost: 91507.8348389
+Training Accuracy: 0.826914938637
+Validation Accuracy: 0.509306
+linear_start:  True
+max_val 0.510998
+val_lower_count 2
+Testing Accuracy: 0.425
+-----------------------
+Epoch 15
+Total Cost: 50425.2669678
+Training Accuracy: 0.852306390182
+Validation Accuracy: 0.536379
+linear_start:  True
+max_val 0.536379
+val_lower_count 0
+Testing Accuracy: 0.395
+-----------------------
+Epoch 16
+Total Cost: 52989.4975586
+Training Accuracy: 0.867964451968
+Validation Accuracy: 0.546531
+linear_start:  True
+max_val 0.546531
+val_lower_count 0
+Testing Accuracy: 0.42
+-----------------------
+Epoch 17
+Total Cost: 43707.3027344
+Training Accuracy: 0.671180702497
+Validation Accuracy: 0.426396
+linear_start:  True
+max_val 0.546531
+val_lower_count 1
+Testing Accuracy: 0.2925
+-----------------------
+Epoch 18
+Total Cost: 38367.0698853
+Training Accuracy: 0.858654253068
+Validation Accuracy: 0.560068
+linear_start:  True
+max_val 0.560068
+val_lower_count 0
+Testing Accuracy: 0.4075
+-----------------------
+Epoch 19
+Total Cost: 33013.5739136
+Training Accuracy: 0.915785019044
+Validation Accuracy: 0.565144
+linear_start:  True
+max_val 0.565144
+val_lower_count 0
+Testing Accuracy: 0.41
+-----------------------
+Epoch 20
+Total Cost: 27120.8411255
+Training Accuracy: 0.897587812103
+Validation Accuracy: 0.565144
+linear_start:  True
+max_val 0.565144
+val_lower_count 0
+Testing Accuracy: 0.415
+-----------------------
+Epoch 21
+Total Cost: 20552.1090088
+Training Accuracy: 0.913669064748
+Validation Accuracy: 0.575296
+linear_start:  True
+max_val 0.575296
+val_lower_count 0
+Testing Accuracy: 0.395
+-----------------------
+Epoch 22
+Total Cost: 15569.966217
+Training Accuracy: 0.887431231485
+Validation Accuracy: 0.554992
+linear_start:  True
+max_val 0.575296
+val_lower_count 1
+Testing Accuracy: 0.4025
+-----------------------
+Epoch 23
+Total Cost: 12858.8857422
+Training Accuracy: 0.915361828185
+Validation Accuracy: 0.543147
+linear_start:  True
+max_val 0.575296
+val_lower_count 2
+Testing Accuracy: 0.405
+-----------------------
+Epoch 24
+Total Cost: 10912.0844116
+Training Accuracy: 0.919170545916
+Validation Accuracy: 0.566836
+linear_start:  True
+max_val 0.575296
+val_lower_count 3
+Testing Accuracy: 0.4
+-----------------------
+Epoch 25
+Total Cost: 9538.40101624
+Training Accuracy: 0.903935674989
+Validation Accuracy: 0.546531
+linear_start:  True
+max_val 0.575296
+val_lower_count 4
+Testing Accuracy: 0.3775
+-----------------------
+Epoch 26
+Total Cost: 8175.15231323
+Training Accuracy: 0.906051629285
+Validation Accuracy: 0.566836
+linear_start:  True
+max_val 0.575296
+val_lower_count 5
+Testing Accuracy: 0.39
+-----------------------
+Epoch 27
+Total Cost: 6654.7133255
+Training Accuracy: 0.822259839187
+Validation Accuracy: 0.519459
+linear_start:  False
+max_val 0.575296
+val_lower_count 6
+Testing Accuracy: 0.4
+-----------------------
+Epoch 28
+Total Cost: 3883.14899445
+Training Accuracy: 0.863732543377
+Validation Accuracy: 0.551607
+linear_start:  False
+max_val 0.575296
+val_lower_count 7
+Testing Accuracy: 0.39
+-----------------------
+Epoch 29
+Total Cost: 3423.18338013
+Training Accuracy: 0.878967414304
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.575296
+val_lower_count 8
+Testing Accuracy: 0.3925
+-----------------------
+Epoch 30
+Total Cost: 3272.60643005
+Training Accuracy: 0.898434193821
+Validation Accuracy: 0.563452
+linear_start:  False
+max_val 0.575296
+val_lower_count 9
+Testing Accuracy: 0.3675
+-----------------------
+Epoch 31
+Total Cost: 3142.64640808
+Training Accuracy: 0.89885738468
+Validation Accuracy: 0.568528
+linear_start:  False
+max_val 0.575296
+val_lower_count 10
+Testing Accuracy: 0.39
+-----------------------
+Epoch 32
+Total Cost: 3111.65509796
+Training Accuracy: 0.909437156157
+Validation Accuracy: 0.56176
+linear_start:  False
+max_val 0.575296
+val_lower_count 11
+Testing Accuracy: 0.3825
+-----------------------
+Epoch 33
+Total Cost: 3041.25844574
+Training Accuracy: 0.925095217943
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.575296
+val_lower_count 12
+Testing Accuracy: 0.4225
+-----------------------
+Epoch 34
+Total Cost: 2875.02707672
+Training Accuracy: 0.914938637325
+Validation Accuracy: 0.560068
+linear_start:  False
+max_val 0.575296
+val_lower_count 13
+Testing Accuracy: 0.3875
+-----------------------
+Epoch 35
+Total Cost: 2936.6961441
+Training Accuracy: 0.915361828185
+Validation Accuracy: 0.566836
+linear_start:  False
+max_val 0.575296
+val_lower_count 14
+Testing Accuracy: 0.405
+-----------------------
+Epoch 36
+Total Cost: 2787.67842102
+Training Accuracy: 0.919593736775
+Validation Accuracy: 0.57022
+linear_start:  False
+max_val 0.575296
+val_lower_count 15
+Testing Accuracy: 0.405
+-----------------------
+Epoch 37
+Total Cost: 2711.72839355
+Training Accuracy: 0.920863309353
+Validation Accuracy: 0.551607
+linear_start:  False
+max_val 0.575296
+val_lower_count 16
+Testing Accuracy: 0.3925
+-----------------------
+Epoch 38
+Total Cost: 2639.5314827
+Training Accuracy: 0.929327126534
+Validation Accuracy: 0.576988
+linear_start:  False
+max_val 0.576988
+val_lower_count 0
+Testing Accuracy: 0.4075
+-----------------------
+Epoch 39
+Total Cost: 2537.05290604
+Training Accuracy: 0.930173508252
+Validation Accuracy: 0.543147
+linear_start:  False
+max_val 0.576988
+val_lower_count 1
+Testing Accuracy: 0.3825
+-----------------------
+Epoch 40
+Total Cost: 2520.91942978
+Training Accuracy: 0.921709691071
+Validation Accuracy: 0.588832
+linear_start:  False
+max_val 0.588832
+val_lower_count 0
+Testing Accuracy: 0.3775
+-----------------------
+Epoch 41
+Total Cost: 2582.09192657
+Training Accuracy: 0.930173508252
+Validation Accuracy: 0.58714
+linear_start:  False
+max_val 0.588832
+val_lower_count 1
+Testing Accuracy: 0.4
+-----------------------
+Epoch 42
+Total Cost: 2413.66386032
+Training Accuracy: 0.937790943716
+Validation Accuracy: 0.595601
+linear_start:  False
+max_val 0.595601
+val_lower_count 0
+Testing Accuracy: 0.385
+-----------------------
+Epoch 43
+Total Cost: 2402.935215
+Training Accuracy: 0.94498518832
+Validation Accuracy: 0.580372
+linear_start:  False
+max_val 0.595601
+val_lower_count 1
+Testing Accuracy: 0.3725
+-----------------------
+Epoch 44
+Total Cost: 2270.1101265
+Training Accuracy: 0.945408379179
+Validation Accuracy: 0.582064
+linear_start:  False
+max_val 0.595601
+val_lower_count 2
+Testing Accuracy: 0.3875
+-----------------------
+Epoch 45
+Total Cost: 2230.67931366
+Training Accuracy: 0.943715615743
+Validation Accuracy: 0.597293
+linear_start:  False
+max_val 0.597293
+val_lower_count 0
+Testing Accuracy: 0.3875
+-----------------------
+Epoch 46
+Total Cost: 2155.261676

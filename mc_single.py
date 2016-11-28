@@ -107,7 +107,7 @@ print("Label size", label_size)
 
 # train/validation/test sets
 S, Q, A, L = vectorize_data(train, word_idx, sentence_size, memory_size, answer_size)
-trainS, valS, trainQ, valQ, trainA, valA, trainL, valL = cross_validation.train_test_split(S, Q, A, L, test_size=.2, random_state=FLAGS.random_state)
+trainS, valS, trainQ, valQ, trainA, valA, trainL, valL = cross_validation.train_test_split(S, Q, A, L, test_size=0.01, random_state=FLAGS.random_state)
 #trainS,trainQ,trainAA,trainAB,trainAC,trainL = perturb(trainS,trainQ,trainAA,trainAB,trainAC,trainL)
 testS, testQ, testA, testL= vectorize_data(test, word_idx, sentence_size, memory_size, answer_size)
 
